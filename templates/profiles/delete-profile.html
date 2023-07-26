@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Edit Profile Form -->
+
+
+
+    <section class="text-center text-lg-start" id="delete">
+
+        <div class="container">
+            <h1>Are you sure you want to delete your profile?</h1>
+
+            <!-- Delete Profile Form -->
+            <form class="delete-form" action="{% url 'delete profile' pk=user.pk %}" method="post">
+                <!-- Confirm Button -->
+                {% csrf_token %}
+{#                {{ form.as_table }}#}
+{#                {{ form.as_ul }}#}
+                {{ form.as_p}}
+                {#            {{ form.first_name.as_p }}#}
+                {#            {{ form.last_name }}#}
+                <button class="btn btn-primary btn-block mb-4" type="submit">Delete Profile</button>
+
+            </form>
+            <!-- End Delete Profile Form -->
+        </div>
+
+    </section>
+
+{% endblock %}
+

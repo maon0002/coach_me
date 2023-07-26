@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{#{% load forms %}#}
+{% load static %}
+{#{% load widget_tweaks %}#}
+{#{% load forms custom_filters %}#}
+
+{% block content %}
+
+    <h1>Profile Details</h1>
+    <img src="{{ picture }}" alt="Profile Picture"
+         style="width: 5%" height="5%">
+
+    <!-- Section: Design Block -->
+    <section class="text-center text-lg-start">
+        <style>
+            .cascading-left {
+                margin-left: -30px;
+            }
+
+            @media (max-width: 992px) {
+                .cascading-left {
+                    margin-left: 0;
+                }
+            }
+        </style>
+
+        <!-- Jumbotron -->
+        <div class="container py-4" style="
+                {#display: flex;#}
+                justify-content: center;
+                align-items: center;
+                height: 100vh;">
+
+            <div class="row g-0 align-items-center" style="padding-top: 10%">
+
+                {% if object.picture is not None %}
+                    <div class="col-lg-6 mb-5 mb-lg-0"
+                         style="
+                             width: 30%;
+                             height: 40%;">
+                        <img src="{{ object.picture }}" class="w-100 rounded-4 shadow-4"
+                             alt="login screen"/>
+                    </div>
+                {% else %}
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <img src="{% static '/images/missing-person.jpg' %}" class="w-100 rounded-4 shadow-4"
+                             alt="login screen"/>
+                    </div>
+                {% endif %}
+
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card cascading-left" style="
+                            background: hsla(0, 0%, 100%, 0.55);
+                            backdrop-filter: blur(30px);
+                            {#padding-top: 30%;#}
+                            ">
+                        <div class="card-body p-5 shadow-5 text-center">
+
+                            <h2 class="fw-bold mb-5">Profile details</h2>
+
+                            <input type="hidden" value="{{ next }}" name="next"/>
+                            {% csrf_token %}
+
+                            {% for field_name, field_value in fields %}
+                                <div class="form-outline mb-4" style="text-align: left;">
+                                    <strong>{{ field_name|title|ljust:"100" }}:</strong> {{ field_value }}
+                                </div>
+                            {% endfor %}
+
+                            <!-- Delete Profile Button -->
+                            <a href="{% url 'delete profile' pk=object.pk %}" class="btn btn-danger">Delete
+                                Profile</a>
+
+                            <!-- Edit Profile Button -->
+                            <a href="{% url 'edit profile' pk=object.pk %}" class="btn btn-primary">Edit Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,240 @@
+{#{% extends 'base.html' %}#}
+{#{% load forms %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{#{{ request.user }}#}
+{##}
+{#{% include 'common/head.html' %}#}
+{##}
+{#<!-- Section: Design Block -->#}
+{#<section class="text-center text-lg-start">#}
+{#    <style>#}
+{#        .cascading-right {#}
+{#            margin-right: -50px;#}
+{#        }#}
+{##}
+{#        @media (max-width: 992px) {#}
+{#            .cascading-right {#}
+{#                margin-right: 0;#}
+{#            }#}
+{#        }#}
+{#    </style>#}
+{##}
+{#    <!-- Jumbotron -->#}
+{#    <div class="container py-4">#}
+{#        <div class="row g-0 align-items-center" style="padding-top: 5%">#}
+{#            <div class="col-lg-6 mb-5 mb-lg-0">#}
+{#                <div class="card cascading-right" style="#}
+{#            background: hsla(0, 0%, 100%, 0.55);#}
+{#            backdrop-filter: blur(30px);#}
+{#            ">#}
+{#                    <div class="card-body p-5 shadow-5 text-center">#}
+{#                        <a class="navbar-brand" href="{% url 'index' %}">#}
+{#                            <img id="logo-img" src="{% static '/images/logo.png' %}" alt="logo"/></a>#}
+{##}
+{#                        <h2 class="fw-bold mb-5">Sign up now</h2>#}
+{##}
+{#                        <form action="{% url 'register_user' %}" method="post">#}
+{##}
+{#                            <input type="hidden" value="{{ next }}" name="next"/>#}
+{##}
+{#                            <!-- 2 column grid layout with text inputs for the first and last names -->#}
+{#                            <div class="row">#}
+{#                                <div class="col-md-6 mb-4">#}
+{#                                    <div class="form-outline">#}
+{#                                        <input type="text" name="first_name" maxlength="30" required=""#}
+{#                                               id="id_first_name" class="form-control" placeholder="First name"/>#}
+{#                                        <label class="form-label" for="id_first_name"></label>#}
+{#                                    </div>#}
+{#                                </div>#}
+{##}
+{#                                <div class="col-md-6 mb-4">#}
+{#                                    <div class="form-outline">#}
+{#                                        <input type="text" name="last_name" maxlength="30" required=""#}
+{#                                               id="id_last_name" class="form-control" placeholder="Last name"/>#}
+{#                                        <label class="form-label" for="id_last_name"></label>#}
+{#                                    </div>#}
+{#                                </div>#}
+{##}
+{#                            </div>#}
+{##}
+{#                            <!-- Email input -->#}
+{#                            <div class="form-outline mb-4">#}
+{#                                <label for="id_email"></label><input type="email" name="email" class="form-control"#}
+{#                                                                     maxlength="254" autofocus=""#}
+{#                                                                     required="" id="id_email"#}
+{#                                                                     placeholder="Corporate email address"/>#}
+{#                                <label class="form-label" for="form3Example3"></label>#}
+{#                            </div>#}
+{##}
+{#                            <!-- Password input -->#}
+{#                            <div class="form-outline mb-4">#}
+{#                                <label for="password1"></label><input type="password" name="password1"#}
+{#                                                                      autocomplete="new-password" required=""#}
+{#                                                                      id="password1" class="form-control"#}
+{#                                                                      placeholder="Password"/>#}
+{#                                <label class="form-label" for="password"></label>#}
+{#                            </div>#}
+{##}
+{#                            <!-- Repeat Password input -->#}
+{#                            <div class="form-outline mb-4">#}
+{#                                <input type="password" name="password2" autocomplete="new-password" required=""#}
+{#                                       id="id_password2" class="form-control" placeholder="Repeat password"/>#}
+{#                                <label class="form-label" for="id_password2"></label>#}
+{#                            </div>#}
+{##}
+{#                            <!-- Checkbox -->#}
+{#                            <div class="form-check d-flex justify-content-center mb-4">#}
+{#                                <input class="form-check-input me-2" type="checkbox" name="newsletter_subscription"#}
+{#                                       required="" id="id_newsletter_subscription" checked/>#}
+{#                                <label class="form-check-label" for="id_newsletter_subscription">#}
+{#                                    Subscribe to our newsletter#}
+{#                                </label>#}
+{#                            </div>#}
+{##}
+{#                            <!-- Checkbox -->#}
+{#                            <div class="form-check d-flex justify-content-center mb-4">#}
+{#                                <input class="form-check-input me-2" type="checkbox" name="consent_terms" required=""#}
+{#                                       id="id_consent_terms" checked/>#}
+{#                                <label class="form-check-label" for="id_consent_terms">#}
+{#                                    Agree to Terms and Conditions#}
+{#                                </label>#}
+{#                            </div>#}
+{##}
+{#                            {% csrf_token %}#}
+{##}
+{#                            <!-- Submit button -->#}
+{#                            <button type="submit" class="btn btn-primary btn-block mb-4">#}
+{#                                Sign up#}
+{#                            </button>#}
+{#                            or#}
+{#                            <a class="reg-link" href="{% url 'login_user' %}?next={{ next }}">#}
+{#                                Login here</a>#}
+{##}
+{#                            <!-- Register buttons -->#}
+{#                            <div class="text-center">#}
+{##}
+{#                            </div>#}
+{#                        </form>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="col-lg-6 mb-5 mb-lg-0">#}
+{#                <img src="{% static '/images/signup.jpg' %}" class="w-100 rounded-4 shadow-4"#}
+{#                     alt=""/>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#</section>#}
+
+{#{% extends 'base.html' %}#}
+{% load forms %}
+{% load static %}
+{#{% block content %}#}
+{{ request.user }}
+
+{% include 'common/head.html' %}
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+        .cascading-right {
+            margin-right: -50px;
+        }
+
+        @media (max-width: 992px) {
+            .cascading-right {
+                margin-right: 0;
+            }
+        }
+    </style>
+
+    <!-- Jumbotron -->
+    <div class="container py-4">
+        <div class="row g-0 align-items-center" style="padding-top: 5%">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <a class="navbar-brand" href="{% url 'index' %}">
+                            <img id="logo-img" src="{% static '/images/logo.png' %}" alt="logo"/></a>
+
+                        <h2 class="fw-bold mb-5">Sign up now</h2>
+
+                        <form action="{% url 'register_user' %}" method="post">
+
+                            <input type="hidden" value="{{ next }}" name="next"/>
+
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+
+                            <!-- Email input -->
+                            <div class="form-outline mb-4" style="text-align: left;">
+                                {% include 'common/bs4_form_only_placeholders.html' with form=form placeholders=placeholders %}
+                            </div>
+                            {##}
+                            {#                            <!-- Password input -->#}
+                            {#                            <div class="form-outline mb-4">#}
+                            {#                                <label for="password1"></label><input type="password" name="password1"#}
+                            {#                                                                      autocomplete="new-password" required=""#}
+                            {#                                                                      id="password1" class="form-control"#}
+                            {#                                                                      placeholder="Password"/>#}
+                            {#                                <label class="form-label" for="password"></label>#}
+                            {#                            </div>#}
+                            {##}
+                            {#                            <!-- Repeat Password input -->#}
+                            {#                            <div class="form-outline mb-4">#}
+                            {#                                <input type="password" name="password2" autocomplete="new-password" required=""#}
+                            {#                                       id="id_password2" class="form-control" placeholder="Repeat password"/>#}
+                            {#                                <label class="form-label" for="id_password2"></label>#}
+                            {#                            </div>#}
+                            {##}
+                            <!-- Checkbox -->
+{#                            <div class="form-check d-flex justify-content-center mb-4">#}
+{#                                <input class="form-check-input me-2" type="checkbox" name="newsletter_subscription"#}
+{#                                       required="" id="id_newsletter_subscription" checked/>#}
+{#                                <label class="form-check-label" for="id_newsletter_subscription">#}
+{#                                    Subscribe to our newsletter#}
+{#                                </label>#}
+{#                            </div>#}
+{##}
+{#                            <!-- Checkbox -->#}
+{#                            <div class="form-check d-flex justify-content-center mb-4">#}
+{#                                <input class="form-check-input me-2" type="checkbox" name="consent_terms" required=""#}
+{#                                       id="id_consent_terms" checked/>#}
+{#                                <label class="form-check-label" for="id_consent_terms">#}
+{#                                    Agree to Terms and Conditions#}
+{#                                </label>#}
+{#                            </div>#}
+
+                            {% csrf_token %}
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4">
+                                Sign up
+                            </button>
+                            or
+                            <a class="reg-link" href="{% url 'login_user' %}?next={{ next }}">
+                                Login here</a>
+
+                            <!-- Register buttons -->
+                            <div class="text-center">
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <img src="{% static '/images/signup.jpg' %}" class="w-100 rounded-4 shadow-4"
+                     alt=""/>
+            </div>
+        </div>
+    </div>
+
+</section>
+

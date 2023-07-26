@@ -1,0 +1,184 @@
+{#{% extends 'base.html' %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{##}
+{#    <!-- Edit Profile Form -->#}
+{##}
+{#    <section id="register">#}
+{#        <div class="form">#}
+{#            <h2>Edit Booking</h2>#}
+{#            <form class="register-form" action="{% url 'edit booking' pk=booking.pk %}" method="post">#}
+{##}
+{#                {% csrf_token %}#}
+{#                {{ form.as_p }}#}
+{##}
+{#                <section class="text-center text-lg-start">#}
+{#                    <style>#}
+{#                        .cascading-right {#}
+{#                            margin-right: -50px;#}
+{#                        }#}
+{##}
+{#                        @media (max-width: 991.98px) {#}
+{#                            .cascading-right {#}
+{#                                margin-right: 0;#}
+{#                            }#}
+{#                        }#}
+{#                    </style>#}
+{##}
+{#                    <!-- Jumbotron -->#}
+{#                    <div class="container py-4">#}
+{#                        <div class="row g-0 align-items-center">#}
+{#                            <div class="col-lg-6 mb-5 mb-lg-0">#}
+{#                                <div class="card cascading-right" style="#}
+{#            background: hsla(0, 0%, 100%, 0.55);#}
+{#            backdrop-filter: blur(30px);#}
+{#            ">#}
+{#                                    <div class="card-body p-5 shadow-5 text-center">#}
+{##}
+{#                                        <a class="navbar-brand" href="{% url 'index' %}">#}
+{#                                            <img id="logo-img" src="{% static '/images/logo.png' %}" alt="logo"/></a>#}
+{#                                        <h2 class="fw-bold mb-5">Login now</h2>#}
+{#                                        <form action="{% url 'login_user' %}" method="post">#}
+{#                                            <input type="hidden" value="{{ next }}" name="next"/>#}
+{##}
+{#                                            <!-- Email input -->#}
+{#                                            <div class="mb-3">#}
+{#                                                                                <label for="exampleInputEmail1" class="form-label">Email address</label>#}
+{#                                                <input type="text" name="username" autofocus="" autocapitalize="none"#}
+{#                                                       autocomplete="username" maxlength="254" required=""#}
+{#                                                       id="id_username"#}
+{#                                                       placeholder="User">#}
+{##}
+{#                                            </div>#}
+{##}
+{#                                            <!-- Password input -->#}
+{#                                            <div class="mb-3">#}
+{#                                                                                <label for="exampleInputPassword1" class="form-label">Password</label>#}
+{#                                                <input type="password" name="password" autocomplete="current-password"#}
+{#                                                       required=""#}
+{#                                                       id="id_password" placeholder="Password">#}
+{#                                            </div>#}
+{#                                                                        <div class="mb-3 form-check">#}
+{#                                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">#}
+{#                                                                            <label class="form-check-label" for="exampleCheck1">Check me out</label>#}
+{#                                                                        </div>#}
+{#                                                                        <button type="submit" class="btn btn-primary">Submit</button>#}
+{##}
+{#                                                                        <!-- Submit button -->#}
+{#                                                                        <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>#}
+{#                                                                        or#}
+{#                                                                        <a class="reg-link" href="{% url 'register_user' %}">Register here</a>#}
+{##}
+{#                                            {% csrf_token %}#}
+{##}
+{#                                            <!-- Submit button -->#}
+{#                                            <button type="submit" class="btn btn-primary btn-block mb-4">#}
+{#                                                Login#}
+{#                                            </button>#}
+{#                                            or#}
+{#                                            <a class="reg-link" href="{% url 'register_user' %}">#}
+{#                                                Register here</a>#}
+{#                                        </form>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-lg-6 mb-5 mb-lg-0">#}
+{#                                <img src="{% static '/images/login.jpg' %}" class="w-100 rounded-4 shadow-4"#}
+{#                                     alt="login screen"/>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </section>#}
+{##}
+{#                <button type="submit">Edit</button>#}
+{##}
+{#            </form>#}
+{#        </div>#}
+{#    </section>#}
+{##}
+{#{% endblock %}#}
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <section class="text-center text-lg-start">
+        <style>
+            .cascading-right {
+                margin-right: -50px;
+            }
+
+            @media (max-width: 992px) {
+                .cascading-right {
+                    margin-right: 0;
+                }
+            }
+        </style>
+        <!-- Jumbotron -->
+        <div class="container py-4" style="
+                {#display: flex;#}
+                justify-content: center;
+                align-items: center;
+                height: 100vh;">
+
+            <div class="row g-0 align-items-center" style="padding-top: 5%">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+                        <div class="card-body p-5 shadow-5 text-center">
+
+                            <h2 class="fw-bold mb-5">Edit Booking</h2>
+                            <link rel="stylesheet" href="{% static '/css/styles.css' %}"/>
+                            <img class="rounded-image"
+                                 src="{{ training.service_image }}"
+                                 alt="Profile Picture"
+                                 style="
+                                 width: 50%;
+                                 height: 40%;
+                                    ">
+                            <p></p>
+                            <p>{{ training.service_name }}</p>
+
+                            <form action="{% url 'edit booking' pk=object.pk %}" method="post">
+
+                                <input type="hidden" value="{{ next }}" name="next"/>
+
+                                {% csrf_token %}
+
+                                <div class="form-outline mb-4" style="text-align: left;">
+                                    {% include 'common/bs4_form.html' with form=form %}
+
+                                </div>
+<!-- Submit button -->
+                                <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>
+                                <!-- Cancel button -->
+                                <button type="button" class="btn btn-primary btn-block mb-4" id="cancelButton">Cancel</button>
+
+
+                                {#                                <button class="btn btn-primary btn-block mb-4">#}
+                                {#                                    <a href="{% url 'dashboard' pk=request.user.pk %} text=Cancel"></a>#}
+                                {#                                    Cancel#}
+                                {#                                </button>#}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        // Add event listener to the Cancel button
+        document.getElementById('cancelButton').addEventListener('click', function () {
+            // Navigate to the dashboard page when the Cancel button is clicked
+            window.location.href = "{% url 'dashboard' pk=request.user.pk %}";
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,90 @@
+{##TODO add view/form#}
+
+
+{% extends 'base.html' %}
+{% load forms %}
+{% load static %}
+{% block content %}
+
+    <div id="intro" class="p-5 text-center bg-light">
+            <h1 class="mb-3 h2">See our lectors:</h1>
+            <p class="mb-3">Effortlessly schedule and manage soft skills training for your employees with our intuitive
+                booking system. Empower your workforce with valuable professional development opportunities.</p>
+{#            <a class="btn btn-primary m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"#}
+{#               rel="nofollow"#}
+{#               target="_blank">Start tutorial</a>#}
+{#            <a class="btn btn-primary m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"#}
+{#               role="button">See our Lectors</a>#}
+        </div>
+
+    <main class="my-5">
+        <div class="container">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-md-9 mb-4">
+                    <!--Section: Content-->
+                    <section>
+                        {% for lector in lector_list %}
+                            <!-- Post -->
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="bg-image hover-overlay shadow-1-strong rounded ripple"
+                                         data-mdb-ripple-color="light">
+                                        {#                                    <img src="{{ training.service_image }}https://mdbootstrap.com/img/new/standard/nature/184.jpg"#}
+                                        <img src="{{ lector.lector_image }}"
+                                             class="img-fluid" alt="{{ lector.full_name }}"/>
+                                        <a href="#!">
+                                            {#                                            TODO hrfe above - needed or not #}
+                                            <div class="mask"
+                                                 style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-8 mb-4">
+                                    <h5>{{ lector.full_name }}</h5>
+                                    <p>
+                                        {{ lector.biography }}
+                                    </p>
+
+{#                                    <button type="button" class="btn btn-primary">#}
+{#                                        <a class="edit-booking-button"#}
+{#                                           href="{% url 'details training' pk=training.pk %}"#}
+{#                                           style="text-decoration: white;#}
+{#                                           color: inherit;"></a>#}
+{#                                        Read#}
+{#                                    </button>#}
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+                        <!--Section: Video-->
+                    </section>
+                    <!--Section: Sidebar-->
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+
+            <!-- Pagination -->
+            <nav class="my-4" aria-label="...">
+                <ul class="pagination pagination-circle justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+{% endblock %}

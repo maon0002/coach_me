@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load forms %}
+{% load static %}
+{#TODO it will crush if the use dont have any bookings#}
+{#{{ booking }}#}
+{#{{ form.as_table }}#}
+{#{{ form.as_p }}#}
+{#{{ form.as_ul }}#}
+{##}
+{#{% for booking in booking_list %}#}
+{#    {{ booking.first_name }}#}
+{#    {{ booking.first_name }}#}
+{#    {{ booking.first_name }}#}
+{#{% endfor %}#}
+{% block content %}
+
+    <!-- my_bookings.html -->
+    <table class="table">
+        <thead class="table-light">
+        <tr>
+            <th>Booking ID</th>
+            <th>Employee</th>
+            <th>Date</th>
+            <!-- Add more table headers as needed -->
+        </tr>
+        </thead>
+        <tbody>
+        {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.id }}</td>
+                <td>{{ booking.employee }}</td>
+                <td>{{ booking.start_date }}</td>
+                <!-- Add more table cells with booking details as needed -->
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {#SECOND OPTION#}
+    <section class="intro">
+        {#        <div class="bg-image h-100" style="background-color: #6095F0;">#}
+        <div class="bg-image h-100" style="background-color: white;">
+            <div class="mask d-flex align-items-center h-100">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            {#                            <div class="card shadow-2-strong" style="background-color: #f5f7fa;">#}
+                            <div class="card shadow-2-strong" style="background-color: deepskyblue;">
+                                {#                                <div class="card-body">#}
+                                <div>
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless mb-0">
+                                            <thead>
+                                            <tr>
+                                                {#                                                <th scope="col">#}
+                                                {#                                                    <div class="form-check">#}
+                                                {#                                                        <input class="form-check-input" type="checkbox" value=""#}
+                                                {#                                                               id="flexCheckDefault"/>#}
+                                                {#                                                    </div>#}
+                                                {#                                                </th>#}
+                                                <th scope="col">EMPLOYEE NAMES</th>
+                                                <th scope="col">DATE AND TIME</th>
+                                                <th scope="col">LECTOR</th>
+                                                <th scope="col">TRAINING</th>
+                                                <th scope="col">MODE</th>
+                                                <th scope="col">Edit</th>
+                                                <th scope="col">Delete</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for booking in bookings %}
+                                                <tr>
+                                                    {#                                                    <th scope="row">#}
+                                                    {#                                                        <div class="form-check">#}
+                                                    {#                                                            <input class="form-check-input" type="checkbox" value=""#}
+                                                    {#                                                                   id="flexCheckDefault1" checked/>#}
+                                                    {#                                                        </div>#}
+                                                    {#                                                    </th>#}
+                                                    <td>{{ booking.first_name }} {{ booking.last_name }}</td>
+                                                    <td>{{ booking.start_date }} : {{ booking.start_time }}</td>
+                                                    <td>{{ booking.lector }}</td>
+                                                    <td>{{ booking.booking_type }}</td>
+                                                    <td>{{ booking.training_mode }}</td>
+                                                    <td>
+                                                        {#                                                        <button type="button" class="btn btn-danger btn-sm px-3">#}
+{#                                                        <button type="button">#}
+                                                            <a class="edit-booking-button"
+                                                               href="{% url 'edit booking' %}">
+                                                                <img src="{% static '/images/edit-icon.png' %}"
+                                                                     style="width: 20px" alt="edit-booking">
+                                                            </a>
+{#                                                        </button>#}
+
+                                                        {#                                                        <button type="button">#}
+                                                        <a class="delete-booking-button"
+                                                           href="{% url 'delete booking' pk=booking.pk %}">
+                                                            <img src="{% static 'images/delete-booking-icon.png' %}"
+                                                                 style="width: 20px" alt="delete-booking">
+                                                        </a>
+
+                                                        {#                                                        </button>#}
+
+                                                        {#                                                        <a href="{% url 'delete profile' pk=object.pk %}" class="btn btn-danger">Delete Profile</a>#}
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

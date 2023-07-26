@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load forms %}
+{% load static %}
+{#TODO it will crush if the use dont have any bookings#}
+
+{% block content %}
+{##}
+{#    <!-- my_bookings.html -->#}
+{#        <table class="table">#}
+{#            <thead class="table-light">#}
+{#            <tr>#}
+{#                <th>Booking ID</th>#}
+{#                <th>Employee</th>#}
+{#                <th>Date</th>#}
+{#                <!-- Add more table headers as needed -->#}
+{#            </tr>#}
+{#            </thead>#}
+{#            <tbody>#}
+{#            {% for booking in bookings %}#}
+{#                <tr>#}
+{#                    <td>{{ booking.employee.email }} {{ booking.first_name }}</td>#}
+{#                    <td>{{ booking.employee }}</td>#}
+{#                    <td>{{ booking.start_date }}</td>#}
+{#                    <!-- Add more table cells with booking details as needed -->#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{##}
+{#            {% for prof in profile %}#}
+{#                <tr>#}
+{#                    <td>{{ prof.employee.email }} {{ prof.first_name }}</td>#}
+{#                    <td>{{ prof.employee }}</td>#}
+{#                    <td>{{ booking.start_date }}</td>#}
+{#                    <!-- Add more table cells with booking details as needed -->#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{#            </tbody>#}
+{#        </table>#}
+
+{#    SECOND OPTION#}
+    <section class="intro">
+        <div class="bg-image h-100" style="background-color: white;">
+            <div class="mask d-flex align-items-center h-100">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="card shadow-2-strong" style="background-color: deepskyblue;">
+                                <div>
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless mb-0">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">TRAINING</th>
+                                                <th scope="col">SCHEDULED FOR</th>
+                                                <th scope="col">EMPLOYEE NAMES</th>
+                                                <th scope="col">LECTOR</th>
+                                                <th scope="col">MODE</th>
+                                                <th scope="col">Details</th>
+                                                <th scope="col">Edit</th>
+                                                <th scope="col">Cancel</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            {% for booking in bookings %}
+                                                <tr>
+                                                    <td>{{ booking.booking_type }}</td>
+                                                    <td>{{ booking.start_date }} : {{ booking.start_time }}</td>
+{#                                                    <td>{{ profile.full_name|capfirst }}</td>#}
+                                                    <td>{{ profile.full_name|capfirst }}</td>
+
+                                                    <td>{{ booking.lector }}</td>
+                                                    <td>{{ booking.training_mode }}</td>
+                                                    <td>
+                                                        <a class="details-booking-button"
+                                                           href="{% url 'details booking' pk=booking.pk %}">
+                                                            <img src="{% static '/images/eye.png' %}"
+                                                                 style="width: 25px; margin:auto; text-align:center; display:block;"
+                                                                 alt="edit-booking">
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="edit-booking-button"
+                                                           href="{% url 'edit booking' pk=booking.pk %}">
+                                                            <img src="{% static '/images/edit-icon.png' %}"
+                                                                 style="width: 20px; margin:auto; text-align:center; display:block;"
+                                                                 alt="edit-booking">
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="delete-booking-button"
+                                                           href="{% url 'delete booking' pk=booking.pk %}">
+                                                            <img src="{% static 'images/delete-booking-icon.jpg' %}"
+                                                                 style="width: 20px; margin:auto; text-align:center; display:block;"
+                                                                 alt="delete-booking">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

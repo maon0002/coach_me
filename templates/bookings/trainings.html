@@ -1,0 +1,212 @@
+{##TODO add view/form#}
+
+
+{% extends 'base.html' %}
+{% load forms %}
+{% load static %}
+{% block content %}
+
+    {#    <main class="my-5">#}
+    {#        <div class="container">#}
+    {#            <!--Grid row-->#}
+    {#            <div class="row">#}
+    {#                <!--Grid column-->#}
+    {#                <div class="col-md-9 mb-4">#}
+    {#                    <!--Section: Content-->#}
+    {#                    <section>#}
+    {#                        {% for training in training_list %}#}
+    {#                            <!-- Post -->#}
+    {#                            <div class="row">#}
+    {#                                <div class="col-md-4 mb-4">#}
+    {#                                    <div class="bg-image hover-overlay shadow-1-strong rounded ripple"#}
+    {#                                         data-mdb-ripple-color="light">#}
+    {#                                    <img src="{{ training.service_image }}https://mdbootstrap.com/img/new/standard/nature/184.jpg"#}
+    {#                                        <img src="{{ training.service_image }}"#}
+    {#                                             class="img-fluid" #}
+    {#                                             class="rounded float-start"#}
+    {#                                             class="img-fluid img-thumbnail"#}
+    {#                                             alt="{{ training.service_name }}"/>#}
+    {#                                        <a href="#!">#}
+    {#                                            TODO hrfe above - needed or not #}
+    {#                                            <div class="mask"#}
+    {#                                                 style="background-color: rgba(251, 251, 251, 0.15);"></div>#}
+    {#                                        </a>#}
+    {#                                    </div>#}
+    {#                                </div>#}
+    {##}
+    {#                                <div class="col-md-8 mb-4">#}
+    {#                                    <h5>{{ training.service_name }}</h5>#}
+    {#                                    <p>#}
+    {#                                        {{ training.service_description }}#}
+    {#                                    </p>#}
+    {##}
+    {#                                    <button type="button" class="btn btn-primary">#}
+    {#                                        <a class="edit-booking-button"#}
+    {#                                           href="{% url 'details training' pk=training.pk %}"#}
+    {#                                           style="text-decoration: white;#}
+    {#                                           color: inherit;"></a>#}
+    {#                                        Read#}
+    {#                                    </button>#}
+    {#                                </div>#}
+    {#                            </div>#}
+    {##}
+    {#                        {% endfor %}#}
+    {##}
+    {#                        <!--Section: Video-->#}
+    {#                    </section>#}
+    {#                    <!--Section: Sidebar-->#}
+    {#                </div>#}
+    {#                <!--Grid column-->#}
+    {#            </div>#}
+    {#            <!--Grid row-->#}
+    {##}
+    {#            <!-- Pagination -->#}
+    {#            <nav class="my-4" aria-label="...">#}
+    {#                <ul class="pagination pagination-circle justify-content-center">#}
+    {#                    <li class="page-item">#}
+    {#                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>#}
+    {#                    </li>#}
+    {#                    <li class="page-item"><a class="page-link" href="#">1</a></li>#}
+    {#                    <li class="page-item active" aria-current="page">#}
+    {#                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>#}
+    {#                    </li>#}
+    {#                    <li class="page-item"><a class="page-link" href="#">3</a></li>#}
+    {#                    <li class="page-item">#}
+    {#                        <a class="page-link" href="#">Next</a>#}
+    {#                    </li>#}
+    {#                </ul>#}
+    {#            </nav>#}
+    {#        </div>#}
+    {#    </main>#}
+
+
+
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="my-5">
+        <div class="container">
+            <div id="intro" class="p-5 text-center bg-light">
+                <h1 class="mb-3 h2">Streamline Your Corporate Training Bookings with Ease</h1>
+                <p class="mb-3">Effortlessly schedule and manage soft skills training for your employees with our
+                    intuitive
+                    booking system. Empower your workforce with valuable professional development opportunities.</p>
+
+                {% if not user.isauthenticated %}
+                    <a class="btn btn-primary m-2" href="{% url 'add booking' %}" role="button"
+{#                       rel="nofollow"#}
+{#                       target="_blank">#}
+                        >
+                        Book training
+                    </a>
+                    <a class="btn btn-primary m-2" href="{% url 'lectors' %}"
+                            {#                   target="_blank"#}
+                       role="button">
+                        See our Lectors
+                    </a>
+
+                {% else %}
+
+                    <a class="btn btn-primary m-2" href="{% url 'login_user' %}"
+                       role="button"
+{#                       rel="nofollow"#}
+                    >
+                            {#                   target="_blank">#}
+                       Login
+                    </a>
+
+                    <a class="btn btn-primary m-2" href="{% url 'lectors' %}"
+                            {#                   target="_blank"#}
+                       role="button">
+                        See our Lectors
+                    </a>
+                {% endif %}
+            </div>
+            <!--Section: Content-->
+            <section class="text-center">
+                {#                <h4 class="mb-5">#}
+                {#                    <strong>#}
+                {#                        Latest posts#}
+                {#                    </strong>#}
+                {#                </h4>#}
+
+                <div class="row">
+                    <!-- First Column - Display elements at even indexes -->
+                    <div class="col-lg-6 mb-4" style="padding: 5%">
+                        {% for training in training_list %}
+                            {% if forloop.counter0|divisibleby:2 %}
+                                <div class="card">
+                                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                        <img src="{{ training.service_image }}" class="img-fluid"/>
+                                        <a href="#!">
+                                            <div class="mask"
+                                                 style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ training.service_name }}</h5>
+                                        <p class="card-text">
+                                            {{ training.service_description }}
+                                        </p>
+                                        {#                                        <a href="#!" class="btn btn-primary">Read</a>#}
+                                    </div>
+                                </div>
+                                <p></p>
+                            {% endif %}
+                            {% empty %}
+                            <p>No trainings available.</p>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Second Column - Display elements at odd indexes -->
+                    <div class="col-lg-6 mb-4" style="padding: 5%">
+                        {% for training in training_list %}
+                            {% if not forloop.counter0|divisibleby:2 %}
+                                <div class="card">
+                                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                        <img src="{{ training.service_image }}" class="img-fluid"/>
+                                        <a href="#!">
+                                            <div class="mask"
+                                                 style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ training.service_name }}</h5>
+                                        <p class="card-text">
+                                            {{ training.service_description }}
+                                        </p>
+                                        {#                                        <a href="#!" class="btn btn-primary">Read</a>#}
+                                    </div>
+                                </div>
+                                <p></p>
+                            {% endif %}
+                            {% empty %}
+                            <p>No trainings available.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <!--Section: Content-->
+
+            <!-- Pagination -->
+            <nav class="my-4" aria-label="...">
+                <ul class="pagination pagination-circle justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+    <!--Main layout-->
+
+{% endblock %}
