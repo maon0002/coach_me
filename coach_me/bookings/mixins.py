@@ -1,4 +1,6 @@
 from django.apps import apps
+from django.contrib.auth.mixins import AccessMixin
+from django.shortcuts import redirect
 
 
 class DisabledFormFieldsMixin:
@@ -26,3 +28,15 @@ class MyModelMixin:
         choices_list = list(model_class.objects.values_list(field_name).distinct())
         max_len = max(len(str(value)) for value in choices_list)
         return max_len, choices
+
+
+class AnonymousRequiredMixin(AccessMixin):
+    """
+    Mixin to restrict access to views only for anonymous users (unauthenticated users).
+    """
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect(
+                'index')
+        return super().dispatch(request, *args, **kwargs)

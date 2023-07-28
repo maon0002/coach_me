@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.http import request
 from django.shortcuts import get_object_or_404
+from coach_me.bookings.form_mixins import FieldsWithFormControlClassMixin
 from django.utils import timezone
 
 from coach_me.bookings.models import Booking
@@ -10,7 +11,9 @@ from coach_me.profiles.models import BookingUserProfile
 UserModel = get_user_model()
 
 
-class BookingForm(forms.ModelForm):
+class BookingForm(FieldsWithFormControlClassMixin, forms.ModelForm):
+    form_control_fields = '__all__'
+
     class Meta:
         model = Booking
         # fields = ['date', 'start_time', 'end_time']
@@ -105,7 +108,8 @@ class BookingForm(forms.ModelForm):
 # from .models import Booking
 
 
-class BookingCreateForm(forms.ModelForm):
+class BookingCreateForm(FieldsWithFormControlClassMixin, forms.ModelForm):
+    form_control_fields = '__all__'
     class Meta:
         model = Booking
         # fields = '__all__'
@@ -150,13 +154,15 @@ class BookingDeleteForm(forms.ModelForm):
         # fields = '__all__'
 
 
-class BookingDetailsForm(forms.ModelForm):
+class BookingDetailsForm(FieldsWithFormControlClassMixin, forms.ModelForm):
+    form_control_fields = '__all__'
     class Meta:
         model = Booking
         fields = '__all__'
 
 
-class BookingUpdateForm(forms.ModelForm):
+class BookingUpdateForm(FieldsWithFormControlClassMixin, forms.ModelForm):
+    form_control_fields = '__all__'
     class Meta:
         model = Booking
         fields = '__all__'

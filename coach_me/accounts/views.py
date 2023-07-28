@@ -6,66 +6,10 @@ from django.urls import reverse_lazy
 from django.views import generic as views
 from coach_me.accounts.forms import LoginUserForm, RegisterUserForm
 from coach_me.profiles.models import Company
+from coach_me.bookings.mixins import AnonymousRequiredMixin
 
 
-# class RegisterUserView(views.CreateView):
-#     template_name = 'accounts/register.html'
-#     form_class = RegisterUserForm
-#     success_url = reverse_lazy('index')
-#
-#     # Static way of providing `success_url`
-#     # success_url = reverse_lazy('register_user')
-#
-#     def form_valid(self, form):
-#         result = super().form_valid(form)
-#         login(self.request, self.object)
-#
-#         return result
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         placeholders = {
-#             'first_name': 'First name',
-#             'last_name': 'Last name',
-#             'email': 'Enter your corporate email',
-#             'password1': 'Password',
-#             'password2': 'Repeat password',
-#         }
-#         context['placeholders'] = placeholders
-#         return context
-
-
-# class RegisterUserView(views.CreateView):
-#     template_name = 'accounts/register.html'
-#     form_class = RegisterUserForm
-#     success_url = reverse_lazy('index')
-#
-#     # Static way of providing `success_url`
-#     # success_url = reverse_lazy('register_user')
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         placeholders = {
-#             'first_name': 'First name',
-#             'last_name': 'Last name',
-#             'email': 'Enter your corporate email',
-#             'password1': 'Password',
-#             'password2': 'Repeat password',
-#         }
-#         context['placeholders'] = placeholders
-#         return context
-#
-#     def form_valid(self, form):
-#         result = super().form_valid(form)
-#         login(self.request, self.object)
-#         return result
-
-# TODO add OnlyAnonymousMixin 
-class OnlyAnonymousMixin:
-    pass
-
-
-class RegisterUserView(OnlyAnonymousMixin, views.CreateView):
+class RegisterUserView(AnonymousRequiredMixin, views.CreateView):
     template_name = 'accounts/register.html'
     form_class = RegisterUserForm
     success_url = reverse_lazy('index')
@@ -121,3 +65,58 @@ class LoginUserView(auth_views.LoginView):
 
 class LogoutUserView(auth_views.LogoutView):
     pass
+
+
+
+
+# class RegisterUserView(views.CreateView):
+#     template_name = 'accounts/register.html'
+#     form_class = RegisterUserForm
+#     success_url = reverse_lazy('index')
+#
+#     # Static way of providing `success_url`
+#     # success_url = reverse_lazy('register_user')
+#
+#     def form_valid(self, form):
+#         result = super().form_valid(form)
+#         login(self.request, self.object)
+#
+#         return result
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         placeholders = {
+#             'first_name': 'First name',
+#             'last_name': 'Last name',
+#             'email': 'Enter your corporate email',
+#             'password1': 'Password',
+#             'password2': 'Repeat password',
+#         }
+#         context['placeholders'] = placeholders
+#         return context
+
+
+# class RegisterUserView(views.CreateView):
+#     template_name = 'accounts/register.html'
+#     form_class = RegisterUserForm
+#     success_url = reverse_lazy('index')
+#
+#     # Static way of providing `success_url`
+#     # success_url = reverse_lazy('register_user')
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         placeholders = {
+#             'first_name': 'First name',
+#             'last_name': 'Last name',
+#             'email': 'Enter your corporate email',
+#             'password1': 'Password',
+#             'password2': 'Repeat password',
+#         }
+#         context['placeholders'] = placeholders
+#         return context
+#
+#     def form_valid(self, form):
+#         result = super().form_valid(form)
+#         login(self.request, self.object)
+#         return result
