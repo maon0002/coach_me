@@ -1,6 +1,5 @@
 from django.urls import path, include
-from coach_me.bookings.views import IndexView, \
-    BookingUpdateView, BookingDeleteView, BookingDetailsView, BookingCreateView
+from coach_me.bookings.views import IndexView, BookingUpdateView, BookingDeleteView, BookingDetailsView, BookingCreateView
 
 
 urlpatterns = (

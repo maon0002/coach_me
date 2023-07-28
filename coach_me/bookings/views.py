@@ -4,17 +4,24 @@ from django.urls import reverse_lazy, reverse
 from django.views import generic as views
 from coach_me.bookings.forms import BookingCreateForm, BookingUpdateForm
 from coach_me.bookings.models import Booking
-from coach_me.profiles.models import BookingUserProfile,Company
+from coach_me.profiles.models import BookingUserProfile, Company
 from django.http import HttpResponseRedirect
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 
 from coach_me.trainings.models import Training
 
 UserModel = get_user_model()
 
 
+
 class IndexView(views.ListView):
     model = Training
     template_name = 'index.html'
+
+    @method_decorator(cache_page(3600))  # Cache will expire in 1 hour (3600 seconds)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 
 class BookingCreateView(LoginRequiredMixin, views.CreateView):

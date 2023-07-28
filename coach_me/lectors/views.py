@@ -5,6 +5,8 @@ from django.urls import reverse_lazy
 from django.views import generic as views
 from coach_me.lectors.models import Lector
 from coach_me.bookings.mixins import DisabledFormFieldsMixin
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 
 UserModel = get_user_model()
 
@@ -12,6 +14,10 @@ UserModel = get_user_model()
 class LectorListView(views.ListView):
     model = Lector
     template_name = 'lectors/lectors.html'
+
+    @method_decorator(cache_page(3600))  # Cache will expire in 1 hour (3600 seconds)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 
 class LectorCreateView(LoginRequiredMixin, views.CreateView):
