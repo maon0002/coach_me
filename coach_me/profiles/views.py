@@ -4,7 +4,6 @@ from django.forms import modelform_factory
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
-
 from coach_me.accounts.models import BookingUser
 from coach_me.bookings.mixins import DisabledFormFieldsMixin
 from coach_me.bookings.models import Booking
@@ -15,14 +14,15 @@ from django.views import generic as views, View
 UserModel = get_user_model()
 
 
-class DashboardView(ListView):
+class DashboardView(views.ListView):
     model = Booking  # or def get_queryset изобщо няма да гледа модела
     template_name = 'dashboard.html'  # Use the template name where you want to display the bookings
     context_object_name = 'bookings'  # Name of the context variable to be used in the template
-    paginate_by = 10  # Optional: Set the number of bookings to be displayed per page
+    paginate_by = 5  # Optional: Set the number of bookings to be displayed per page
 
     def get_queryset(self):
         user = self.request.user
+
         return Booking.objects.filter(employee=user)
 
     def get_context_data(self, **kwargs):
@@ -39,14 +39,14 @@ class DashboardView(ListView):
         context['profile'] = profile
 
         # #TODO _set from the bookings because of the employee in the Booking model fk
-        context['bookingsss'] = user.booking_set.all()
+        # context['bookingsss'] = user.booking_set.all()
         # bookings_count = Booking.objects.count()
         # context['bookings_count'] = bookings_count
 
         return context
 
 
-class ProfileDetailsView(DetailView):
+class ProfileDetailsView(views.DetailView):
     model = BookingUserProfile
     template_name = 'profiles/details-profile.html'
     form_class = ProfileDetailsForm
@@ -71,7 +71,7 @@ class ProfileDetailsView(DetailView):
         context['custom_display_names'] = custom_display_names  # Pass the dictionary to the template
 
         # TODO _set from the bookings because of the employee in the Booking model fk
-        context['bookingsss'] = user.booking_set.all()
+        # context['bookingsss'] = user.booking_set.all()
         # bookings_count = Booking.objects.count()
         bookings_count = Booking.objects.filter(employee=user).count()
         context['bookings_count'] = bookings_count

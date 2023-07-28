@@ -196,14 +196,12 @@
 
             </div>
             <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
-                {#        Booking Details#}
                 <div class="card cascading-left" style="
                         background: hsla(0, 0%, 100%, 0.55);
                         backdrop-filter: blur(30px);
                         {#padding-top: 30%;#}
                         ">
                     <div class="card-body p-5 shadow-5 text-center">
-
                         <h2 class="fw-bold mb-5">Booking details</h2>
 
                         <input type="hidden" value="{{ next }}" name="next"/>
@@ -228,19 +226,14 @@
                             <p><strong>Notes: </strong> {{ booking.notes }}</p>
                             <p><strong>Scheduled on: </strong> {{ booking.date_scheduled }}</p>
                             <p><strong>Preferred platform: </strong> {{ booking.preferred_platforms }}</p>
-
-
                         </div>
-
 
                         <!-- Delete Profile Button -->
                         <a href="{% url 'delete booking' pk=object.pk %}" class="btn btn-danger">Delete
-                            {#                            <a href="{% url 'delete booking' %}" class="btn btn-danger">Delete#}
                             Booking</a>
 
                         <!-- Edit Profile Button -->
                         <a href="{% url 'edit booking' pk=object.pk %}" class="btn btn-primary">Edit Booking</a>
-                        {#                            <a href="{% url 'edit booking' %}" class="btn btn-primary">Edit Booking</a>#}
                     </div>
                 </div>
             </div>

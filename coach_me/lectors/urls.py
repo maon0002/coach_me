@@ -5,9 +5,9 @@ urlpatterns = (
     path('lectors/', LectorListView.as_view(), name='lectors'),
 
     path('lector/<int:pk>/', include([
-        path('details/', LectorDetailsView.as_view(), name='details training'),
-        path('edit/', LectorUpdateView.as_view(), name='edit training'),
-        path('delete/', LectorDeleteView.as_view(), name='delete training'),
+        path('details/', LectorDetailsView.as_view(), name='details lector'),
+        path('edit/', LectorUpdateView.as_view(), name='edit lector'),
+        path('delete/', LectorDeleteView.as_view(), name='delete lector'),
     ])),
 
 )

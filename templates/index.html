@@ -2,40 +2,7 @@
 {% load forms %}
 {% load static %}
 {% block content %}
-{#    <ul>#}
-{#        {% for user in object_list %}#}
-{#            <li>#}
-{#                {{ user }}#}
-{#            </li>#}
-{#        {% endfor %}#}
-{#    </ul>#}
-{#    <body>#}
-{#    <section>#}
-{#        {% if user.is_authenticated %}#}
-{#            <h1>Welcome, {{ user.email }}!</h1>#}
-{#        {% else %}#}
-{#            <h1>Welcome to Our Website!</h1>#}
-{#            <p>Sign in or create an account to get started.</p>#}
-{#            <a href="#">Login</a> | <a href="#">Register</a>#}
-{#        {% endif %}#}
-{#    </section>#}
 
-    <!-- Add the rest of your HTML content here -->
-{#    </body>#}
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--Main Navigation-->
     <header>
         <!-- Intro settings -->
         <style>
@@ -63,9 +30,8 @@
             <a class="btn btn-primary m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
                role="button">See our Lectors</a>
         </div>
-        <!-- Jumbotron -->
     </header>
-    <!--Main Navigation-->
+
 
     <!--Main layout-->
     <main class="my-5">
@@ -82,7 +48,6 @@
                                 <div class="col-md-4 mb-4">
                                     <div class="bg-image hover-overlay shadow-1-strong rounded ripple"
                                          data-mdb-ripple-color="light">
-                                        {#                                    <img src="{{ training.service_image }}https://mdbootstrap.com/img/new/standard/nature/184.jpg"#}
                                         <img src="{{ training.service_image }}"
                                              class="img-fluid" alt="{{ training.service_name }}"/>
                                         <a href="#!">
@@ -92,19 +57,16 @@
                                         </a>
                                     </div>
                                 </div>
-
                                 <div class="col-md-8 mb-4">
                                     <h5>{{ training.service_name }}</h5>
                                     <p>
                                         {{ training.service_description }}
                                     </p>
-
                                     <button type="button" class="btn btn-primary">
-                                        <a class="edit-booking-button"
-                                           href="{% url 'details training' pk=training.pk %}"
-                                           style="text-decoration: white;
-                                           color: inherit;"></a>
-                                        Read
+                                        <a href="{% url 'details training' pk=training.pk %}"
+                                           style="text-decoration: white; color: inherit;">
+                                            Read
+                                        </a>
                                     </button>
                                 </div>
                             </div>
@@ -112,12 +74,8 @@
                         {% endfor %}
 
                     </section>
-                    <!--Section: Sidebar-->
                 </div>
-                <!--Grid column-->
             </div>
-            <!--Grid row-->
-
             <!-- Pagination -->
             <nav class="my-4" aria-label="...">
                 <ul class="pagination pagination-circle justify-content-center">
@@ -136,34 +94,6 @@
             </nav>
         </div>
     </main>
-    <!--Main layout-->
-
-    {#    <!--Footer-->#}
-    {#    <footer class="bg-light text-lg-start">#}
-    {#        <div class="py-4 text-center">#}
-    {#            <a role="button" class="btn btn-primary btn-lg m-2"#}
-    {#               href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow" target="_blank">#}
-    {#                Learn Bootstrap 5#}
-    {#            </a>#}
-    {#            <a role="button" class="btn btn-primary btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"#}
-    {#               target="_blank">#}
-    {#                Download MDB UI KIT#}
-    {#            </a>#}
-    {#        </div>#}
-
-    {#        <hr class="m-0"/>#}
-
     <div class="text-center py-4 align-items-center">
-        {#            HERE I CAN ADD some centred items#}
     </div>
-
-    {#    <!-- Copyright -->#}
-    {#    <div class="text-center p-3" style="background-color: white;">#}
-    {#        © 2023 Copyright:#}
-    {#        <a class="text-dark" href="https://github.com/maon0002">Maon group</a>#}
-    {#    </div>#}
-    {#    <!-- Copyright -->#}
-    {#    </footer>#}
-    {#    <!--Footer-->#}
-
 {% endblock %}

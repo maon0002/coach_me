@@ -1,78 +1,45 @@
-{#{{ object.service_name }}#}
-
 {% extends 'base.html' %}
 {% load forms %}
 {% load static %}
 {% block content %}
 
-    <main class="my-5">
-        <div class="container">
-            <!--Grid row-->
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-md-9 mb-4">
-                    <!--Section: Content-->
-                    <section>
-                        {% for training in training_list %}
-                            <!-- Post -->
-                            <div class="row">
-                                <div class="col-md-4 mb-4">
-                                    <div class="bg-image hover-overlay shadow-1-strong rounded ripple"
-                                         data-mdb-ripple-color="light">
-                                        {#                                    <img src="{{ training.service_image }}https://mdbootstrap.com/img/new/standard/nature/184.jpg"#}
-                                        <img src="{{ training.service_image }}"
-                                             class="img-fluid" alt="{{ training.service_name }}"/>
-                                        <a href="#!">
-                                            {#                                            TODO hrfe above - needed or not #}
-                                            <div class="mask"
-                                                 style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                        </a>
-                                    </div>
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col"><!-- EMPTY col --></div>
+            <div class="col">
+                <div class="card cascading-left">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <input type="hidden" value="{{ next }}" name="next"/>
+                        {% csrf_token %}
+                        <div class="form-outline mb-4" style="text-align: left;">
+                            <h2 class="fw-bold mb-5" style="text-align: center">Training Details</h2>
+                            {% if training.service_image is not None %}
+                                <div class="colM"
+                                     style="text-align: left;
+                             width: 90%;
+                             height: 70%;">
+                                    <img src="{{ training.service_image }}" class="w-100 rounded-4 shadow-4"
+                                         alt="login screen"/>
+                                    <p></p>
+                                    <p><strong>Training: </strong> {{ booking.booking_type }}</p>
+                                    <p><strong>Training info: </strong> {{ training.service_description }}</p>
                                 </div>
+                            {% endif %}
+                        </div>
+                        <!-- Delete Profile Button -->
+                        <a href="{% url 'delete training' pk=object.pk %}" class="btn btn-danger">Delete</a>
 
-                                <div class="col-md-8 mb-4">
-                                    <h5>{{ training.service_name }}</h5>
-                                    <p>
-                                        {{ training.service_description }}
-                                    </p>
-
-                                    <button type="button" class="btn btn-primary">
-                                        <a class="edit-booking-button"
-                                           href="{% url 'details training' pk=training.pk %}"
-                                           style="text-decoration: white;
-                                           color: inherit;"></a>
-                                        Read
-                                    </button>
-                                </div>
-                            </div>
-
-                        {% endfor %}
-
-                        <!--Section: Video-->
-                    </section>
-                    <!--Section: Sidebar-->
+                        <!-- Edit Profile Button -->
+                        <a href="{% url 'edit training' pk=object.pk %}" class="btn btn-primary">Edit</a>
+                    </div>
                 </div>
-                <!--Grid column-->
-            </div>
-            <!--Grid row-->
 
-            <!-- Pagination -->
-            <nav class="my-4" aria-label="...">
-                <ul class="pagination pagination-circle justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
+            </div>
+            <div class="col"><!-- EMPTY col --></div>
         </div>
-    </main>
+    </div>
+
+
+
 
 {% endblock %}
