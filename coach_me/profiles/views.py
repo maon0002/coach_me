@@ -5,133 +5,18 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 
-from coach_me.accounts.models import BookingUser, Company
+from coach_me.accounts.models import BookingUser
 from coach_me.bookings.mixins import DisabledFormFieldsMixin
-from coach_me.bookings.models import Booking, Lector, Training
+from coach_me.bookings.models import Booking
 from coach_me.profiles.forms import ProfileUpdateForm, ProfileDeleteForm, ProfileDetailsForm
-from coach_me.profiles.models import BookingUserProfile
+from coach_me.profiles.models import BookingUserProfile, Company
 from django.views import generic as views, View
 
 UserModel = get_user_model()
 
-from coach_me.profiles.templatetags.custom_filters import get_item  # Import the custom filter
-
-
-class ProfileDetailsView(DetailView):
-    model = BookingUserProfile
-    template_name = 'profiles/details-profile.html'
-    form_class = ProfileDetailsForm
-
-    def get_context_data(self, **kwargs):
-        custom_display_names = {
-            'first_name': 'First Name',
-            'last_name': 'Last Name',
-            # Add more custom display names for other fields if needed
-        }
-        context = super().get_context_data(**kwargs)
-        profile = context['object']
-        fields = [(field.name, getattr(profile, field.name)) for field in profile._meta.fields if
-                  # field.name not in ['user', 'consent_terms', 'newsletter_subscription', 'picture']]
-                  field.name not in ['user', 'consent_terms', 'newsletter_subscription', 'picture']]
-        # print(fields)
-        # fields2 = list([[str(field[0]).replace("_", " "), field[1]] for field in fields])
-        fields_replace_underscores = tuple([str(field[0]).replace("_", " "), str(field[1])] for field in fields)
-        # print(fields_replace_underscores)
-        context['fields'] = fields_replace_underscores
-        context['custom_display_names'] = custom_display_names  # Pass the dictionary to the template
-        return context
-
-
-#
-# # class DashboardView(views.DetailView):
-# class DashboardView(View):
-#     # template_name = 'booking/edit-booking.html'
-#     # model = Booking
-#
-#     def get(self, request, *args, **kwargs):
-#         # Retrieve the bookings for the current user
-#         # bookings = Booking.objects.filter(employee=request.user)
-#         bookings = Booking.objects.filter(employee=request.user)
-#         profile = BookingUserProfile.objects.filter(pk=request.user.pk)
-#
-#         bookings_list = list(bookings) + list(profile)
-#         print(bookings_list)
-#
-#         bookings_nested = Booking.objects.all()
-#         # Pass the bookings to the template context
-#         context = {
-#             'bookings': bookings,
-#             'profile': profile,
-#             'bookings_list': bookings_list,
-#             'bookings_nested': bookings_nested,
-#         }
-#         return render(request, 'dashboard.html', context)
-#
-#     def get_queryset(self):
-#         return Booking.objects.select_related('employee').all()
-
-
-# class DashboardView(View):
-#     def get(self, request, *args, **kwargs):
-#         # Retrieve the bookings for the current user
-#         bookings = Booking.objects.filter(employee=request.user)
-#         lectors = Lector.objects.filter(email__in=Booking.lector.email)
-#         # lectors = Lector.objects.filter(pk=Booking.lector)
-#
-#         # Retrieve the user profile for the current user
-#         try:
-#             profile = BookingUserProfile.objects.get(pk=request.user.pk)
-#         except BookingUserProfile.DoesNotExist:
-#             profile = None
-#
-#         # Pass the merged data (bookings with appended profiles) to the template context
-#         context = {
-#             'bookings': bookings,
-#             'lectors': lectors,
-#             'profile': profile,
-#
-#         }
-#         return render(request, 'dashboard.html', context)
-#
-#     def get_queryset(self):
-#         return Booking.objects.select_related('employee').all()
-
-
-# from django.shortcuts import render
-# from django.views import View
-# from .models import BookingUserProfile, Booking, Lector
-
-
-# #ORIGINAL but with issues
-# class DashboardView(View):
-#     model = Booking
-#
-#     def get(self, request, *args, **kwargs):
-#         # Retrieve the bookings for the current user
-#         bookings = Booking.objects.filter(employee=request.user)
-#
-#         # Retrieve the lectors associated with the bookings made by the current user
-#         lectors = Lector.objects.filter(booking__employee=request.user)
-#
-#         # Retrieve the user profile for the current user
-#         try:
-#             profile = BookingUserProfile.objects.get(pk=request.user.pk)
-#         except BookingUserProfile.DoesNotExist:
-#             profile = None
-#
-#         # Pass the merged data (bookings with appended profiles) to the template context
-#         context = {
-#             'bookings': bookings,
-#             'lectors': lectors,
-#             'profile': profile,
-#         }
-#         return render(request, 'dashboard.html', context)
-#
-#     def get_queryset(self):
-#         return Booking.objects.select_related('employee').all()
 
 class DashboardView(ListView):
-    model = Booking
+    model = Booking  # or def get_queryset изобщо няма да гледа модела
     template_name = 'dashboard.html'  # Use the template name where you want to display the bookings
     context_object_name = 'bookings'  # Name of the context variable to be used in the template
     paginate_by = 10  # Optional: Set the number of bookings to be displayed per page
@@ -153,38 +38,45 @@ class DashboardView(ListView):
         # Add the related BookingUserProfile to the context
         context['profile'] = profile
 
+        # #TODO _set from the bookings because of the employee in the Booking model fk
+        context['bookingsss'] = user.booking_set.all()
+        # bookings_count = Booking.objects.count()
+        # context['bookings_count'] = bookings_count
+
         return context
 
-# class DashboardView(views.ListView):
-#     model = Booking
 
-#     def get(self, request, *args, **kwargs):
-#         # Retrieve the bookings for the current user
-#         bookings = Booking.objects.filter(employee=request.user)
-#
-#         # Retrieve the lectors associated with the bookings made by the current user
-#         lectors = Lector.objects.filter(booking__lector=bookings.lector)
-#
-#         # Retrieve the lectors associated with the bookings made by the current user
-#         trainings = Training.objects.filter(service_name=bookings.booking_type)
-#
-#         # Retrieve the user profile for the current user
-#         try:
-#             profile = BookingUserProfile.objects.get(pk=request.user.pk)
-#         except BookingUserProfile.DoesNotExist:
-#             profile = None
-#
-#         # Pass the merged data (bookings with appended profiles) to the template context
-#         context = {
-#             'bookings': bookings,
-#             'lectors': lectors,
-#             'profile': profile,
-#             'trainings': trainings,
-#         }
-#         return render(request, 'dashboard.html', context)
-#
-#     def get_queryset(self):
-#         return Booking.objects.select_related('employee').all()
+class ProfileDetailsView(DetailView):
+    model = BookingUserProfile
+    template_name = 'profiles/details-profile.html'
+    form_class = ProfileDetailsForm
+
+    def get_context_data(self, **kwargs):
+        user = self.request.user
+        custom_display_names = {
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
+            # Add more custom display names for other fields if needed
+        }
+        context = super().get_context_data(**kwargs)
+        profile = context['object']
+        fields = [(field.name, getattr(profile, field.name)) for field in profile._meta.fields if
+                  # field.name not in ['user', 'consent_terms', 'newsletter_subscription', 'picture']]
+                  field.name not in ['user', 'consent_terms', 'newsletter_subscription', 'picture']]
+        # print(fields)
+        # fields2 = list([[str(field[0]).replace("_", " "), field[1]] for field in fields])
+        fields_replace_underscores = tuple([str(field[0]).replace("_", " "), str(field[1])] for field in fields)
+        # print(fields_replace_underscores)
+        context['fields'] = fields_replace_underscores
+        context['custom_display_names'] = custom_display_names  # Pass the dictionary to the template
+
+        # TODO _set from the bookings because of the employee in the Booking model fk
+        context['bookingsss'] = user.booking_set.all()
+        # bookings_count = Booking.objects.count()
+        bookings_count = Booking.objects.filter(employee=user).count()
+        context['bookings_count'] = bookings_count
+
+        return context
 
 
 class ProfileUpdateView(views.UpdateView):

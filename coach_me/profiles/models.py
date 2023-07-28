@@ -1,8 +1,10 @@
+from django.core import validators
 from django.core.validators import MinLengthValidator
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
-from coach_me.accounts.models import BookingUser, Company
+from coach_me.accounts.models import BookingUser
+# from coach_me.profiles.models import Company
 
 UserModel = get_user_model()
 
@@ -105,3 +107,61 @@ class BookingUserProfile(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+
+class Company(models.Model):
+    MAX_COMPANY_SHORT_NAME = 20
+    MIN_COMPANY_SHORT_NAME = 2
+    MAX_COMPANY_LEGAL_NAME = 50
+    MIN_COMPANY_LEGAL_NAME = 3
+    MAX_CONTACT_PERSON_NAMES = 30
+    MAX_CONTACT_PERSON_ROLE_LEN = 15
+
+    short_company_name = models.CharField(
+        max_length=MAX_COMPANY_SHORT_NAME,
+        unique=True,
+        null=False,
+        blank=False,
+        validators=(
+            validators.MinLengthValidator(MIN_COMPANY_SHORT_NAME),
+            # validate_if_string_is_alphanumeric,
+        ),
+        verbose_name="Short Company name",
+    )
+    legal_company_name = models.CharField(
+        max_length=MAX_COMPANY_SHORT_NAME,
+        unique=True,
+        null=False,
+        blank=False,
+        validators=(
+            validators.MinLengthValidator(MIN_COMPANY_LEGAL_NAME),
+        ),
+    )
+    company_register_number = models.PositiveBigIntegerField(
+        unique=True,
+
+    )
+    contact_person_names = models.CharField(
+        max_length=MAX_CONTACT_PERSON_NAMES
+    )
+    contact_person_role = models.CharField(
+        max_length=MAX_CONTACT_PERSON_ROLE_LEN
+    )
+    contact_person_email = models.EmailField()
+    contract_start_date = models.DateField()
+    contract_end_date = models.DateField()
+    company_domain = models.CharField(
+        max_length=30,
+        null=False,
+        blank=False,
+        default=None,
+    )
+
+    inserted_on = models.DateTimeField(auto_now_add=True)  # ,  auto_now=True for update
+    updated_on = models.DateTimeField(auto_now=True)  # ,  auto_now=True for update
+
+    def __str__(self):
+        return f'{self.id}: {self.short_company_name}'
+
+    class Meta:
+        verbose_name_plural = "Companies"

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from coach_me.profiles.models import BookingUserProfile
+from coach_me.profiles.models import BookingUserProfile, Company
 
 
 #
@@ -9,4 +9,9 @@ from coach_me.profiles.models import BookingUserProfile
 #
 @admin.register(BookingUserProfile)
 class ProfileAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
     pass

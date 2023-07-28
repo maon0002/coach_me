@@ -32,6 +32,8 @@ MY_APPS = [
     'coach_me.accounts',
     'coach_me.bookings',
     'coach_me.profiles',
+    'coach_me.lectors',
+    'coach_me.trainings',
 ]
 
 INSTALLED_APPS = [

@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views import generic as views
 from coach_me.accounts.forms import LoginUserForm, RegisterUserForm
-from coach_me.accounts.models import Company
+from coach_me.profiles.models import Company
 
 
 # class RegisterUserView(views.CreateView):
@@ -59,7 +59,13 @@ from coach_me.accounts.models import Company
 #         result = super().form_valid(form)
 #         login(self.request, self.object)
 #         return result
-class RegisterUserView(views.CreateView):
+
+# TODO add OnlyAnonymousMixin 
+class OnlyAnonymousMixin:
+    pass
+
+
+class RegisterUserView(OnlyAnonymousMixin, views.CreateView):
     template_name = 'accounts/register.html'
     form_class = RegisterUserForm
     success_url = reverse_lazy('index')
@@ -115,4 +121,3 @@ class LoginUserView(auth_views.LoginView):
 
 class LogoutUserView(auth_views.LogoutView):
     pass
-

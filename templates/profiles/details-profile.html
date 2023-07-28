@@ -65,7 +65,12 @@
                                 <div class="form-outline mb-4" style="text-align: left;">
                                     <strong>{{ field_name|title|ljust:"100" }}:</strong> {{ field_value }}
                                 </div>
+
                             {% endfor %}
+                            <div class="form-outline mb-4" style="text-align: left;">
+                                <strong>Bookings: </strong> {{ bookings_count }}
+                                <strong>Test: </strong> {{ bookingsss }}
+                            </div>
 
                             <!-- Delete Profile Button -->
                             <a href="{% url 'delete profile' pk=object.pk %}" class="btn btn-danger">Delete

@@ -22,4 +22,6 @@ urlpatterns = [
     path('auth/', include('coach_me.accounts.urls')),
     path('', include('coach_me.bookings.urls')),
     path('', include('coach_me.profiles.urls')),
+    path('', include('coach_me.lectors.urls')),
+    path('', include('coach_me.trainings.urls')),
 ]
