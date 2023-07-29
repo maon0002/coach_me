@@ -1,0 +1,16 @@
+{% load static %}
+{#{% load navbar_tags %}#}
+
+<li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'login_user' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'register_user' %}">Sign
+        Up</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
+</li>

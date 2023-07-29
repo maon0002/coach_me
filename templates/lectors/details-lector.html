@@ -13,17 +13,15 @@
                 <div class="col-md-9 mb-4">
                     <!--Section: Content-->
                     <section>
-                        {% for training in training_list %}
+                        {% for lector in object_list %}
                             <!-- Post -->
                             <div class="row">
                                 <div class="col-md-4 mb-4">
                                     <div class="bg-image hover-overlay shadow-1-strong rounded ripple"
                                          data-mdb-ripple-color="light">
-                                        {#                                    <img src="{{ training.service_image }}https://mdbootstrap.com/img/new/standard/nature/184.jpg"#}
-                                        <img src="{{ training.service_image }}"
-                                             class="img-fluid" alt="{{ training.service_name }}"/>
+                                        <img src="{{ lector.lector_image }}"
+                                             class="img-fluid" alt="{{ lector.first_name }}"/>
                                         <a href="#!">
-                                            {#                                            TODO hrfe above - needed or not #}
                                             <div class="mask"
                                                  style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                         </a>
@@ -31,20 +29,22 @@
                                 </div>
 
                                 <div class="col-md-8 mb-4">
-                                    <h5>{{ training.service_name }}</h5>
+                                    <h5>{{ lector.first_name }} {{ lector.last_name }}</h5>
                                     <p>
-                                        {{ training.service_description }}
+                                        {{ lector.biography }}
                                     </p>
 
-                                    <button type="button" class="btn btn-primary">
-                                        <a class="edit-booking-button"
-                                           href="{% url 'details training' pk=training.pk %}"
-                                           style="text-decoration: white;
-                                           color: inherit;"></a>
-                                        Read
-                                    </button>
+
                                 </div>
+                                <button type="button" class="btn btn-primary">
+                                    <a class="edit-lector-button"
+                                       href="{% url 'details lector' pk=lector.pk %}"
+                                       style="text-decoration: white;
+                                           color: inherit;"></a>
+                                    Details
+                                </button>
                             </div>
+
 
                         {% endfor %}
 

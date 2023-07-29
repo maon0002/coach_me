@@ -10,6 +10,7 @@ from coach_me.bookings.models import Booking
 from coach_me.profiles.forms import ProfileUpdateForm, ProfileDeleteForm, ProfileDetailsForm
 from coach_me.profiles.models import BookingUserProfile, Company
 from django.views import generic as views, View
+from django.utils import timezone
 
 UserModel = get_user_model()
 
@@ -18,16 +19,19 @@ class DashboardView(views.ListView):
     model = Booking  # or def get_queryset изобщо няма да гледа модела
     template_name = 'dashboard.html'  # Use the template name where you want to display the bookings
     context_object_name = 'bookings'  # Name of the context variable to be used in the template
-    paginate_by = 5  # Optional: Set the number of bookings to be displayed per page
+    paginate_by = 3  # Optional: Set the number of bookings to be displayed per page
 
     def get_queryset(self):
         user = self.request.user
-
         return Booking.objects.filter(employee=user)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
+        current_date = timezone.now().date()
+
+        past_bookings = Booking.objects.filter(employee=user, start_date__lt=current_date).order_by('-start_date').all()
+        future_bookings = Booking.objects.filter(employee=user, start_date__gte=current_date).order_by('start_date').all()
 
         # Retrieve the user profile for the current user
         try:
@@ -37,6 +41,8 @@ class DashboardView(views.ListView):
 
         # Add the related BookingUserProfile to the context
         context['profile'] = profile
+        context['past_bookings'] = past_bookings
+        context['future_bookings'] = future_bookings
 
         # #TODO _set from the bookings because of the employee in the Booking model fk
         # context['bookingsss'] = user.booking_set.all()

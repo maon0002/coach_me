@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os
 # from os import path
 from pathlib import Path
 from django.urls import reverse_lazy
@@ -24,8 +25,54 @@ SECRET_KEY = 'django-insecure-)me+gt_-s)5ga$x9j07u1$nya12k(mzka+&cb&svui2jx7ysq&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = FALSE // plus do 404 page
+# DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ') //'for_deploy qa.for_deploy'
+# ALLOWED_HOSTS = (
+#     '127.0.0.1',
+# )
+
+
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+# C:\Users\LENOVO\PycharmProjects\coach_me\db.sqlite3_bckp
+# jdbc:sqlite:C:\Users\LENOVO\PycharmProjects\coach_me\db.sqlite3_bckp
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3_0',
+        # 'NAME': BASE_DIR / 'db.sqlite3_2',
+    }
+}
+#
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "HOST": os.getenv('DB_HOST', None),
+#         "PORT": os.getenv('DB_PORT', '5432'),
+#         "NAME": os.getenv('DB_NAME', None),
+#         "USER": os.getenv('DB_USER', None),
+#         "PASSWORD": os.getenv('DB_PASSWORD', None),
+#
+#     }
+# }
+
+#
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "fruitipedia_db", # TODO db
+#         "USER": "maon0002",
+#         "PASSWORD": "nirvana",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     }
+# }
+
 
 # Application definition
 MY_APPS = [
@@ -79,20 +126,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'coach_me.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# C:\Users\LENOVO\PycharmProjects\coach_me\db.sqlite3_bckp
-# jdbc:sqlite:C:\Users\LENOVO\PycharmProjects\coach_me\db.sqlite3_bckp
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3_0',
-        # 'NAME': BASE_DIR / 'db.sqlite3_2',
-    }
-}
-
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
@@ -137,6 +170,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (BASE_DIR / 'static',)
+# STATIC_ROOT = os.environ.get('STATIC_ROOT', BASE_DIR / 'static')
 
 MEDIA_URL = '/media/'
 # MEDIA_ROOT = path.join(BASE_DIR, 'media')

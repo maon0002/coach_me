@@ -176,10 +176,10 @@
 
             <div class="col-sm-6 col-md-5 col-lg-6">
                 {#        Training Details#}
-            <p>	&nbsp;</p>
-{#            <p>	&nbsp;</p>#}
+                <p> &nbsp;</p>
+                {#            <p>	&nbsp;</p>#}
 
-            <h2 class="fw-bold mb-5" style="text-align: left">Training Details</h2>
+                <h2 class="fw-bold mb-5" style="text-align: left">Training Details</h2>
                 {% if training.service_image is not None %}
                     <div class="colM"
                          style="text-align: left;
@@ -214,7 +214,7 @@
                             <p><strong>Date and Time: </strong> {{ booking.start_date }}, {{ booking.start_time }}
                             </p>
                             <p><strong>Phone: </strong> {{ booking.phone }}</p>
-                            <p><strong>Company: </strong> {{ profile.company }}</p>
+                            <p><strong>Company: </strong> {{ company.short_company_name }}</p>
                             <p><strong>Company email: </strong> {{ profile.user }}</p>
                             <p><strong>Private email: </strong> {{ booking.private_email }}</p>
                             {#                                <p><strong>Training: </strong> {{ booking.booking_type }}</p>#}
@@ -228,12 +228,14 @@
                             <p><strong>Preferred platform: </strong> {{ booking.preferred_platforms }}</p>
                         </div>
 
-                        <!-- Delete Profile Button -->
-                        <a href="{% url 'delete booking' pk=object.pk %}" class="btn btn-danger">Delete
-                            Booking</a>
+                        {% if not booking.start_date <= current_date %}
+                            <!-- Delete Profile Button -->
+                            <a href="{% url 'delete booking' pk=object.pk %}" class="btn btn-danger">Delete
+                                Booking</a>
 
-                        <!-- Edit Profile Button -->
-                        <a href="{% url 'edit booking' pk=object.pk %}" class="btn btn-primary">Edit Booking</a>
+                            <!-- Edit Profile Button -->
+                            <a href="{% url 'edit booking' pk=object.pk %}" class="btn btn-primary">Edit Booking</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

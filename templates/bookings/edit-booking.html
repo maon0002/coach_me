@@ -155,7 +155,7 @@
                                     {% include 'common/bs4_form.html' with form=form %}
 
                                 </div>
-<!-- Submit button -->
+                                <!-- Submit button -->
                                 <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>
                                 <!-- Cancel button -->
                                 <button type="button" class="btn btn-primary btn-block mb-4" id="cancelButton">Cancel</button>
@@ -173,7 +173,6 @@
         </div>
     </section>
 
-
     <script>
         // Add event listener to the Cancel button
         document.getElementById('cancelButton').addEventListener('click', function () {
@@ -181,4 +180,5 @@
             window.location.href = "{% url 'dashboard' pk=request.user.pk %}";
         });
     </script>
+
 {% endblock %}

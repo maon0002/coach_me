@@ -1,112 +1,311 @@
+{#{% extends 'base.html' %}#}
+{#{% load forms %}#}
+{#{% load static %}#}
+{#TODO it will crush if the use dont have any bookings#}
+{##}
+{#{% block content %}#}
+{##}
+{#    <section class="my-5">#}
+{#        <div class="bg-image h-100" style="background-color: white;">#}
+{#            <div class="mask d-flex align-items-center h-100">#}
+{#                <div class="container">#}
+{#                    <div class="row justify-content-center">#}
+{#                        <div class="col-12">#}
+{#                            <div#}
+{#                                    class="card shadow-2-strong" #}
+{#                                 class="p-0 text-center bg-light"#}
+{#                                 style="background-color: deepskyblue;"#}
+{#                            >#}
+{#                                <div>#}
+{#                                    <div class="table-responsive">#}
+{#                                        <table class="table table-hover"#}
+{#                                                class="table table-striped"#}
+{#                                                class="table table-borderless mb-0"#}
+{#                                        >#}
+{#                                            <thead>#}
+{#                                            <tr>#}
+{#                                                <th scope="col">TRAINING</th>#}
+{#                                                <th scope="col">SCHEDULED FOR</th>#}
+{#                                                <th scope="col">EMPLOYEE NAMES</th>#}
+{#                                                <th scope="col">LECTOR</th>#}
+{#                                                <th scope="col">MODE</th>#}
+{#                                                <th scope="col">Details</th>#}
+{#                                                <th scope="col">Edit</th>#}
+{#                                                <th scope="col">Cancel</th>#}
+{#                                            </tr>#}
+{#                                            </thead>#}
+{#                                            <tbody>#}
+{##}
+{#                                            {% for booking in bookings %}#}
+{#                                                <tr>#}
+{#                                                    <td>{{ booking.booking_type }}</td>#}
+{#                                                    <td>{{ booking.start_date }} : {{ booking.start_time }}</td>#}
+{#                                                    <td>{{ profile.full_name|capfirst }}</td>#}
+{#                                                    <td>{{ profile.full_name|capfirst }}</td>#}
+{##}
+{#                                                    <td>{{ booking.lector }}</td>#}
+{#                                                    <td>{{ booking.training_mode }}</td>#}
+{#                                                    <td>#}
+{#                                                        <a class="details-booking-button"#}
+{#                                                           href="{% url 'details booking' pk=booking.pk %}">#}
+{#                                                            <img src="{% static '/images/eye.png' %}"#}
+{#                                                                 style="width: 25px; margin:auto; text-align:center; display:block;"#}
+{#                                                                 alt="edit-booking">#}
+{#                                                        </a>#}
+{#                                                    </td>#}
+{#                                                    <td>#}
+{#                                                        <a class="edit-booking-button"#}
+{#                                                           href="{% url 'edit booking' pk=booking.pk %}">#}
+{#                                                            <img src="{% static '/images/edit-icon.png' %}"#}
+{#                                                                 style="width: 20px; margin:auto; text-align:center; display:block;"#}
+{#                                                                 alt="edit-booking">#}
+{#                                                        </a>#}
+{#                                                    </td>#}
+{#                                                    <td>#}
+{#                                                        <a class="delete-booking-button"#}
+{#                                                           href="{% url 'delete booking' pk=booking.pk %}">#}
+{#                                                            <img src="{% static 'images/delete-booking-icon.jpg' %}"#}
+{#                                                                 style="width: 20px; margin:auto; text-align:center; display:block;"#}
+{#                                                                 alt="delete-booking">#}
+{#                                                        </a>#}
+{#                                                    </td>#}
+{#                                                </tr>#}
+{#                                            {% endfor %}#}
+{#                                            </tbody>#}
+{#                                        </table>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{##}
+{#    <!-- Pagination handling -->#}
+{##}
+{#    {% if is_paginated %}#}
+{#        <nav aria-label="Page navigation">#}
+{#            <ul class="pagination justify-content-center">#}
+{#                {% if page_obj.has_previous %}#}
+{#                    <li class="page-item">#}
+{#                        <a class="page-link" href="?page=1">&laquo; first</a>#}
+{#                    </li>#}
+{#                    <li class="page-item">#}
+{#                        <a class="page-link"#}
+{#                           href="?page={{ page_obj.previous_page_number }}">previous</a>#}
+{#                    </li>#}
+{#                {% endif %}#}
+{##}
+{#                {% for num in page_obj.paginator.page_range %}#}
+{#                    {% if page_obj.number == num %}#}
+{#                        <li class="page-item active">#}
+{#                            <span class="page-link">{{ num }}</span>#}
+{#                        </li>#}
+{#                    {% else %}#}
+{#                        <li class="page-item">#}
+{#                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>#}
+{#                        </li>#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+{##}
+{#                {% if page_obj.has_next %}#}
+{#                    <li class="page-item">#}
+{#                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a>#}
+{#                    </li>#}
+{#                    <li class="page-item">#}
+{#                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last#}
+{#                            &raquo;</a>#}
+{#                    </li>#}
+{#                {% endif %}#}
+{#            </ul>#}
+{#        </nav>#}
+{#    {% endif %}#}
+{##}
+{#{% endblock %}#}
+
+
 {% extends 'base.html' %}
 {% load forms %}
 {% load static %}
 {#TODO it will crush if the use dont have any bookings#}
 
 {% block content %}
-{##}
-{#    <!-- my_bookings.html -->#}
-{#        <table class="table">#}
-{#            <thead class="table-light">#}
-{#            <tr>#}
-{#                <th>Booking ID</th>#}
-{#                <th>Employee</th>#}
-{#                <th>Date</th>#}
-{#                <!-- Add more table headers as needed -->#}
-{#            </tr>#}
-{#            </thead>#}
-{#            <tbody>#}
-{#            {% for booking in bookings %}#}
-{#                <tr>#}
-{#                    <td>{{ booking.employee.email }} {{ booking.first_name }}</td>#}
-{#                    <td>{{ booking.employee }}</td>#}
-{#                    <td>{{ booking.start_date }}</td>#}
-{#                    <!-- Add more table cells with booking details as needed -->#}
-{#                </tr>#}
-{#            {% endfor %}#}
-{##}
-{#            {% for prof in profile %}#}
-{#                <tr>#}
-{#                    <td>{{ prof.employee.email }} {{ prof.first_name }}</td>#}
-{#                    <td>{{ prof.employee }}</td>#}
-{#                    <td>{{ booking.start_date }}</td>#}
-{#                    <!-- Add more table cells with booking details as needed -->#}
-{#                </tr>#}
-{#            {% endfor %}#}
-{#            </tbody>#}
-{#        </table>#}
 
-{#    SECOND OPTION#}
-    <section class="intro">
-        <div class="bg-image h-100" style="background-color: white;">
-            <div class="mask d-flex align-items-center h-100">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12">
-                            <div class="card shadow-2-strong" style="background-color: deepskyblue;">
-                                <div>
-                                    <div class="table-responsive">
-                                        <table class="table table-borderless mb-0">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">TRAINING</th>
-                                                <th scope="col">SCHEDULED FOR</th>
-                                                <th scope="col">EMPLOYEE NAMES</th>
-                                                <th scope="col">LECTOR</th>
-                                                <th scope="col">MODE</th>
-                                                <th scope="col">Details</th>
-                                                <th scope="col">Edit</th>
-                                                <th scope="col">Cancel</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
+    <section class="my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div>
+                        <div class="table-responsive">
 
-                                            {% for booking in bookings %}
-                                                <tr>
-                                                    <td>{{ booking.booking_type }}</td>
-                                                    <td>{{ booking.start_date }} : {{ booking.start_time }}</td>
-{#                                                    <td>{{ profile.full_name|capfirst }}</td>#}
-                                                    <td>{{ profile.full_name|capfirst }}</td>
+                            <table class="table table-hover">
+                                <h3
+                                        style="text-align: center; color: deepskyblue">
+                                    Scheduled bookings for {{ profile.first_name }}:
+                                </h3>
+                                <hr>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">TRAINING</th>
+                                        <th scope="col">SCHEDULED FOR</th>
+                                        <th scope="col">EMPLOYEE NAMES</th>
+                                        <th scope="col">LECTOR</th>
+                                        <th scope="col">MODE</th>
+                                        <th scope="col">Details</th>
+                                        <th scope="col">Edit</th>
+                                        <th scope="col">Cancel</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
 
-                                                    <td>{{ booking.lector }}</td>
-                                                    <td>{{ booking.training_mode }}</td>
-                                                    <td>
-                                                        <a class="details-booking-button"
-                                                           href="{% url 'details booking' pk=booking.pk %}">
-                                                            <img src="{% static '/images/eye.png' %}"
-                                                                 style="width: 25px; margin:auto; text-align:center; display:block;"
-                                                                 alt="edit-booking">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a class="edit-booking-button"
-                                                           href="{% url 'edit booking' pk=booking.pk %}">
-                                                            <img src="{% static '/images/edit-icon.png' %}"
-                                                                 style="width: 20px; margin:auto; text-align:center; display:block;"
-                                                                 alt="edit-booking">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a class="delete-booking-button"
-                                                           href="{% url 'delete booking' pk=booking.pk %}">
-                                                            <img src="{% static 'images/delete-booking-icon.jpg' %}"
-                                                                 style="width: 20px; margin:auto; text-align:center; display:block;"
-                                                                 alt="delete-booking">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            {% endfor %}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                                    {% for booking in future_bookings %}
+                                    <tr>
+                                        <td>{{ booking.booking_type }}</td>
+                                        <td>{{ booking.start_date }} : {{ booking.start_time }}</td>
+                                        {#                                                    <td>{{ profile.full_name|capfirst }}</td>#}
+                                        <td>{{ profile.full_name|capfirst }}</td>
+
+                                        <td>{{ booking.lector }}</td>
+                                        <td>{{ booking.training_mode }}</td>
+                                        <td>
+                                            <a class="details-booking-button"
+                                               href="{% url 'details booking' pk=booking.pk %}">
+                                                <img src="{% static '/images/eye.png' %}"
+                                                     style="width: 25px; margin:auto; text-align:center; display:block;"
+                                                     alt="edit-booking">
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a class="edit-booking-button"
+                                               href="{% url 'edit booking' pk=booking.pk %}">
+                                                <img src="{% static '/images/edit-icon.png' %}"
+                                                     style="width: 20px; margin:auto; text-align:center; display:block;"
+                                                     alt="edit-booking">
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a class="delete-booking-button"
+                                               href="{% url 'delete booking' pk=booking.pk %}">
+                                                <img src="{% static 'images/delete-booking-icon.jpg' %}"
+                                                     style="width: 20px; margin:auto; text-align:center; display:block;"
+                                                     alt="delete-booking">
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+
+                            <table class="table table-hover">
+                                <h3
+                                        style="text-align: left; color: gray">
+                                    Past bookings:
+                                </h3>
+                                <hr>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">TRAINING</th>
+                                        <th scope="col">SCHEDULED FOR</th>
+                                        <th scope="col">EMPLOYEE NAMES</th>
+                                        <th scope="col">LECTOR</th>
+                                        <th scope="col">MODE</th>
+                                        <th scope="col">Details</th>
+                                        <th scope="col">Edit</th>
+                                        <th scope="col">Cancel</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    {% for booking in past_bookings %}
+                                    <tr>
+                                        <td>{{ booking.booking_type }}</td>
+                                        <td>{{ booking.start_date }} : {{ booking.start_time }}</td>
+                                        <td>{{ profile.full_name|capfirst }}</td>
+                                        <td>{{ booking.lector }}</td>
+                                        <td>{{ booking.training_mode }}</td>
+                                        <td>
+                                            <a class="details-booking-button"
+                                               href="{% url 'details booking' pk=booking.pk %}">
+                                                <img src="{% static '/images/eye.png' %}"
+                                                     style="width: 25px; margin:auto; text-align:center; display:block;"
+                                                     alt="edit-booking">
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a class="edit-booking-button"
+                                               href="#">
+                                                <img src="{% static 'images/na.png' %}"
+                                                     style="width: 20px; margin:auto; text-align:center; display:block;"
+                                                     alt="edit-booking">
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a class="delete-booking-button"
+                                               href="#">
+                                                <img src="{% static 'images/na.png' %}"
+                                                     style="width: 20px; margin:auto; text-align:center; display:block;"
+                                                     alt="delete-booking">
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                {% endfor %}
+
+
+
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
+    <!-- Pagination handling -->
+
+    {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1">&laquo; first</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <li class="page-item active">
+                            <span class="page-link">{{ num }}</span>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last
+                            &raquo;</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
 
 {% endblock %}

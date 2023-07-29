@@ -15,9 +15,9 @@ class LectorListView(views.ListView):
     model = Lector
     template_name = 'lectors/lectors.html'
 
-    @method_decorator(cache_page(3600))  # Cache will expire in 1 hour (3600 seconds)
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+    # @method_decorator(cache_page(1))  # Cache will expire in 1 hour (3600 seconds)
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
 
 
 class LectorCreateView(LoginRequiredMixin, views.CreateView):

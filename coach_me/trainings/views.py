@@ -17,9 +17,9 @@ class TrainingListView(views.ListView):
     model = Training
     template_name = 'bookings/../../templates/trainings/trainings.html'
 
-    @method_decorator(cache_page(3600))  # Cache will expire in 1 hour (3600 seconds)
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+    # @method_decorator(cache_page(3600))  # Cache will expire in 1 hour (3600 seconds)
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
 
 
 class TrainingCreateView(LoginRequiredMixin, views.CreateView):

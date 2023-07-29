@@ -1,6 +1,37 @@
 from django.apps import apps
 from django.contrib.auth.mixins import AccessMixin
 from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404
+
+from coach_me.accounts.models import BookingUser
+from coach_me.profiles.models import BookingUserProfile
+
+
+class DefineModelsMixin:
+    def get_booking_user_profile(self, *args, **kwargs):
+        # Get the primary key (pk) of the logged-in user
+        user_pk = self.request.user.pk
+
+        # Retrieve the BookingUserProfile using the pk
+        # booking_user_profile = get_object_or_404(BookingUserProfile, user_id=user_pk)
+        booking_user_profile = BookingUserProfile.objects.filter(pk=user_pk)
+        if booking_user_profile:
+            return booking_user_profile
+        else:
+            return None
+
+    def get_booking_user(self, *args, **kwargs):
+        # Get the primary key (pk) of the logged-in user
+        user_pk = self.request.user.pk
+
+        # Retrieve the BookingUser using the pk
+        # booking_user_profile = get_object_or_404(BookingUserProfile, user_id=user_pk)
+        booking_user = BookingUser.objects.filter(pk=user_pk)
+
+        if booking_user:
+            return booking_user
+        else:
+            return None
 
 
 class DisabledFormFieldsMixin:

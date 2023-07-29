@@ -1,11 +1,13 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
+from django.utils import timezone
 from django.views import generic as views
 from coach_me.bookings.forms import BookingCreateForm, BookingUpdateForm
 from coach_me.bookings.models import Booking
 from coach_me.profiles.models import BookingUserProfile, Company
 from django.http import HttpResponseRedirect
+from coach_me.bookings.mixins import DefineModelsMixin
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 
@@ -14,13 +16,37 @@ from coach_me.trainings.models import Training
 UserModel = get_user_model()
 
 
-class IndexView(views.ListView):
+class IndexView(DefineModelsMixin, views.ListView):
     model = Training
     template_name = 'index.html'
+    paginate_by = 4  # Optional: Set the number of bookings to be displayed per page
 
-    # @method_decorator(cache_page(3600))  # Cache will expire in 1 hour (3600 seconds)
+    # @method_decorator(cache_page(1))  # Cache will expire in 1 hour (3600 seconds)
     # def dispatch(self, *args, **kwargs):
     #     return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Retrieve the BookingUserProfile and add it to the context
+
+        user = self.get_booking_user()
+        print(user, "<<<<<<< USER")
+        booking_user_profile = self.get_booking_user_profile()
+        print(booking_user_profile, "<<<<<<< BUP")
+
+        if user and booking_user_profile:
+            context['user'] = self.get_booking_user().get()
+
+            # print(user.is_staff, "<<<<<<< USER is staff?")
+            context['booking_user_profile'] = self.get_booking_user_profile().get()
+
+            # print(booking_user_profile.is_lector, "<<<<<<< BUP is Lector?")
+            return context
+
+        else:
+            context = super().get_context_data(**kwargs)
+        return context
 
 
 class BookingCreateView(LoginRequiredMixin, views.CreateView):
@@ -32,31 +58,36 @@ class BookingCreateView(LoginRequiredMixin, views.CreateView):
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
         user = self.request.user
+        booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).get()
 
-        # Set 'employee' and 'corporate_email' initial values from BookingUser
-        form.fields['employee'].initial = user
-        form.fields['corporate_email'].initial = user.email
+        #TODO check the logic for lector to booked for another person and remove the IF if not needed
+        if booking_user_profile and not booking_user_profile.is_lector:
 
-        # Try to get the related BookingUserProfile instance
-        booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).first()
+            # Set 'employee' and 'corporate_email' initial values from BookingUser
+            form.fields['employee'].initial = user
+            form.fields['corporate_email'].initial = user.email
 
-        # Set 'first_name' and 'last_name' initial values from BookingUserProfile
-        if booking_user_profile:
-            form.fields['first_name'].initial = str(booking_user_profile.first_name)
-            form.fields['last_name'].initial = str(booking_user_profile.last_name)
+            # Try to get the related BookingUserProfile instance
+            # booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).first()
 
-        # Disable the fields
-        # form.fields['employee'].widget.attrs['disabled'] = True
-        form.fields['employee'].widget.attrs['readonly'] = True
-        form.fields['corporate_email'].widget.attrs['readonly'] = True
-        form.fields['first_name'].widget.attrs['readonly'] = True
-        form.fields['last_name'].widget.attrs['readonly'] = True
+            # Set 'first_name' and 'last_name' initial values from BookingUserProfile
+            if booking_user_profile:
+                form.fields['first_name'].initial = str(booking_user_profile.first_name)
+                form.fields['last_name'].initial = str(booking_user_profile.last_name)
 
-        # Remove the fields from the form's required fields to prevent validation errors
-        for field_name in ['employee', 'corporate_email', 'first_name', 'last_name']:
-            if field_name in form.fields:
-                form.fields[field_name].required = False
+            # Disable the fields
+            # form.fields['employee'].widget.attrs['disabled'] = True
+            form.fields['employee'].widget.attrs['readonly'] = True
+            form.fields['corporate_email'].widget.attrs['readonly'] = True
+            form.fields['first_name'].widget.attrs['readonly'] = True
+            form.fields['last_name'].widget.attrs['readonly'] = True
 
+            # Remove the fields from the form's required fields to prevent validation errors
+            for field_name in ['employee', 'corporate_email', 'first_name', 'last_name']:
+                if field_name in form.fields:
+                    form.fields[field_name].required = False
+
+            return form
         return form
 
     def form_valid(self, form):
@@ -137,6 +168,8 @@ class BookingDetailsView(LoginRequiredMixin, views.DetailView):
         user = self.request.user
         training = context['object'].booking_type
         lector = context['object'].lector
+        current_date = timezone.now().date()
+
 
         # Retrieve the user profile for the current user
         try:
@@ -144,10 +177,15 @@ class BookingDetailsView(LoginRequiredMixin, views.DetailView):
         except BookingUserProfile.DoesNotExist:
             profile = None
 
+        company = Company.objects.filter(company_domain__iendswith=user.email.split('@')[1]).get()
+
         # Add the related BookingUserProfile to the context
         context['profile'] = profile
         context['lector'] = lector
         context['training'] = training
+        context['company'] = company
+        context['current_date'] = current_date
+
 
         return context
 

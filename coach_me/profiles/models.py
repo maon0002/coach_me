@@ -98,6 +98,13 @@ class BookingUserProfile(models.Model):
         blank=True,
     )
 
+    is_lector = models.BooleanField(
+        default=False,
+        null=True,
+        blank=True,
+    )
+
+
     @property
     def full_name(self):
         if self.first_name or self.last_name:
