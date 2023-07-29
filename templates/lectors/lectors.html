@@ -1,54 +1,113 @@
-{##TODO add view/form#}
-
-
 {% extends 'base.html' %}
 {% load forms %}
 {% load static %}
 {% block content %}
 
-    <div id="intro" class="p-5 text-center bg-light">
-        <h1 class="mb-3 h2">See our lectors:</h1>
-        <p class="mb-3">Effortlessly schedule and manage soft skills training for your employees with our intuitive
-            booking system. Empower your workforce with valuable professional development opportunities.</p>
-    </div>
-
     <main class="my-5">
         <div class="container">
-            <!--Grid row-->
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-md-9 mb-4">
-                    <!--Section: Content-->
-                    <section>
-                        {% for lector in object_list %}
-                            <!-- Post -->
-                            <div class="row">
-                                <div class="col-md-4 mb-4">
-                                    <div class="bg-image hover-overlay shadow-1-strong rounded ripple"
-                                         data-mdb-ripple-color="light">
-                                        {#                                    <img src="{{ training.service_image }}https://mdbootstrap.com/img/new/standard/nature/184.jpg"#}
-                                        <img src="{{ lector.lector_image }}"
-                                             class="img-fluid" alt="{{ lector.full_name }}"/>
-                                        <a href="{% url 'details lector' pk=lector.pk %}!">
-                                            <div class="mask"
-                                                 style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                        </a>
-                                    </div>
-                                    <p></p>
-                                    <button type="button" class="btn btn-primary">
-                                        <a class="edit-lector-button"
-                                           href="{% url 'details lector' pk=lector.pk %}"
-                                           style="text-decoration: white;
-                                           color: inherit;"></a>
-                                        Details
-                                    </button>
-                                </div>
+            <div id="intro" class="p-5 text-center bg-light">
+                <h1 class="mb-3 h2">Streamline Your Corporate Training Bookings with Ease</h1>
+                <p class="mb-3">Effortlessly schedule and manage soft skills training for your
+                    employees with our
+                    intuitive
+                    booking system. Empower your workforce with valuable professional development
+                    opportunities.</p>
+                <p>&nbsp;<hr/></p>
 
-                                <div class="col-md-8 mb-4">
-                                    <h5>{{ lector.full_name }}</h5>
-                                    <p>
-                                        {{ lector.biography }}
-                                    </p>
+                <p>&nbsp;</p>
+                {% for lector in lector_list %}
+                    <!-- Post -->
+                    <div class="row" style="text-align: left;">
+                        <div class="col-md-4 mb-4">
+                            <div class="bg-image hover-overlay shadow-1-strong rounded ripple"
+                                 data-mdb-ripple-color="light">
+                                <img src="{{ lector.lector_image }}"
+                                     class="img-fluid" alt="{{ lector.full_name }}"/>
+                                <a href="#!">
+                                    {#                                            TODO hrfe above - needed or not #}
+                                    <div class="mask"
+                                         style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8 mb-4">
+                            <h5>{{ lector.full_name }}</h5>
+                            <p>
+                                {{ lector.biography }}
+                            </p>
+                            {% if user.is_authenticated %}
+{#                            <button type="button" >#}
+                                <a href="{% url 'details lector' pk=lector.pk %}"
+                                   style="text-decoration: white; color: deepskyblue;">
+                                    Details
+                                </a>
+{#                            </button>#}
+                            {% endif %}
+                        </div>
+                    </div>
+                <p>&nbsp;<hr/>&nbsp;</p>
+                {% endfor %}
+
+                <!-- Pagination -->
+                <nav class="my-4" aria-label="...">
+                    <ul class="pagination pagination-circle justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
+
+
+{##TODO add view/form#}
+{##}
+{##}
+{#{% extends 'base.html' %}#}
+{#{% load forms %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{##}
+{#    <div id="intro" class="p-5 text-center bg-light">#}
+{#        <h1 class="mb-3 h2">See our lectors:</h1>#}
+{#        <p class="mb-3">Effortlessly schedule and manage soft skills training for your employees with our intuitive#}
+{#            booking system. Empower your workforce with valuable professional development opportunities.</p>#}
+{#    </div>#}
+{##}
+{#    <main class="my-5">#}
+{#        <div class="container">#}
+{#            <!--Grid row-->#}
+{#            <div class="row">#}
+{#                <!--Grid column-->#}
+{#                <div class="col-md-9 mb-4">#}
+{#                    <!--Section: Content-->#}
+{#                    <section>#}
+{#                        {% for lector in object_list %}#}
+{#                            <!-- Post -->#}
+{#                            <div class="row">#}
+{#                                <div class="col-md-4 mb-4">#}
+{#                                    <div class="bg-image hover-overlay shadow-1-strong rounded ripple"#}
+{#                                         data-mdb-ripple-color="light">#}
+                                        {#                                    <img src="{{ training.service_image }}https://mdbootstrap.com/img/new/standard/nature/184.jpg"#}
+{#                                        <img src="{{ lector.lector_image }}"#}
+{#                                             class="img-fluid" alt="{{ lector.full_name }}"/>#}
+{#                                        <a href="{% url 'details lector' pk=lector.pk %}!">#}
+{#                                            <div class="mask"#}
+{#                                                 style="background-color: rgba(251, 251, 251, 0.15);"></div>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <p></p>#}
 {#                                    <button type="button" class="btn btn-primary">#}
 {#                                        <a class="edit-lector-button"#}
 {#                                           href="{% url 'details lector' pk=lector.pk %}"#}
@@ -56,36 +115,50 @@
 {#                                           color: inherit;"></a>#}
 {#                                        Details#}
 {#                                    </button>#}
-                                </div>
-                            </div>
-
-                        {% endfor %}
-
-                        <!--Section: Video-->
-                    </section>
-                    <!--Section: Sidebar-->
-                </div>
-                <!--Grid column-->
-            </div>
-            <!--Grid row-->
-
-            <!-- Pagination -->
-            <nav class="my-4" aria-label="...">
-                <ul class="pagination pagination-circle justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </main>
-
-{% endblock %}
+{#                                </div>#}
+{##}
+{#                                <div class="col-md-8 mb-4">#}
+{#                                    <h5>{{ lector.full_name }}</h5>#}
+{#                                    <p>#}
+{#                                        {{ lector.biography }}#}
+{#                                    </p>#}
+{#                                    <button type="button" class="btn btn-primary">#}
+{#                                        <a class="edit-lector-button"#}
+{#                                           href="{% url 'details lector' pk=lector.pk %}"#}
+{#                                           style="text-decoration: white;#}
+{#                                           color: inherit;"></a>#}
+{#                                        Details#}
+{#                                    </button>#}
+{#                                </div>#}
+{#                            </div>#}
+{##}
+{#                        {% endfor %}#}
+{##}
+{#                        <!--Section: Video-->#}
+{#                    </section>#}
+{#                    <!--Section: Sidebar-->#}
+{#                </div>#}
+{#                <!--Grid column-->#}
+{#            </div>#}
+{#            <!--Grid row-->#}
+{##}
+{#            <!-- Pagination -->#}
+{#            <nav class="my-4" aria-label="...">#}
+{#                <ul class="pagination pagination-circle justify-content-center">#}
+{#                    <li class="page-item">#}
+{#                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>#}
+{#                    </li>#}
+{#                    <li class="page-item"><a class="page-link" href="#">1</a></li>#}
+{#                    <li class="page-item active" aria-current="page">#}
+{#                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>#}
+{#                    </li>#}
+{#                    <li class="page-item"><a class="page-link" href="#">3</a></li>#}
+{#                    <li class="page-item">#}
+{#                        <a class="page-link" href="#">Next</a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </nav>#}
+{#        </div>#}
+{#    </main>#}
+{##}
+{#{% endblock %}#}

@@ -1,12 +1,8 @@
-from django.core import validators
-from django.core.exceptions import ValidationError
-from django.core.validators import MinLengthValidator
 from django.db import models
-from django.contrib.auth import models as auth_models, get_user_model
+from django.contrib.auth import models as auth_models
 from coach_me.accounts.managers import BookingUserManager
 
 
-# Create your models here.
 class BookingUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
     email = models.EmailField(
         null=False,
@@ -43,7 +39,6 @@ class BookingUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
 
     def __str__(self):
         return f'{self.email}'
-        # return f'{self.id}: {self.email}'
 
     def __repr__(self):
         return f'{self.id}: {self.email}'

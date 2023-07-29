@@ -14,7 +14,6 @@ class LoginUserForm(auth_forms.AuthenticationForm):
             attrs={
                 'style': 'border-color: blue;',
                 'placeholder': 'Enter your email',
-                # 'class': 'login-email',
                 'class': 'form-control',
             }
         )
@@ -26,9 +25,7 @@ class LoginUserForm(auth_forms.AuthenticationForm):
                 'style': 'border-color: blue;',
                 'placeholder': 'Enter your password',
                 'content': '*',
-                # 'placeholder': '********',
                 'autocomplete': 'off',
-                # 'data-toggle': 'password',
                 'render_value': True,
                 'class': 'form-control',
             }
@@ -37,7 +34,7 @@ class LoginUserForm(auth_forms.AuthenticationForm):
 
     class Meta(auth_forms.UserCreationForm.Meta):
         model = UserModel
-        fields = '__all__'  # ('email', 'password')
+        fields = '__all__'
         widgets = {
             'username': forms.TextInput(
                 attrs={

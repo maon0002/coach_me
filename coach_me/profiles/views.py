@@ -31,7 +31,8 @@ class DashboardView(views.ListView):
         current_date = timezone.now().date()
 
         past_bookings = Booking.objects.filter(employee=user, start_date__lt=current_date).order_by('-start_date').all()
-        future_bookings = Booking.objects.filter(employee=user, start_date__gte=current_date).order_by('start_date').all()
+        future_bookings = Booking.objects.filter(employee=user, start_date__gte=current_date).order_by(
+            'start_date').all()
 
         # Retrieve the user profile for the current user
         try:
@@ -59,26 +60,13 @@ class ProfileDetailsView(views.DetailView):
 
     def get_context_data(self, **kwargs):
         user = self.request.user
-        custom_display_names = {
-            'first_name': 'First Name',
-            'last_name': 'Last Name',
-            # Add more custom display names for other fields if needed
-        }
         context = super().get_context_data(**kwargs)
         profile = context['object']
         fields = [(field.name, getattr(profile, field.name)) for field in profile._meta.fields if
-                  # field.name not in ['user', 'consent_terms', 'newsletter_subscription', 'picture']]
-                  field.name not in ['user', 'consent_terms', 'newsletter_subscription', 'picture']]
-        # print(fields)
-        # fields2 = list([[str(field[0]).replace("_", " "), field[1]] for field in fields])
+                  field.name not in ['user', 'consent_terms', 'newsletter_subscription', 'picture', 'is_lector']]
         fields_replace_underscores = tuple([str(field[0]).replace("_", " "), str(field[1])] for field in fields)
-        # print(fields_replace_underscores)
-        context['fields'] = fields_replace_underscores
-        context['custom_display_names'] = custom_display_names  # Pass the dictionary to the template
 
-        # TODO _set from the bookings because of the employee in the Booking model fk
-        # context['bookingsss'] = user.booking_set.all()
-        # bookings_count = Booking.objects.count()
+        context['fields'] = fields_replace_underscores
         bookings_count = Booking.objects.filter(employee=user).count()
         context['bookings_count'] = bookings_count
 
@@ -113,6 +101,7 @@ class ProfileUpdateView(views.UpdateView):
         if booking_user_profile:
             form.fields['first_name'].initial = str(booking_user_profile.first_name)
             form.fields['last_name'].initial = str(booking_user_profile.last_name)
+            form.fields['phone'].initial = "+359"
 
         # Disable the fields
         # form.fields['corporate_email'].widget.attrs['readonly'] = True

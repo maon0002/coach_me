@@ -143,7 +143,8 @@
                             <table class="table table-hover">
                                 <h3
                                         style="text-align: center; color: deepskyblue">
-                                    Scheduled bookings for {{ profile.first_name }}:
+{#                                    SCHEDULED BOOKINGS FOR {{ profile.first_name }}:#}
+                                    SCHEDULED BOOKINGS:
                                 </h3>
                                 <hr>
                                     <thead>
@@ -199,13 +200,13 @@
 
                                 </tbody>
                             </table>
-
+                            <p>	&nbsp;</p>
                             <table class="table table-hover">
                                 <h3
                                         style="text-align: left; color: gray">
-                                    Past bookings:
+                                    PAST BOOKINGS:
                                 </h3>
-                                <hr>
+{#                                <hr>#}
                                     <thead>
                                     <tr>
                                         <th scope="col">TRAINING</th>
@@ -220,14 +221,15 @@
                                     </thead>
                                     <tbody>
 
+
                                     {% for booking in past_bookings %}
                                     <tr>
-                                        <td>{{ booking.booking_type }}</td>
-                                        <td>{{ booking.start_date }} : {{ booking.start_time }}</td>
-                                        <td>{{ profile.full_name|capfirst }}</td>
-                                        <td>{{ booking.lector }}</td>
-                                        <td>{{ booking.training_mode }}</td>
-                                        <td>
+                                        <td style="color: gray">{{ booking.booking_type }}</td>
+                                        <td style="color: gray">{{ booking.start_date }} : {{ booking.start_time }}</td>
+                                        <td style="color: gray">{{ profile.full_name|capfirst }}</td>
+                                        <td style="color: gray">{{ booking.lector }}</td>
+                                        <td style="color: gray">{{ booking.training_mode }}</td>
+                                        <td style="color: gray">
                                             <a class="details-booking-button"
                                                href="{% url 'details booking' pk=booking.pk %}">
                                                 <img src="{% static '/images/eye.png' %}"

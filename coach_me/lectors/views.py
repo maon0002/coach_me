@@ -3,10 +3,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import modelform_factory
 from django.urls import reverse_lazy
 from django.views import generic as views
+
+from coach_me.lectors.forms import LectorList
 from coach_me.lectors.models import Lector
 from coach_me.bookings.mixins import DisabledFormFieldsMixin
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
+
+from coach_me.profiles.models import BookingUserProfile
 
 UserModel = get_user_model()
 
@@ -14,10 +18,21 @@ UserModel = get_user_model()
 class LectorListView(views.ListView):
     model = Lector
     template_name = 'lectors/lectors.html'
+    form_class = LectorList
 
     # @method_decorator(cache_page(1))  # Cache will expire in 1 hour (3600 seconds)
     # def dispatch(self, *args, **kwargs):
     #     return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        user = self.request.user
+        context = super().get_context_data(**kwargs)
+        booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).get()
+
+        context['booking_user_profile'] = booking_user_profile
+        context['user'] = user
+
+        return context
 
 
 class LectorCreateView(LoginRequiredMixin, views.CreateView):

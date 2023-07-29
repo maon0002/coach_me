@@ -5,6 +5,7 @@ from django.urls import reverse_lazy, reverse
 from django.views import generic as views
 from django.views.decorators.cache import cache_page
 from coach_me.bookings.models import Booking, Lector
+from coach_me.profiles.models import BookingUserProfile
 from coach_me.trainings.models import Training
 from coach_me.bookings.mixins import DisabledFormFieldsMixin
 from django.utils.decorators import method_decorator
@@ -32,6 +33,16 @@ class TrainingCreateView(LoginRequiredMixin, views.CreateView):
 class TrainingDetailsView(views.DetailView):
     model = Training
     template_name = 'trainings/details-training.html'
+
+    def get_context_data(self, **kwargs):
+        user = self.request.user
+        context = super().get_context_data(**kwargs)
+        booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).get()
+
+        context['booking_user_profile'] = booking_user_profile
+        context['user'] = user
+
+        return context
 
 
 class TrainingUpdateView(LoginRequiredMixin, views.UpdateView):

@@ -2,16 +2,23 @@ from django import forms
 from django.contrib.auth import forms as auth_forms, get_user_model
 from django.utils.translation import gettext_lazy as _
 from coach_me.accounts.models import BookingUser
+from coach_me.lectors.models import Lector
 from coach_me.profiles.models import BookingUserProfile
 
 UserModel = get_user_model()
 
 
-class ProfileDashboardForm(forms.ModelForm):
+class LectorDashboardForm(forms.ModelForm):
     pass
 
 
-class ProfileUpdateForm(forms.ModelForm):
+class LectorList(forms.ModelForm):
+    class Meta:
+        model = Lector
+        fields = '__all__'
+
+
+class LectorUpdateForm(forms.ModelForm):
     # date_of_birth = forms.DateField(
     #     widget=forms.DateInput(
     #         attrs={
@@ -39,7 +46,7 @@ class ProfileUpdateForm(forms.ModelForm):
         # self.fields['email'].help_text = _('Use your company email address')
 
 
-class ProfileDeleteForm(forms.ModelForm):
+class LectorDeleteForm(forms.ModelForm):
     class Meta:
         model = BookingUserProfile
         fields = '__all__'
@@ -52,7 +59,7 @@ class ProfileDeleteForm(forms.ModelForm):
             self.fields[field_name].widget.attrs['disabled'] = True
 
 
-class ProfileDetailsForm(forms.ModelForm):
+class LectorDetailsForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -62,4 +69,4 @@ class ProfileDetailsForm(forms.ModelForm):
     class Meta:
         model = BookingUserProfile
         # fields = '__all__'
-        exclude = ['user', 'consent_terms', 'newsletter_subscription', 'is_lector',]
+        exclude = ['user', 'consent_terms', 'newsletter_subscription', 'is_lector', ]

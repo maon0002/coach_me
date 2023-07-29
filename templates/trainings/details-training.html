@@ -26,11 +26,14 @@
                                 </div>
                             {% endif %}
                         </div>
+
+                        {% if user.is_staff %}
                         <!-- Delete Profile Button -->
                         <a href="{% url 'delete training' pk=object.pk %}" class="btn btn-danger">Delete</a>
 
                         <!-- Edit Profile Button -->
                         <a href="{% url 'edit training' pk=object.pk %}" class="btn btn-primary">Edit</a>
+                        {% endif %}
                     </div>
                 </div>
 
