@@ -61,15 +61,20 @@
                             <input type="hidden" value="{{ next }}" name="next"/>
                             {% csrf_token %}
 
+                            <div class="form-outline mb-4" style="text-align: left;">
+                                <strong>Registration email: </strong> {{ user.email }}
+                            </div>
+
                             {% for field_name, field_value in fields %}
                                 <div class="form-outline mb-4" style="text-align: left;">
                                     <strong>{{ field_name|title|ljust:"100" }}:</strong> {{ field_value }}
                                 </div>
-
                             {% endfor %}
                             <div class="form-outline mb-4" style="text-align: left;">
-                                <strong>Bookings count: </strong> {{ bookings_count }}
-{#                                <strong>Test: </strong> {{ bookingsss }}#}
+                                <strong>Company: </strong> {{ company_name }}
+                            </div>
+                            <div class="form-outline mb-4" style="text-align: left;">
+                                <strong>Bookings count: </strong>  {{ bookings_count }}   (active: {{ active_bookings_count }}, inactive: {{ past_booking_count }})
                             </div>
 
                             <!-- Delete Profile Button -->

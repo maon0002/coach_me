@@ -12,22 +12,8 @@ class ProfileDashboardForm(forms.ModelForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
-    # date_of_birth = forms.DateField(
-    #     widget=forms.DateInput(
-    #         attrs={
-    #             # 'class': 'form-control',
-    #             'class': 'date-icon',
-    #             'placeholder': 'YYYY-MM-DD',
-    #         }
-    #     ),
-    #     label='Date of birth',
-    #     required=False,  # Update this based on your requirements
-    #     input_formats=['%Y-%m-%d'],  # Specify the date input format
-    # )
-
     class Meta:
         model = BookingUserProfile
-        # fields = '__all__'
         exclude = ['consent_terms', 'newsletter_subscription', 'is_lector']
 
     def __init__(self, *args, **kwargs):
@@ -36,7 +22,6 @@ class ProfileUpdateForm(forms.ModelForm):
         self.fields['user'].widget = forms.HiddenInput()
         self.fields['date_of_birth'].help_text = _('in "YYYY-MM-DD" format')
         self.fields['phone'].help_text = _('starting with +359  (e.g "+35912345678")')
-        # self.fields['email'].help_text = _('Use your company email address')
 
 
 class ProfileDeleteForm(forms.ModelForm):
@@ -46,8 +31,6 @@ class ProfileDeleteForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Disable the 'user' field
-        # self.fields['user'].disabled = True
         for field_name in self.fields:
             self.fields[field_name].widget.attrs['disabled'] = True
 
@@ -61,5 +44,9 @@ class ProfileDetailsForm(forms.ModelForm):
 
     class Meta:
         model = BookingUserProfile
-        # fields = '__all__'
-        exclude = ['user', 'consent_terms', 'newsletter_subscription', 'is_lector',]
+        exclude = [
+            # 'user',
+            'consent_terms',
+            'newsletter_subscription',
+            'is_lector',
+        ]

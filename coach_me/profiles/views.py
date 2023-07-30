@@ -15,7 +15,7 @@ class DashboardView(views.ListView):
     model = Booking  # or def get_queryset изобщо няма да гледа модела
     template_name = 'dashboard.html'  # Use the template name where you want to display the bookings
     context_object_name = 'bookings'  # Name of the context variable to be used in the template
-    paginate_by = 1  #TODO not working properly
+    paginate_by = 1  # TODO not working properly
 
     def get_queryset(self):
         user = self.request.user
@@ -57,14 +57,36 @@ class ProfileDetailsView(views.DetailView):
     def get_context_data(self, **kwargs):
         user = self.request.user
         context = super().get_context_data(**kwargs)
+        current_date = timezone.now().date()
         profile = context['object']
         fields = [(field.name, getattr(profile, field.name)) for field in profile._meta.fields if
-                  field.name not in ['user', 'consent_terms', 'newsletter_subscription', 'picture', 'is_lector']]
-        fields_replace_underscores = tuple([str(field[0]).replace("_", " "), str(field[1])] for field in fields)
+                  field.name not in [
+                      'user',
+                      'consent_terms',
+                      'newsletter_subscription',
+                      'picture',
+                      'is_lector',
+                      'company', ]
+                  ]
+        fields_replace_underscores = list([str(field[0]).replace("_", " "), str(field[1])] for field in fields)
 
         context['fields'] = fields_replace_underscores
+
+        company_name = Company.objects.get(
+            company_domain__iendswith=user.email.split('@')[1]
+                                            ).short_company_name
+
+        context['company_name'] = company_name
+
         bookings_count = Booking.objects.filter(employee=user).count()
+        active_bookings_count = Booking.objects.filter(
+            employee=user,
+            start_date__gte=current_date,
+        ).count()
+        past_booking_count = bookings_count - active_bookings_count
         context['bookings_count'] = bookings_count
+        context['active_bookings_count'] = active_bookings_count
+        context['past_booking_count'] = past_booking_count
 
         return context
 
@@ -77,6 +99,7 @@ class ProfileUpdateView(views.UpdateView):
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
         user = self.request.user
+        # user = UserModel
 
         try:
             company = Company.objects.get(company_domain__iendswith=user.email.split('@')[1])
@@ -88,19 +111,18 @@ class ProfileUpdateView(views.UpdateView):
             form.fields['company'].initial = company.short_company_name
         else:
             form.fields['company'].initial = None
-            # form.fields['corporate_email'].initial = user.email
 
         # Try to get the related BookingUserProfile instance
-        booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).first()
+        booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).get()
 
         # Set 'first_name' and 'last_name' initial values from BookingUserProfile
         if booking_user_profile:
             form.fields['first_name'].initial = str(booking_user_profile.first_name)
             form.fields['last_name'].initial = str(booking_user_profile.last_name)
-            form.fields['phone'].initial = "+359"
 
         # Disable the fields
         # form.fields['corporate_email'].widget.attrs['readonly'] = True
+        # form.fields['company'].widget.attrs['readonly'] = True
         # form.fields['first_name'].widget.attrs['readonly'] = True
         # form.fields['last_name'].widget.attrs['readonly'] = True
 
@@ -108,7 +130,9 @@ class ProfileUpdateView(views.UpdateView):
         for field_name in [
             # 'corporate_email',
             'picture',
-            'first_name', 'last_name', ]:
+            'first_name',
+            'last_name',
+        ]:
             if field_name in form.fields:
                 form.fields[field_name].required = False
 

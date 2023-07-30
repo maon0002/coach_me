@@ -31,9 +31,9 @@ class IndexView(DefineModelsMixin, views.ListView):
         # Retrieve the BookingUserProfile and add it to the context
 
         user = self.get_booking_user()
-        print(user, "<<<<<<< USER")
+        # print(user, "<<<<<<< USER")
         booking_user_profile = self.get_booking_user_profile()
-        print(booking_user_profile, "<<<<<<< BUP")
+        # print(booking_user_profile, "<<<<<<< BUP")
 
         if user and booking_user_profile:
             context['user'] = self.get_booking_user().get()
