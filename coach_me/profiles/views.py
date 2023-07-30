@@ -19,7 +19,7 @@ class DashboardView(views.ListView):
     model = Booking  # or def get_queryset изобщо няма да гледа модела
     template_name = 'dashboard.html'  # Use the template name where you want to display the bookings
     context_object_name = 'bookings'  # Name of the context variable to be used in the template
-    paginate_by = 3  # Optional: Set the number of bookings to be displayed per page
+    paginate_by = 1  #TODO not working properly
 
     def get_queryset(self):
         user = self.request.user

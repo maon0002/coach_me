@@ -64,6 +64,8 @@ class BookingUserProfile(models.Model):
 
     phone = models.CharField(  # TODO fix the below code
         default=None,
+        null=True,
+        blank=True,
         max_length=PHONE_MAX_LEN,
     )
 

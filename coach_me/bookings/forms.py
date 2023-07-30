@@ -4,7 +4,7 @@ from django.http import request
 from django.shortcuts import get_object_or_404
 from coach_me.bookings.form_mixins import FieldsWithFormControlClassMixin
 from django.utils import timezone
-
+from django.utils.translation import gettext_lazy as _
 from coach_me.bookings.models import Booking
 from coach_me.profiles.models import BookingUserProfile
 
@@ -132,6 +132,10 @@ class BookingCreateForm(FieldsWithFormControlClassMixin, forms.ModelForm):
         super().__init__(*args, **kwargs)
         # Hide the 'user' field
         self.fields['employee'].widget = forms.HiddenInput()
+        self.fields['start_date'].help_text = _('*the format is : "YYYY-MM-DD"')
+        self.fields['booking_type'].help_text = _('Choose "Booking type" before "Lector"')
+        self.fields['lector'].help_text = _('Before selecting a Lector be sure that you already select a "Booking type" to get the available lectors for the training')
+        # self.fields['email'].help_text = _('Use your company email address')
 
     def clean_start_date(self):
         start_date = self.cleaned_data.get('start_date')

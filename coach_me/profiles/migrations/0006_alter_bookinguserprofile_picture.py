@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='bookinguserprofile',
             name='picture',
-            field=models.URLField(default='static/images/missing-person.jpg'),
+            field=models.URLField(default='static/images/missing-person.png'),
         ),
     ]

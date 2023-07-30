@@ -25,3 +25,5 @@ urlpatterns = [
     path('', include('coach_me.lectors.urls')),
     path('', include('coach_me.trainings.urls')),
 ]
+
+

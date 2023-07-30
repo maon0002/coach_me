@@ -29,9 +29,10 @@ DEBUG = True
 # DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = []
+
 # ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ') //'for_deploy qa.for_deploy'
 # ALLOWED_HOSTS = (
-#     '127.0.0.1',
+#     '127.0.0.1:8000',
 # )
 
 
@@ -76,7 +77,8 @@ DATABASES = {
 
 # Application definition
 MY_APPS = [
-    'coach_me.accounts',
+    # 'coach_me.accounts',
+    'coach_me.accounts.apps.AccountsConfig',
     'coach_me.bookings',
     'coach_me.profiles',
     'coach_me.lectors',
@@ -192,3 +194,28 @@ LOGIN_URL = reverse_lazy('login_user')
 # Defines the model for **Users**
 # AUTH_USER_MODEL = 'accounts.BookingUser'
 AUTH_USER_MODEL = 'accounts.BookingUser'
+
+#SMTP config
+# SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+#
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey'  # this is exactly the value 'apikey'
+# EMAIL_HOST_PASSWORD = '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' #SENDGRID_API_KEY
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
+
+
+
+#
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey'  # this is exactly the value 'apikey'
+# EMAIL_HOST_PASSWORD = 'jpisehhqplalzlkr'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'coachme.demoapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'jpisehhqplalzlkr'

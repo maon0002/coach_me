@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>Welcome to Our Platform!</title>
     <style>
         /* Your custom styles here */
         body {
@@ -28,7 +28,6 @@
 
         .logo {
             text-align: center;
-            margin-bottom: 20px;
         }
 
         .logo img {
@@ -36,24 +35,24 @@
             height: auto;
         }
 
-        .error-code {
-            font-size: 80px;
+        .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
 
-        .error-message {
+        .message {
+            margin-top: 30px;
             text-align: center;
-            margin-bottom: 30px;
         }
 
         .btn {
             display: inline-block;
             padding: 10px 20px;
             background-color: #007bff;
-            color: #fff;
+            color: white;
             text-decoration: none;
             border-radius: 4px;
+            margin-top: 20px;
         }
 
         .footer {
@@ -66,15 +65,20 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="https://example.com/logo.png" alt="Logo">
+            <img src="https://drive.google.com/file/d/1QufNBZiR1ZjDHOF7SdjNAN6RN-LTXlf5/view?usp=sharing" alt="Logo">
         </div>
-        <div class="error-code">404</div>
-        <div class="error-message">
-            <p>Oops! The page you are looking for could not be found.</p>
-            <p>Please check the URL or go back to the homepage.</p>
+        <div class="header">
+            <h2>Welcome to CoachMe!</h2>
+        </div>
+        <div class="message">
+            <p>Hello {{ profile.email }},</p>
+            <p>Thank you for registering with us. We are excited to have you on board!</p>
+            <p>Get ready to explore our amazing features and content.</p>
+            <p>If you have any questions or need assistance, feel free to reach out to our support team.</p>
+            <a href="https://http://coachme.tk/auth/login/" class="btn">Login to Your Account</a>
         </div>
         <div class="footer">
-            <a href="https://example.com/" class="btn">Go to Homepage</a>
+            <p>Best regards,<br>CoachMe Team</p>
         </div>
     </div>
 </body>
