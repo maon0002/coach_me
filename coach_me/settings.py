@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-)me+gt_-s)5ga$x9j07u1$nya12k(mzka+&cb&svui2jx7ysq&'
+# SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ') //'for_deploy qa.for_deploy'
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ') #'for_deploy qa.for_deploy'
 # ALLOWED_HOSTS = (
 #     '127.0.0.1:8000',
 # )
@@ -42,14 +43,14 @@ ALLOWED_HOSTS = []
 # C:\Users\LENOVO\PycharmProjects\coach_me\db.sqlite3_bckp
 # jdbc:sqlite:C:\Users\LENOVO\PycharmProjects\coach_me\db.sqlite3_bckp
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3_0',
-        # 'NAME': BASE_DIR / 'db.sqlite3_2',
-    }
-}
-#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3_0',
+#         # 'NAME': BASE_DIR / 'db.sqlite3_2',
+#     }
+# }
+# #
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.sqlite3",
@@ -61,6 +62,17 @@ DATABASES = {
 #
 #     }
 # }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "HOST": os.getenv('DB_HOST', 'localhost'),
+        "PORT": os.getenv('DB_PORT', '5432'),
+        "NAME": os.getenv('DB_NAME', 'coachme_db'),
+        "USER": os.getenv('DB_USER', 'maon0002'),
+        "PASSWORD": os.getenv('DB_PASSWORD', 'nirvana'),
+    }
+}
 
 #
 # DATABASES = {

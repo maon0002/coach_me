@@ -1,13 +1,9 @@
-from django.conf.urls.static import static
 from django.contrib.auth import get_user_model
-from django.forms import modelform_factory
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, ListView
 from coach_me.accounts.models import BookingUser
-from coach_me.bookings.mixins import DisabledFormFieldsMixin
 from coach_me.bookings.models import Booking
-from coach_me.profiles.forms import ProfileUpdateForm, ProfileDeleteForm, ProfileDetailsForm
+from coach_me.profiles.forms import ProfileUpdateForm, ProfileDetailsForm
 from coach_me.profiles.models import BookingUserProfile, Company
 from django.views import generic as views, View
 from django.utils import timezone
