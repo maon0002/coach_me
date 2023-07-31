@@ -55,6 +55,13 @@ class BookingCreateView(LoginRequiredMixin, views.CreateView):
     template_name = 'bookings/create-booking.html'
     success_url = reverse_lazy('dashboard')
 
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     user = self.request.user
+    #     training = context['object'].booking_type
+    #     lector = context['object'].lector
+    #     current_date = timezone.now().date()
+
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
         user = self.request.user

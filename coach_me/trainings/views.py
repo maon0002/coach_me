@@ -35,14 +35,20 @@ class TrainingDetailsView(views.DetailView):
     model = Training
     template_name = 'trainings/details-training.html'
 
-
     def get_context_data(self, **kwargs):
         user = self.request.user
         context = super().get_context_data(**kwargs)
         booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).get()
+        # lectors = Lector.objects.all()
+        # available_lectors = Training.objects.filter(booking__lector__service_integrity__in=lectors).all()
+        training = self.object
+        # Get the available lectors for the specific training
+        available_lectors = Lector.objects.filter(service_integrity=training).all()
+        available_lectors = [x.full_name for x in available_lectors]
 
         context['booking_user_profile'] = booking_user_profile
         context['user'] = user
+        context['available_lectors'] = ", ".join(available_lectors)
 
         return context
 

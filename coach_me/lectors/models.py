@@ -1,6 +1,6 @@
 from django.core import validators
 from django.db import models
-
+from django.utils.text import slugify
 from coach_me.accounts.models import BookingUser
 from coach_me.trainings.models import Training
 from coach_me.bookings.validators import validate_string_is_letters_only, \
@@ -14,10 +14,10 @@ class Lector(models.Model):
     LAST_NAME_MAX_LENGTH = 30
     LAST_NAME_MIN_LENGTH = 2
     PHONE_MAX_LENGTH = 10
+    SLUG_MAX_LENGTH = 254
 
-    # #TODO to add constraint
     user = models.ForeignKey(
-        BookingUser,  # Use BookingUser model here
+        BookingUser,
         on_delete=models.DO_NOTHING,
         # related_name='rel_bookings', #instead of employee_set
     )
@@ -62,6 +62,12 @@ class Lector(models.Model):
 
     biography = models.TextField()
 
+    slug = models.SlugField(
+        max_length=SLUG_MAX_LENGTH,
+        unique=True,
+        blank=True
+    )
+
     inserted_on = models.DateTimeField(auto_now_add=True)  # ,  auto_now=True for update
     updated_on = models.DateTimeField(auto_now=True)  # ,  auto_now=True for update
 
@@ -70,8 +76,15 @@ class Lector(models.Model):
         if self.first_name or self.last_name:
             return f"{self.first_name} {self.last_name}"
 
+    def save(self, *args, **kwargs):
+        # Generate the slug before saving the instance
+        if not self.slug:
+            full_name = f"{self.first_name} {self.last_name}"
+            self.slug = slugify(f"{self.pk}-{full_name}")
+
+        super().save(*args, **kwargs)
+
     def __str__(self):
-        # return f'{self.id}: {self.first_name} {self.last_name}'
         return f'{self.first_name} {self.last_name}'
 
     def __repr__(self):

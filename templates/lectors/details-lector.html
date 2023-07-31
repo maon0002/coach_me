@@ -38,7 +38,8 @@
                                 </div>
                                 <button type="button" class="btn btn-primary">
                                     <a class="edit-lector-button"
-                                       href="{% url 'details lector' pk=lector.pk %}"
+{#                                       href="{% url 'details lector' pk=lector.pk %}"#}
+                                       href="{% url 'details lector' slug=lector.slug %}"
                                        style="text-decoration: white;
                                            color: inherit;"></a>
                                     Details

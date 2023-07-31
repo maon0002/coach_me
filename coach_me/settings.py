@@ -3,6 +3,11 @@ import os
 from pathlib import Path
 from django.urls import reverse_lazy
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -17,12 +22,12 @@ SECRET_KEY = 'django-insecure-)me+gt_-s)5ga$x9j07u1$nya12k(mzka+&cb&svui2jx7ysq&
 # DEBUG = True
 
 # DEBUG = FALSE // plus do 404 page
+# DEBUG = bool(int(os.environ.get('DEBUG', '1')))
 DEBUG = bool(int(os.environ.get('DEBUG')))
-
 
 ALLOWED_HOSTS = []
 
-# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ') #'for_deploy qa.for_deploy'
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
 # ALLOWED_HOSTS = (
 #     '127.0.0.1:8000',
 # )
@@ -44,7 +49,7 @@ ALLOWED_HOSTS = []
 #
 DATABASES = {
     "default": {
-        "ENGINE": 'django.db.backends.postgresql',
+        "ENGINE": "django.db.backends.postgresql",
         "HOST": os.getenv('DB_HOST'),
         "PORT": os.getenv('DB_PORT'),
         "NAME": os.getenv('DB_NAME'),
@@ -53,7 +58,7 @@ DATABASES = {
 
     }
 }
-
+#
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.postgresql",
@@ -65,17 +70,6 @@ DATABASES = {
 #     }
 # }
 
-#
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "fruitipedia_db", # TODO db
-#         "USER": "maon0002",
-#         "PASSWORD": "nirvana",
-#         "HOST": "127.0.0.1",
-#         "PORT": "5432",
-#     }
-# }
 
 
 # Application definition
@@ -198,7 +192,7 @@ LOGIN_URL = reverse_lazy('login_user')
 # AUTH_USER_MODEL = 'accounts.BookingUser'
 AUTH_USER_MODEL = 'accounts.BookingUser'
 
-#SMTP config
+# SMTP config
 # SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
 #
 # EMAIL_HOST = 'smtp.sendgrid.net'
@@ -206,8 +200,6 @@ AUTH_USER_MODEL = 'accounts.BookingUser'
 # EMAIL_HOST_PASSWORD = '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' #SENDGRID_API_KEY
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
-
-
 
 
 #

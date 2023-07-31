@@ -37,7 +37,7 @@
                             </p>
                             {% if user.is_authenticated %}
 {#                            <button type="button" >#}
-                                <a href="{% url 'details training' pk=training.pk %}"
+                                <a href="{% url 'details training' slug=training.slug %}"
                                    style="text-decoration: white; color: deepskyblue;">
                                     Details
                                 </a>

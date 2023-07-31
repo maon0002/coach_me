@@ -47,7 +47,7 @@
                                  height: 40%;
                                     ">
 
-                            <form action="{% url 'edit training' pk=object.pk %}" method="post">
+                            <form action="{% url 'edit training' slug=object.slug %}" method="post">
 
                                 <input type="hidden" value="{{ next }}" name="next"/>
 
@@ -74,7 +74,7 @@
         // Add event listener to the Cancel button
         document.getElementById('cancelButton').addEventListener('click', function () {
             // Navigate to the dashboard page when the Cancel button is clicked
-            window.location.href = "{% url 'details training' pk=object.pk %}";
+            window.location.href = "{% url 'details training' slug=object.slug %}";
         });
     </script>
 

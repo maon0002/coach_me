@@ -6,7 +6,7 @@ urlpatterns = (
     path('trainings/', TrainingListView.as_view(), name='trainings'),
     path('training/add/', TrainingCreateView.as_view(), name='add training'),
 
-    path('training/<int:pk>/', include([
+    path('training/<slug:slug>/', include([
         path('details/', TrainingDetailsView.as_view(), name='details training'),
         path('edit/', TrainingUpdateView.as_view(), name='edit training'),
         path('delete/', TrainingDeleteView.as_view(), name='delete training'),
