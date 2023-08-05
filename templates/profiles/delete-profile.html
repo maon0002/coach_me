@@ -2,30 +2,50 @@
 {% load static %}
 {% block content %}
 
-    <!-- Edit Profile Form -->
+    <section class="text-center text-lg-start" id="delete" ><p>
+            <h1 style="
+            color: crimson;
+            display: inline-block;
+                ">Are you sure you want to delete </h1>
+            <h1 style="
+            color: #007bff;
+            display: inline-block;"> &nbsp;{{ user.email }}</h1>
 
+            <h1 style="
+            color: crimson;
+            display: inline-block;">?</h1>
+            </p>
 
+        <div class="container"
+        style="
+                {#display: flex;#}
+                justify-content: center;
+                align-items: center;
+                height: 50vh;">
 
-    <section class="text-center text-lg-start" id="delete">
-
-        <div class="container">
-            <h1>Are you sure you want to delete your profile?</h1>
-
+            <p>&nbsp;</p>
             <!-- Delete Profile Form -->
             <form class="delete-form" action="{% url 'delete profile' pk=user.pk %}" method="post">
                 <!-- Confirm Button -->
                 {% csrf_token %}
-{#                {{ form.as_table }}#}
-{#                {{ form.as_ul }}#}
+
                 {{ form.as_p}}
-                {#            {{ form.first_name.as_p }}#}
-                {#            {{ form.last_name }}#}
-                <button class="btn btn-primary btn-block mb-4" type="submit">Delete Profile</button>
 
+                <div class="col-md-4">
+                    <div>
+                        <h3>{{ profile.first_name|capfirst }} {{ profile.last_name|capfirst  }}</h3>
+                    </div>
+
+                    <img src="{{ profile.picture }}" class="w-50 rounded-4 shadow-4"
+                         alt="{{ profile.first_name }} {{ profile.last_name }}image"/>
+                    <p></p>
+                </div>
+
+                <button class="btn btn-primary btn-block mb-4 btn btn-danger" type="submit">
+                    Delete Profile
+                </button>
             </form>
-            <!-- End Delete Profile Form -->
         </div>
-
     </section>
 
 {% endblock %}

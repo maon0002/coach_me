@@ -65,7 +65,8 @@ class Lector(models.Model):
     slug = models.SlugField(
         max_length=SLUG_MAX_LENGTH,
         unique=True,
-        blank=True
+        blank=True,
+        null=True,
     )
 
     inserted_on = models.DateTimeField(auto_now_add=True)  # ,  auto_now=True for update
@@ -80,7 +81,8 @@ class Lector(models.Model):
         # Generate the slug before saving the instance
         if not self.slug:
             full_name = f"{self.first_name} {self.last_name}"
-            self.slug = slugify(f"{self.pk}-{full_name}")
+            # self.slug = slugify(f"{self.pk}-{full_name}")
+            self.slug = slugify(f"{full_name}")
 
         super().save(*args, **kwargs)
 

@@ -12,7 +12,9 @@
                     intuitive
                     booking system. Empower your workforce with valuable professional development
                     opportunities.</p>
-                <p>&nbsp;<hr/></p>
+                <p>&nbsp;
+                <hr/>
+                </p>
 
                 <p>&nbsp;</p>
                 {% for lector in lector_list %}
@@ -35,36 +37,26 @@
                             <p>
                                 {{ lector.biography }}
                             </p>
+{#                            <p>#}
+{#                                {{ available_trainings }}#}
+{#                            </p>#}
                             {% if user.is_authenticated %}
-{#                            <button type="button" >#}
-{#                                <a href="{% url 'details lector' pk=lector.pk %}"#}
+                                {#                            <button type="button" >#}
+                                {#                                <a href="{% url 'details lector' pk=lector.pk %}"#}
                                 <a href="{% url 'details lector' slug=lector.slug %}"
                                    style="text-decoration: white; color: deepskyblue;">
                                     Details
                                 </a>
-{#                            </button>#}
+                                {#                            </button>#}
                             {% endif %}
                         </div>
                     </div>
-                <p>&nbsp;<hr/>&nbsp;</p>
+                    <p>&nbsp;
+                    <hr/>&nbsp;</p>
                 {% endfor %}
 
                 <!-- Pagination -->
-                <nav class="my-4" aria-label="...">
-                    <ul class="pagination pagination-circle justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                {% include 'core/pagination.html' %}
             </div>
         </div>
     </main>
@@ -100,7 +92,7 @@
 {#                                <div class="col-md-4 mb-4">#}
 {#                                    <div class="bg-image hover-overlay shadow-1-strong rounded ripple"#}
 {#                                         data-mdb-ripple-color="light">#}
-                                        {#                                    <img src="{{ training.service_image }}https://mdbootstrap.com/img/new/standard/nature/184.jpg"#}
+{#                                    <img src="{{ training.service_image }}https://mdbootstrap.com/img/new/standard/nature/184.jpg"#}
 {#                                        <img src="{{ lector.lector_image }}"#}
 {#                                             class="img-fluid" alt="{{ lector.full_name }}"/>#}
 {#                                        <a href="{% url 'details lector' pk=lector.pk %}!">#}

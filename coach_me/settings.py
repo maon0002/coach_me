@@ -71,7 +71,6 @@ DATABASES = {
 # }
 
 
-
 # Application definition
 MY_APPS = [
     # 'coach_me.accounts',
@@ -100,6 +99,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'coach_me.bookings.middleware.CatchAllExceptionsMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]

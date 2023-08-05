@@ -12,23 +12,28 @@ UserModel = get_user_model()
 
 
 class DashboardView(views.ListView):
-    model = Booking  # or def get_queryset изобщо няма да гледа модела
-    template_name = 'dashboard.html'  # Use the template name where you want to display the bookings
-    context_object_name = 'bookings'  # Name of the context variable to be used in the template
+    model = Booking
+    template_name = 'dashboard.html'
+    context_object_name = 'bookings'
     paginate_by = 1  # TODO not working properly
 
     def get_queryset(self):
         user = self.request.user
-        return Booking.objects.filter(employee=user)
+        return Booking.objects.filter(employee=user).order_by('start_date').all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
         current_date = timezone.now().date()
 
-        past_bookings = Booking.objects.filter(employee=user, start_date__lt=current_date).order_by('-start_date').all()
-        future_bookings = Booking.objects.filter(employee=user, start_date__gte=current_date).order_by(
-            'start_date').all()
+        past_bookings = Booking.objects.filter(
+            employee=user,
+            start_date__lt=current_date
+        ).order_by('-start_date').all()
+        future_bookings = Booking.objects.filter(
+            employee=user,
+            start_date__gte=current_date
+        ).order_by('start_date').all()
 
         # Retrieve the user profile for the current user
         try:
@@ -40,11 +45,6 @@ class DashboardView(views.ListView):
         context['profile'] = profile
         context['past_bookings'] = past_bookings
         context['future_bookings'] = future_bookings
-
-        # #TODO _set from the bookings because of the employee in the Booking model fk
-        # context['bookingsss'] = user.booking_set.all()
-        # bookings_count = Booking.objects.count()
-        # context['bookings_count'] = bookings_count
 
         return context
 

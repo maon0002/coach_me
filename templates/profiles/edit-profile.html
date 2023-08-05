@@ -61,6 +61,10 @@
                                 <button type="submit" class="btn btn-primary btn-block mb-4">
                                     Save
                                 </button>
+                                <!-- Cancel button -->
+                                <button type="button" class="btn btn-primary btn-block mb-4" id="cancelButton">
+                                    Cancel
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -68,5 +72,21 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // Add event listener to the Cancel button
+        document.getElementById('cancelButton').addEventListener('click', function () {
+            // Navigate to the dashboard page when the Cancel button is clicked
+            window.location.href = "{% url 'details profile' pk=object.pk %}";
+        });
+
+        // Add event listener to the form submission
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Submit the form using JavaScript
+            this.submit();
+        });
+    </script>
 
 {% endblock %}

@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
-{#{% load custom_tags %}#}
 {% load static %}
-{#{% load forms %}#}
-{#{% load widget_tweaks %}#}
+{% load forms %}
 
 {% block content %}
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    {#    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">#}
+    {#    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>#}
 
 
     <section class="text-center text-lg-start">
@@ -38,16 +36,16 @@
                         <div class="card-body p-5 shadow-5 text-center">
 
                             <h2 class="fw-bold mb-5">Edit Training</h2>
-                            <link rel="stylesheet" href="{% static '/css/styles.css' %}"/>
+                            {#                            <link rel="stylesheet" href="{% static '/css/styles.css' %}"/>#}
                             <img class="rounded-image"
                                  src="{{ object.service_image }}"
-                                 alt="Profile Picture"
+                                 alt="Training Picture"
                                  style="
                                  width: 50%;
                                  height: 40%;
                                     ">
 
-                            <form action="{% url 'edit training' slug=object.slug %}" method="post">
+                            <form action="{% url 'edit training' object.slug %}" method="post">
 
                                 <input type="hidden" value="{{ next }}" name="next"/>
 
@@ -58,9 +56,13 @@
 
                                 </div>
                                 <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>
+                                <button type="submit" class="btn btn-primary btn-block mb-4">
+                                    Save
+                                </button>
                                 <!-- Cancel button -->
-                                <button type="button" class="btn btn-primary btn-block mb-4" id="cancelButton">Cancel</button>
+                                <button type="button" class="btn btn-primary btn-block mb-4" id="cancelButton">
+                                    Cancel
+                                </button>
 
                             </form>
                         </div>
@@ -70,12 +72,29 @@
         </div>
     </section>
 
-        <script>
+    {#        <script>#}
+    {#        // Add event listener to the Cancel button#}
+    {#        document.getElementById('cancelButton').addEventListener('click', function () {#}
+    {#            // Navigate to the dashboard page when the Cancel button is clicked#}
+    {#            window.location.href = "{% url 'details training' slug=object.slug %}";#}
+    {#        });#}
+    {#    </script>#}
+
+    <script>
         // Add event listener to the Cancel button
         document.getElementById('cancelButton').addEventListener('click', function () {
             // Navigate to the dashboard page when the Cancel button is clicked
-            window.location.href = "{% url 'details training' slug=object.slug %}";
+            window.location.href = "{% url 'details training' object.slug %}";
+        });
+
+        // Add event listener to the form submission
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Submit the form using JavaScript
+            this.submit();
         });
     </script>
+
 
 {% endblock %}

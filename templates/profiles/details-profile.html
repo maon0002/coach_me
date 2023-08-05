@@ -1,17 +1,13 @@
 {% extends 'base.html' %}
-{#{% load forms %}#}
+{% load forms %}
 {% load static %}
-{#{% load widget_tweaks %}#}
-{#{% load forms custom_filters %}#}
+
 
 {% block content %}
 
-    <h1>Profile Details</h1>
-    <img src="{{ picture }}" alt="Profile Picture"
-         style="width: 5%" height="5%">
-
     <!-- Section: Design Block -->
-    <section class="text-center text-lg-start">
+    <section class="text-center text-lg-start"
+    style="padding-bottom: 10%">
         <style>
             .cascading-left {
                 margin-left: -30px;
@@ -86,7 +82,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

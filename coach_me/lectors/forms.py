@@ -19,19 +19,6 @@ class LectorList(forms.ModelForm):
 
 
 class LectorUpdateForm(forms.ModelForm):
-    # date_of_birth = forms.DateField(
-    #     widget=forms.DateInput(
-    #         attrs={
-    #             # 'class': 'form-control',
-    #             'class': 'date-icon',
-    #             'placeholder': 'YYYY-MM-DD',
-    #         }
-    #     ),
-    #     label='Date of birth',
-    #     required=False,  # Update this based on your requirements
-    #     input_formats=['%Y-%m-%d'],  # Specify the date input format
-    # )
-
     class Meta:
         model = BookingUserProfile
         # fields = '__all__'
@@ -48,15 +35,8 @@ class LectorUpdateForm(forms.ModelForm):
 
 class LectorDeleteForm(forms.ModelForm):
     class Meta:
-        model = BookingUserProfile
+        model = Lector
         fields = '__all__'
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        # Disable the 'user' field
-        # self.fields['user'].disabled = True
-        for field_name in self.fields:
-            self.fields[field_name].widget.attrs['disabled'] = True
 
 
 class LectorDetailsForm(forms.ModelForm):
@@ -67,6 +47,6 @@ class LectorDetailsForm(forms.ModelForm):
         self.fields['is_lector'].widget = forms.HiddenInput()
 
     class Meta:
-        model = BookingUserProfile
+        model = Lector
         # fields = '__all__'
         exclude = ['user', 'consent_terms', 'newsletter_subscription', 'is_lector', ]

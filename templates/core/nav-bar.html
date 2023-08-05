@@ -38,7 +38,8 @@
             <!-- for logged users-->
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    {% if user.is_authenticated %}
+                    {#                    {% if user.is_authenticated %}#}
+                    {% if request.user.is_authenticated and not request.user.is_staff %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'add booking' %}">Add Booking</a>
                         </li>
@@ -89,10 +90,81 @@
                                 </li>
                             </ul>
                         </li>
+                    {% elif request.user.is_authenticated and request.user.is_staff %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add booking' %}">Add Booking</a>
+                        </li>
 
-
-
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'dashboard' pk=request.user.pk %}">My Bookings</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                CoachMe
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- for logged users // profile pages-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                {{ user.email }}
+                                <img class="user-uni-pic" id="user-uni-img"
+                                     src="{% static '/images/profile-blue-default.png' %}"
+                                     alt="user-uni-pic"
+                                     style="width:20px"/>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'details profile' pk=request.user.pk %}">Profile
+                                        details</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'edit profile' pk=request.user.pk %}">Edit
+                                        profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'delete profile' pk=request.user.pk %}">Delete
+                                        profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'logout_user' %}">Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Admin
+                                <img class="user-uni-pic" id="user-uni-img"
+                                     src="{% static '/images/admin-person.png' %}"
+                                     alt="user-uni-pic"
+                                     style="width:20px"/>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'add lector' %}">
+                                        Add Lector</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'add training' %}">
+                                        Add Training</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'logout_user' %}">Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <!-- for anonymous users-->
                     {% else %}
                         <li class="nav-item">
@@ -111,373 +183,6 @@
                     {% endif %}
                 </ul>
             </div>
-
-
-
-
-
         </div>
     </nav>
 </section>
-
-{##}
-{##}
-{#{% load static %}#}
-{#<section id="nav-bar">#}
-{#    <nav class="navbar navbar-expand-lg bg-body-tertiary">#}
-{#        <style>#}
-{#            .logo-navbar {#}
-{#                width: auto;#}
-{#                height: auto;#}
-{#                margin-right: auto;#}
-{#            }#}
-{##}
-{#            .navbar-nav {#}
-{#                list-style: none;#}
-{#                display: flex;#}
-{#                margin-left: auto;#}
-{#                padding-right: 9%;#}
-{#            }#}
-{##}
-{#            .nav-item {#}
-{#                padding-right: 10px;#}
-{#            }#}
-{##}
-{#            .nav-item a:hover {#}
-{#                color: dodgerblue;#}
-{#            }#}
-{#        </style>#}
-{#        <div class="container-fluid">#}
-{#            <a class="navbar-brand" href="{% url 'index' %}">#}
-{#                <img class="logo-navbar" id="logo-img" src="{% static '/images/logo.png' %}" alt="logo"/>#}
-{#            </a>#}
-{#            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"#}
-{#                    data-bs-target="#navbarNavDropdown"#}
-{#                    aria-controls="navbarNavDropdown"#}
-{#                    aria-expanded="false"#}
-{#                    aria-label="Toggle navigation"#}
-{#            >#}
-{#                <span class="navbar-toggler-icon"></span>#}
-{#            </button>#}
-{#            <!-- for logged users-->#}
-{#            <div class="collapse navbar-collapse" id="navbarNavDropdown">#}
-{#                <ul class="navbar-nav">#}
-{#                    {% if user.is_authenticated %}#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{% url 'add booking' %}">Add Booking</a>#}
-{#                        </li>#}
-{##}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{% url 'dashboard' pk=request.user.pk %}">My Bookings</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item dropdown">#}
-{#                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"#}
-{#                               aria-expanded="false">#}
-{#                                CoachMe#}
-{#                            </a>#}
-{#                            <ul class="dropdown-menu">#}
-{#                                <li class="nav-item">#}
-{#                                    <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>#}
-{#                                </li>#}
-{#                            </ul>#}
-{#                        </li>#}
-{##}
-{#                        <!-- for logged users // profile pages-->#}
-{#                        <li class="nav-item dropdown">#}
-{#                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"#}
-{#                               aria-expanded="false">#}
-{#                                {{ user.email }}#}
-{#                                <img class="user-uni-pic" id="user-uni-img"#}
-{#                                     src="{% static '/images/profile-blue-default.webp' %}"#}
-{#                                     alt="user-uni-pic"#}
-{#                                     style="width:20px"/>#}
-{#                            </a>#}
-{#                            <ul class="dropdown-menu">#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'details profile' pk=request.user.pk %}">Profile#}
-{#                                        details</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'edit profile' pk=request.user.pk %}">Edit#}
-{#                                        profile</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'delete profile' pk=request.user.pk %}">Delete#}
-{#                                        profile</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'logout_user' %}">Logout#}
-{#                                    </a>#}
-{#                                </li>#}
-{#                            </ul>#}
-{#                        </li>#}
-{##}
-{##}
-{#                        <!-- for logged users // lector pages-->#}
-{#                        <li class="nav-item dropdown">#}
-{#                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"#}
-{#                               aria-expanded="false">#}
-{#                                Lectors#}
-{#                                <img class="user-uni-pic" id="user-uni-img"#}
-{#                                     src="{% static '/images/profile-blue-default.webp' %}"#}
-{#                                     alt="user-uni-pic"#}
-{#                                     style="width:20px"/>#}
-{#                            </a>#}
-{#                            <ul class="dropdown-menu">#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'details lector' pk=request.user.pk %}">Lector's#}
-{#                                        Profile#}
-{#                                        details</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'edit lector' pk=request.user.pk %}">Lector's#}
-{#                                        Edit#}
-{#                                        profile</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'delete lector' pk=request.user.pk %}">Lector's#}
-{#                                        Delete#}
-{#                                        profile</a>#}
-{#                                </li>#}
-{#                            </ul>#}
-{#                        </li>#}
-{##}
-{##}
-{#                        <!-- for logged users // training pages-->#}
-{#                        <li class="nav-item dropdown">#}
-{#                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"#}
-{#                               aria-expanded="false">#}
-{#                                Trainings#}
-{#                                <img class="user-uni-pic" id="user-uni-img"#}
-{#                                     src="{% static '/images/profile-blue-default.webp' %}"#}
-{#                                     alt="user-uni-pic"#}
-{#                                     style="width:20px"/>#}
-{#                            </a>#}
-{#                            <ul class="dropdown-menu">#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'add training' %}">Add Training</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'details training' pk=request.user.pk %}">Training details</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'edit training' pk=request.user.pk %}">Edit Training#}
-{#                                    </a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'delete training' pk=request.user.pk %}">Delete Training#}
-{#                                    </a>#}
-{#                                </li>#}
-{#                            </ul>#}
-{#                        </li>#}
-{##}
-{##}
-{#                        <!-- for anonymous users-->#}
-{#                    {% else %}#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link active" aria-current="page" href="{% url 'login_user' %}">Login</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link active" aria-current="page" href="{% url 'register_user' %}">Sign#}
-{#                                Up</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>#}
-{#                        </li>#}
-{#                    {% endif %}#}
-{#                </ul>#}
-{#            </div>#}
-{##}
-{##}
-{#        </div>#}
-{#    </nav>#}
-{#</section>#}
-{##}
-
-
-{#{% load static %}#}
-{#<section id="nav-bar">#}
-{#    <nav class="navbar navbar-expand-lg bg-body-tertiary">#}
-{#        <style>#}
-{#            .logo-navbar {#}
-{#                width: auto;#}
-{#                height: auto;#}
-{#                margin-right: auto;#}
-{#            }#}
-{##}
-{#            .navbar-nav {#}
-{#                list-style: none;#}
-{#                display: flex;#}
-{#                margin-left: auto;#}
-{#                padding-right: 9%;#}
-{#            }#}
-{##}
-{#            .nav-item {#}
-{#                padding-right: 10px;#}
-{#            }#}
-{##}
-{#            .nav-item a:hover {#}
-{#                color: dodgerblue;#}
-{#            }#}
-{#        </style>#}
-{#        <div class="container-fluid">#}
-{#            <a class="navbar-brand" href="{% url 'index' %}">#}
-{#                <img class="logo-navbar" id="logo-img" src="{% static '/images/logo.png' %}" alt="logo"/>#}
-{#            </a>#}
-{#            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"#}
-{#                    data-bs-target="#navbarNavDropdown"#}
-{#                    aria-controls="navbarNavDropdown"#}
-{#                    aria-expanded="false"#}
-{#                    aria-label="Toggle navigation"#}
-{#            >#}
-{#                <span class="navbar-toggler-icon"></span>#}
-{#            </button>#}
-{#            <!-- for logged users-->#}
-{#            <div class="collapse navbar-collapse" id="navbarNavDropdown">#}
-{#                <ul class="navbar-nav">#}
-{#                    {% if user.is_authenticated %}#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{% url 'add booking' %}">Add Booking</a>#}
-{#                        </li>#}
-{##}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{% url 'dashboard' pk=request.user.pk %}">My Bookings</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item dropdown">#}
-{#                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"#}
-{#                               aria-expanded="false">#}
-{#                                CoachMe#}
-{#                            </a>#}
-{#                            <ul class="dropdown-menu">#}
-{#                                <li class="nav-item">#}
-{#                                    <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>#}
-{#                                </li>#}
-{#                                <li class="nav-item">#}
-{#                                    <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>#}
-{#                                </li>#}
-{#                            </ul>#}
-{#                        </li>#}
-{#                        <!-- for logged users // profile pages-->#}
-{#                        <li class="nav-item dropdown">#}
-{#                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"#}
-{#                               aria-expanded="false">#}
-{#                                {{ user.email }}#}
-{#                                <img class="user-uni-pic" id="user-uni-img"#}
-{#                                     src="{% static '/images/profile-blue-default.webp' %}"#}
-{#                                     alt="user-uni-pic"#}
-{#                                     style="width:20px"/>#}
-{#                            </a>#}
-{#                            <ul class="dropdown-menu">#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'details profile' pk=request.user.pk %}">Profile#}
-{#                                        details</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'edit profile' pk=request.user.pk %}">Edit#}
-{#                                        profile</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'delete profile' pk=request.user.pk %}">Delete#}
-{#                                        profile</a>#}
-{#                                </li>#}
-{#                                <li>#}
-{#                                    <a class="dropdown-item" href="{% url 'logout_user' %}">Logout#}
-{#                                    </a>#}
-{#                                </li>#}
-{#                            </ul>#}
-{#                        </li>#}
-{##}
-{##}
-{##}
-{##}
-{#                        <!-- for anonymous users-->#}
-{#                    {% else %}#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link active" aria-current="page" href="{% url 'login_user' %}">Login</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link active" aria-current="page" href="{% url 'register_user' %}">Sign#}
-{#                                Up</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>#}
-{#                        </li>#}
-{#                    {% endif %}#}
-{#                </ul>#}
-{#            </div>#}
-{##}
-{##}
-{##}
-{##}
-{##}
-{#        </div>#}
-{#    </nav>#}
-{#</section>#}
-{##}
-
-{##}
-{#{% load static %}#}
-{##}
-{#<section id="nav-bar">#}
-{#    <nav class="navbar navbar-expand-lg bg-body-tertiary">#}
-{#        <style>#}
-{#            .logo-navbar {#}
-{#                width: auto;#}
-{#                height: auto;#}
-{#                margin-right: auto;#}
-{#            }#}
-{##}
-{#            .navbar-nav {#}
-{#                list-style: none;#}
-{#                display: flex;#}
-{#                margin-left: auto;#}
-{#                padding-right: 9%;#}
-{#            }#}
-{##}
-{#            .nav-item {#}
-{#                padding-right: 10px;#}
-{#            }#}
-{##}
-{#            .nav-item a:hover {#}
-{#                color: dodgerblue;#}
-{#            }#}
-{#        </style>#}
-{#        <div class="container-fluid">#}
-{#            <a class="navbar-brand" href="{% url 'index' %}">#}
-{#                <img class="logo-navbar" id="logo-img" src="{% static '/images/logo.png' %}" alt="logo"/>#}
-{#            </a>#}
-{#            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"#}
-{#                    data-bs-target="#navbarNavDropdown"#}
-{#                    aria-controls="navbarNavDropdown"#}
-{#                    aria-expanded="false"#}
-{#                    aria-label="Toggle navigation"#}
-{#            >#}
-{#                <span class="navbar-toggler-icon"></span>#}
-{#            </button>#}
-{#            <!-- for logged users-->#}
-{#            <div class="collapse navbar-collapse" id="navbarNavDropdown">#}
-{#                <ul class="navbar-nav">#}
-{#                    {% if user.is_anonymous %}#}
-{#                        {% include 'core/anonymous_navbar.html' %}#}
-{#                    {% elif user.is_staff %}#}
-{#                        {% include 'core/staff_navbar.html' %}#}
-{#                    {% elif booking_user_profile.is_lector %}#}
-{#                        {% include 'core/lector_navbar.html' %}#}
-{#                    {% elif booking_user_profile and user %}#}
-{#                        {% include 'core/regular_user_navbar.html' %}#}
-{#                    {% endif %}#}
-{#                </ul>#}
-{#            </div>#}
-{#        </div>#}
-{#    </nav>#}
-{#</section>#}
-{##}

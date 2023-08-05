@@ -144,7 +144,6 @@ class Booking(models.Model):
         validators=(
             validate_phone_numbers_formatting,
         )
-
     )
     company_name = models.CharField(
         max_length=200,

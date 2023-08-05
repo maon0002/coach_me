@@ -5,20 +5,23 @@
 
 {% block content %}
 
-    <section class="my-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div>
-                        <div class="table-responsive">
-
+    {% if not past_bookings and not future_bookings %}
+        <h3
+                style="text-align: center; color: deepskyblue">
+            {{ profile.first_name }} HAS NO BOOKINGS SCHEDULED BOOKINGS YET:
+        </h3>
+    {% else %}
+        <section class="my-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        {% if future_bookings %}
+                            <div>
+                            <div class="table-responsive">
                             <table class="table table-hover
-{#                             table-info #}
-{#                                table-bordered#}
                              table-striped">
                                 <h3
                                         style="text-align: center; color: deepskyblue">
-                                    {#                                    SCHEDULED BOOKINGS FOR {{ profile.first_name }}:#}
                                     SCHEDULED BOOKINGS:
                                 </h3>
                                 <hr>
@@ -35,14 +38,11 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
                                 {% for booking in future_bookings %}
                                     <tr>
                                         <td>{{ booking.booking_type }}</td>
                                         <td>{{ booking.start_date }} : {{ booking.start_time }}</td>
-                                        {#                                                    <td>{{ profile.full_name|capfirst }}</td>#}
                                         <td>{{ profile.full_name|capfirst }}</td>
-
                                         <td>{{ booking.lector }}</td>
                                         <td>{{ booking.training_mode }}</td>
                                         <td>
@@ -70,18 +70,17 @@
                                             </a>
                                         </td>
                                     </tr>
-
                                 {% endfor %}
-
                                 </tbody>
                             </table>
-                            <p> &nbsp;</p>
+                        {% endif %}
+                        <p> &nbsp;</p>
+                        {% if past_bookings %}
                             <table class="table table-hover table-secondary">
                                 <h3
                                         style="text-align: center; color: gray">
                                     PAST BOOKINGS:
                                 </h3>
-                                {#                                <hr>#}
                                 <thead>
                                 <tr>
                                     <th scope="col" style="background-color: white">TRAINING</th>
@@ -95,8 +94,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
-
                                 {% for booking in past_bookings %}
                                     <tr>
                                         <td style="color: gray">{{ booking.booking_type }}</td>
@@ -129,60 +126,16 @@
                                             </a>
                                         </td>
                                     </tr>
-
                                 {% endfor %}
-
-
                                 </tbody>
                             </table>
-
+                        {% endif %}
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-    </section>
-
-    {#    <!-- Pagination handling -->#}
-    {##}
-    {#    {% if is_paginated %}#}
-    {#        <nav aria-label="Page navigation">#}
-    {#            <ul class="pagination justify-content-center">#}
-    {#                {% if page_obj.has_previous %}#}
-    {#                    <li class="page-item">#}
-    {#                        <a class="page-link" href="?page=1">&laquo; first</a>#}
-    {#                    </li>#}
-    {#                    <li class="page-item">#}
-    {#                        <a class="page-link"#}
-    {#                           href="?page={{ page_obj.previous_page_number }}">previous</a>#}
-    {#                    </li>#}
-    {#                {% endif %}#}
-    {##}
-    {#                {% for num in page_obj.paginator.page_range %}#}
-    {#                    {% if page_obj.number == num %}#}
-    {#                        <li class="page-item active">#}
-    {#                            <span class="page-link">{{ num }}</span>#}
-    {#                        </li>#}
-    {#                    {% else %}#}
-    {#                        <li class="page-item">#}
-    {#                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>#}
-    {#                        </li>#}
-    {#                    {% endif %}#}
-    {#                {% endfor %}#}
-    {##}
-    {#                {% if page_obj.has_next %}#}
-    {#                    <li class="page-item">#}
-    {#                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a>#}
-    {#                    </li>#}
-    {#                    <li class="page-item">#}
-    {#                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last#}
-    {#                            &raquo;</a>#}
-    {#                    </li>#}
-    {#                {% endif %}#}
-    {#            </ul>#}
-    {#        </nav>#}
-    {#    {% endif %}#}
-    {% include 'core/pagination.html' %}
-
+        </section>
+        {% include 'core/pagination.html' %}
+    {% endif %}
 {% endblock %}

@@ -4,7 +4,9 @@ from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 
 from coach_me.accounts.models import BookingUser
+from coach_me.lectors.models import Lector
 from coach_me.profiles.models import BookingUserProfile
+from coach_me.trainings.models import Training
 
 
 class DefineModelsMixin:
@@ -32,6 +34,34 @@ class DefineModelsMixin:
             return booking_user
         else:
             return None
+
+    @staticmethod
+    def get_lectors_by_training(training, list_csv):
+
+        if Lector.objects.filter(service_integrity=training).all():
+            available_lectors = Lector.objects.filter(service_integrity=training).all()
+        else:
+            return None
+
+        if list_csv:
+            available_lectors_lst = [x.full_name for x in available_lectors]
+            return ", ".join(available_lectors_lst)
+
+        return available_lectors
+
+
+    @staticmethod
+    def get_trainings_by_lector(lector, list_csv):
+        if lector.service_integrity.exists():
+            available_trainings = lector.service_integrity.all()
+        else:
+            return None
+
+        if list_csv:
+            available_trainings_lst = [x.service_name for x in available_trainings]
+            return ", ".join(available_trainings_lst)
+
+        return available_trainings
 
 
 class DisabledFormFieldsMixin:
