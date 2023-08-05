@@ -1,49 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-    <section class="text-center text-lg-start" id="delete">
-        <div class="container">
-            <p>
-            <h1 style="
+    <main style="padding: 2%">
+        <section class="text-center text-lg-start" id="delete">
+            <div class="container">
+                <p>
+                <h1 style="
             color: crimson;
             display: inline-block;
                 ">Are you sure you want to delete </h1>
-            <h1 style="
+                <h1 style="
             color: #007bff;
             display: inline-block;"> &nbsp;{{ object.full_name }}</h1>
-
-            <h1 style="
+                <h1 style="
             color: crimson;
             display: inline-block;">?</h1>
-            </p>
-            <p>&nbsp;</p>
-            <!-- Delete Profile Form -->
-            <form class="delete-form" action="{% url 'delete lector' lector.slug %}" method="post">
-                <!-- Confirm Button -->
-                {% csrf_token %}
-
-
-                <div class="col-md-4">
-                    <img src="{{ object.lector_image }}" class="w-100 rounded-4 shadow-4"
-                         alt="{{ lector.full_name }} image"/>
-                    <p></p>
-                </div>
-
-                <div class="col-md-4">
-                    {#                    {% include 'common/bs4_form.html' with form=form %}#}
-
-
-                </div>
-
-                <button class="btn btn-primary btn-block mb-4 btn btn-danger" type="submit">
-                    Delete Lector
-                </button>
-            </form>
-            <!-- End Delete Profile Form -->
-        </div>
-
-    </section>
-
+                </p>
+                <p>&nbsp;</p>
+                <!-- Delete Profile Form -->
+                <form class="delete-form" action="{% url 'delete lector' lector.slug %}" method="post">
+                    <!-- Confirm Button -->
+                    {% csrf_token %}
+                    <div class="col-md-4">
+                        <img src="{{ object.lector_image }}" class="w-100 rounded-4 shadow-4"
+                             alt="{{ lector.full_name }} image"/>
+                        <p></p>
+                    </div>
+                    <button class="btn btn-primary btn-block mb-4 btn btn-danger" type="submit">
+                        Delete Lector
+                    </button>
+                </form>
+                <!-- End Delete Profile Form -->
+            </div>
+        </section>
+    </main>
 {% endblock %}
 

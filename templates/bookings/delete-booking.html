@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <section class="text-center text-lg-start" id="delete">
-        <div class="container">
-            <h1>Are you sure you want to delete your booking?</h1>
-            <!-- Delete Profile Form -->
-            <form class="delete-form" action="{% url 'delete booking' pk=booking.pk %}" method="post">
-                <!-- Confirm Button -->
-                {% csrf_token %}
-                {{ form.as_p}}
-                <button class="btn btn-primary btn-block mb-4" type="submit">Delete Booking</button>
-            </form>
-            <!-- End Delete Profile Form -->
-        </div>
-    </section>
+    <main style="padding: 2%">
+        <section class="text-center text-lg-start" id="delete">
+            <div class="container">
+                <h1>Are you sure you want to delete your booking?</h1>
+                <!-- Delete Profile Form -->
+                <form class="delete-form" action="{% url 'delete booking' pk=booking.pk %}" method="post">
+                    <!-- Confirm Button -->
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-primary btn-block mb-4" type="submit">Delete Booking</button>
+                </form>
+                <!-- End Delete Profile Form -->
+            </div>
+        </section>
+    </main>
 {% endblock %}
 

@@ -2,244 +2,75 @@
 {% load forms %}
 {% load static %}
 {% block content %}
-    {#    <form>#}
-    {#        {{ form.as_p }}#}
-    {#        {% csrf_token %}#}
-    {##}
-    {#    </form>#}
-    {#    <h1>Profile Details (simple)</h1>#}
-    {##}
-    {#    <p>First Name: {{ bookings_with_profile.first_name }}</p>#}
-    {#    <p>First Name: {{ booking.profile.first_name|capfirst   }}</p>#}
-    {#    <p>Last Name: {{ booking.profile.last_name|capfirst }}</p>#}
-    {#    <p>Last Name: {{ booking.first_name }}</p>#}
-    {#    <p>Last Name: {{ profile.first_name }}</p>#}
-    {##}
-    {#    <!-- Delete Profile Button -->#}
-    {#    <a href="{% url 'delete booking' pk=booking.pk %}" class="btn btn-danger">Delete Profile</a>#}
-    {##}
-    {#    <!-- Edit Profile Button -->#}
-    {#    <a href="{% url 'edit booking' pk=booking.pk %}" class="btn btn-primary">Edit Profile</a>#}
-    {#    <h1>Bookings (simple)</h1>#}
-    {##}
-    {#    <p>First Name: {{ booking.id }}</p>#}
-    {#    <p>First Name: {{ booking.first_name }}</p>#}
-    {#    <p>Last Name: {{ booking.last_name }}</p>#}
-    {#    <p>Last Name: {{ booking.last_name }}</p>#}
-    {#    <p>Last Name: {{ booking.lector }}</p>#}
-    {##}
-    {#    <h1>Profile_a (simple)</h1>#}
-    {##}
-    {#    <p>First Name: {{ profile_a.id }}</p>#}
-    {#    <p>First Name: {{ profile_a.first_name }}</p>#}
-    {#    <p>Last Name: {{ profile_a.last_name }}</p>#}
-    {#    <p>Last Name: {{ profile_a.last_name }}</p>#}
-    {#    <p>Last Name: {{ booking.lector }}</p>#}
-    {##}
-    {#    <h1>Booking Details</h1>#}
-    {#    <img src="{{ picture }}" alt="Profile Picture"#}
-    {#         style="width: 5%" height="5%">#}
-    {##}
-    {#    <!-- Section: Design Block -->#}
-    {#    <section class="text-center text-lg-start">#}
-    {#        <style>#}
-    {#            .cascading-left {#}
-    {#                margin-left: -30px;#}
-    {#            }#}
-    {##}
-    {#            @media (max-width: 992px) {#}
-    {#                .cascading-left {#}
-    {#                    margin-left: 0;#}
-    {#                }#}
-    {#            }#}
-    {#        </style>#}
-    {##}
-    {#        <!-- Jumbotron -->#}
-    {#        <div class="container py-4" style="#}
-    {#display: flex;#}
-    {#                justify-content: center;#}
-    {#                align-items: center;#}
-    {#                height: 100vh;">#}
-    {##}
-    {#            <div class="row g-0 align-items-center" style="padding-top: 10%">#}
-    {#                <div class="col-sm-5 col-md-6">#}
-    {#                    {% if training.service_image is not None %}#}
-    {#                        <div class="col-lg-6 mb-5 mb-lg-0"#}
-    {#                             style="#}
-    {#                                             width: 30%;#}
-    {#                                             height: 40%;">#}
-    {#                            <img src="{{ training.service_image }}" class="w-100 rounded-4 shadow-4"#}
-    {#                                 alt="login screen"/>#}
-    {#                        </div>#}
-    {#                        <p>&nbsp;</p>#}
-    {#                        <p><strong>Training: </strong> {{ booking.booking_type }}</p>#}
-    {#                        <p><strong>Training info: </strong> {{ training.service_description }}</p>#}
-    {#                    {% else %}#}
-    {#                        <div class="col-lg-6 mb-5 mb-lg-0">#}
-    {#                            <img src="{% static '/images/missing-person.png' %}" class="w-100 rounded-4 shadow-4"#}
-    {#                                 alt="login screen"/>#}
-    {#                        </div>#}
-    {#                    {% endif %}#}
-    {#                </div>#}
-    {#                <div class="row">#}
-    {#                    <div class="col-sm-6 col-md-5 col-lg-6">#}
-    {#                        <p><strong>Training: </strong> {{ booking.booking_type }}</p>#}
-    {#                        <p><strong>Training info: </strong> {{ training.service_description }}</p>#}
-    {##}
-    {#                    </div>#}
-    {#                </div>#}
-    {##}
-    {#                <div class="col-lg-6 mb-5 mb-lg-0">#}
-    {#                    <div class="card cascading-left" style="#}
-    {#                            background: hsla(0, 0%, 100%, 0.55);#}
-    {#                            backdrop-filter: blur(30px);#}
-    {#padding-top: 30%;#}
-    {#                            ">#}
-    {#                        <div class="card-body p-5 shadow-5 text-center">#}
-    {##}
-    {#                            <h2 class="fw-bold mb-5">Booking details</h2>#}
-    {##}
-    {#                            <input type="hidden" value="{{ next }}" name="next"/>#}
-    {#                            {% csrf_token %}#}
-    {#                            <div class="form-outline mb-4" style="text-align: left;">#}
-    {#                                {{ profile.first_name.field.verbose_name }}#}
-    {##}
-    {#                                <p><strong>First Name: </strong> {{ profile.first_name }}</p>#}
-    {#                                <p><strong>Last Name: </strong> {{ profile.last_name }}</p>#}
-    {#                                <p><strong>Date and Time: </strong> {{ booking.start_date }}, {{ booking.start_time }}#}
-    {#                                </p>#}
-    {#                                <p><strong>Phone: </strong> {{ booking.phone }}</p>#}
-    {#                                <p><strong>Company: </strong> {{ profile.company }}</p>#}
-    {#                                <p><strong>Company email: </strong> {{ profile.user }}</p>#}
-    {#                                <p><strong>Private email: </strong> {{ booking.private_email }}</p>#}
-    {#                                <p><strong>Training: </strong> {{ booking.booking_type }}</p>#}
-    {#                                <p><strong>Training info: </strong> {{ training.service_description }}</p>#}
-    {#                                <p><strong>Mode: </strong> {{ booking.training_mode }}</p>#}
-    {#                                <p><strong>Lector: </strong> {{ booking.lector }}</p>#}
-    {#                                <p><strong>Lector's email: </strong> {{ lector.email }}</p>#}
-    {#                                <p><strong>Lector's phone: </strong> {{ lector.phone }}</p>#}
-    {#                                <p><strong>Notes: </strong> {{ booking.notes }}</p>#}
-    {#                                <p><strong>Scheduled on: </strong> {{ booking.date_scheduled }}</p>#}
-    {#                                <p><strong>Preferred platform: </strong> {{ booking.preferred_platforms }}</p>#}
-    {##}
-    {##}
-    {#                            </div>#}
-    {##}
-    {##}
-    {#                            <!-- Delete Profile Button -->#}
-    {#                            <a href="{% url 'delete booking' pk=object.pk %}" class="btn btn-danger">Delete#}
-    {#                            <a href="{% url 'delete booking' %}" class="btn btn-danger">Delete#}
-    {#                                Booking</a>#}
-    {##}
-    {#                            <!-- Edit Profile Button -->#}
-    {#                            <a href="{% url 'edit booking' pk=object.pk %}" class="btn btn-primary">Edit Booking</a>#}
-    {#                            <a href="{% url 'edit booking' %}" class="btn btn-primary">Edit Booking</a>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {##}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </section>#}
-    {##}
-    {#{% endblock %}#}
-
-
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-sm-5 col-md-6">
-                {#        Training Picture#}
-                {#            {% if training.service_image is not None %}#}
-                {#                <div class="col-lg-6 mb-5 mb-lg-0"#}
-                {#                     style="#}
-                {#                                             width: 30%;#}
-                {#                                             height: 40%;">#}
-                {#                    <img src="{{ training.service_image }}" class="w-100 rounded-4 shadow-4"#}
-                {#                         alt="login screen"/>#}
-                {#                </div>#}
-                {#                <p>&nbsp;</p>#}
-                {#                        <p><strong>Training: </strong> {{ booking.booking_type }}</p>#}
-                {#                        <p><strong>Training info: </strong> {{ training.service_description }}</p>#}
-                {#            {% else %}#}
-                {#                <div class="col-lg-6 mb-5 mb-lg-0">#}
-                {#                    <img src="{% static '/images/missing-person.png' %}" class="w-100 rounded-4 shadow-4"#}
-                {#                         alt="login screen"/>#}
-                {#                </div>#}
-                {#            {% endif %}#}
+    <main style="padding: 2%">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-5 col-md-6">
+                </div>
+                <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                </div>
             </div>
-            <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
-
-
-            </div>
-        </div>
-        <div class="row">
-
-            <div class="col-sm-6 col-md-5 col-lg-6">
-                {#        Training Details#}
-                <p> &nbsp;</p>
-                {#            <p>	&nbsp;</p>#}
-
-                <h2 class="fw-bold mb-5" style="text-align: left">Training Details</h2>
-                {% if training.service_image is not None %}
-                    <div class="colM"
-                         style="text-align: left;
+            <div class="row">
+                <div class="col-sm-6 col-md-5 col-lg-6">
+                    <p> &nbsp;</p>
+                    <h2 class="fw-bold mb-5" style="text-align: left">Training Details</h2>
+                    {% if training.service_image is not None %}
+                        <div class="colM"
+                             style="text-align: left;
                              width: 90%;
                              height: 70%;">
-                        <img src="{{ training.service_image }}" class="w-100 rounded-4 shadow-4"
-                             alt="login screen"/>
-                        <p></p>
-                        <p><strong>Training: </strong> {{ booking.booking_type }}</p>
-                        <p><strong>Training info: </strong> {{ training.service_description }}</p>
-                    </div>
-                {% endif %}
-
-
-            </div>
-            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
-                <div class="card cascading-left" style="
-                        background: hsla(0, 0%, 100%, 0.55);
-                        backdrop-filter: blur(30px);
-                        {#padding-top: 30%;#}
-                        ">
-                    <div class="card-body p-5 shadow-5 text-center">
-                        <h2 class="fw-bold mb-5">Booking details</h2>
-
-                        <input type="hidden" value="{{ next }}" name="next"/>
-                        {% csrf_token %}
-                        <div class="form-outline mb-4" style="text-align: left;">
-                            {{ profile.first_name.field.verbose_name }}
-
-                            <p><strong>First Name: </strong> {{ profile.first_name }}</p>
-                            <p><strong>Last Name: </strong> {{ profile.last_name }}</p>
-                            <p><strong>Date and Time: </strong> {{ booking.start_date }}, {{ booking.start_time }}
-                            </p>
-                            <p><strong>Phone: </strong> {{ booking.phone }}</p>
-                            <p><strong>Company: </strong> {{ company.short_company_name }}</p>
-                            <p><strong>Company email: </strong> {{ profile.user }}</p>
-                            <p><strong>Private email: </strong> {{ booking.private_email }}</p>
-                            {#                                <p><strong>Training: </strong> {{ booking.booking_type }}</p>#}
-                            {#                            <p><strong>Training info: </strong> {{ training.service_description }}</p>#}
-                            <p><strong>Mode: </strong> {{ booking.training_mode }}</p>
-                            <p><strong>Lector: </strong> {{ booking.lector }}</p>
-                            <p><strong>Lector's email: </strong> {{ lector.email }}</p>
-                            <p><strong>Lector's phone: </strong> {{ lector.phone }}</p>
-                            <p><strong>Notes: </strong> {{ booking.notes }}</p>
-                            <p><strong>Scheduled on: </strong> {{ booking.date_scheduled }}</p>
-                            <p><strong>Preferred platform: </strong> {{ booking.preferred_platforms }}</p>
+                            <img src="{{ training.service_image }}" class="w-100 rounded-4 shadow-4"
+                                 alt="login screen"/>
+                            <p></p>
+                            <p><strong>Training: </strong> {{ booking.booking_type }}</p>
+                            <p><strong>Training info: </strong> {{ training.service_description }}</p>
                         </div>
+                    {% endif %}
 
-                        {% if not booking.start_date <= current_date %}
-                            <!-- Delete Profile Button -->
-                            <a href="{% url 'delete booking' pk=object.pk %}" class="btn btn-danger">Delete
-                                Booking</a>
+                </div>
+                <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+                    <div class="card cascading-left" style="
+                            background: hsla(0, 0%, 100%, 0.55);
+                            backdrop-filter: blur(30px);
+                            {#padding-top: 30%;#}
+                            ">
+                        <div class="card-body p-5 shadow-5 text-center">
+                            <h2 class="fw-bold mb-5">Booking details</h2>
 
-                            <!-- Edit Profile Button -->
-                            <a href="{% url 'edit booking' pk=object.pk %}" class="btn btn-primary">Edit Booking</a>
-                        {% endif %}
+                            <input type="hidden" value="{{ next }}" name="next"/>
+                            {% csrf_token %}
+                            <div class="form-outline mb-4" style="text-align: left;">
+                                {{ profile.first_name.field.verbose_name }}
+
+                                <p><strong>First Name: </strong> {{ profile.first_name }}</p>
+                                <p><strong>Last Name: </strong> {{ profile.last_name }}</p>
+                                <p><strong>Date and Time: </strong> {{ booking.start_date }}, {{ booking.start_time }}
+                                </p>
+                                <p><strong>Phone: </strong> {{ booking.phone }}</p>
+                                <p><strong>Company: </strong> {{ company.short_company_name }}</p>
+                                <p><strong>Company email: </strong> {{ profile.user }}</p>
+                                <p><strong>Private email: </strong> {{ booking.private_email }}</p>
+                                <p><strong>Mode: </strong> {{ booking.training_mode }}</p>
+                                <p><strong>Lector: </strong> {{ booking.lector }}</p>
+                                <p><strong>Lector's email: </strong> {{ lector.email }}</p>
+                                <p><strong>Lector's phone: </strong> {{ lector.phone }}</p>
+                                <p><strong>Notes: </strong> {{ booking.notes }}</p>
+                                <p><strong>Scheduled on: </strong> {{ booking.date_scheduled }}</p>
+                                <p><strong>Preferred platform: </strong> {{ booking.preferred_platforms }}</p>
+                            </div>
+
+                            {% if not booking.start_date <= current_date %}
+                                <!-- Delete Profile Button -->
+                                <a href="{% url 'delete booking' pk=object.pk %}" class="btn btn-danger">Delete
+                                    Booking</a>
+
+                                <!-- Edit Profile Button -->
+                                <a href="{% url 'edit booking' pk=object.pk %}" class="btn btn-primary">Edit Booking</a>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </main>
 {% endblock %}

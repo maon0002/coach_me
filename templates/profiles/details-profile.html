@@ -4,86 +4,89 @@
 
 
 {% block content %}
-
-    <!-- Section: Design Block -->
-    <section class="text-center text-lg-start"
-    style="padding-bottom: 10%">
-        <style>
-            .cascading-left {
-                margin-left: -30px;
-            }
-
-            @media (max-width: 992px) {
+    <main style="padding: 2%">
+        <!-- Section: Design Block -->
+        <section class="text-center text-lg-start"
+                 style="padding-bottom: 10%">
+            <style>
                 .cascading-left {
-                    margin-left: 0;
+                    margin-left: -30px;
                 }
-            }
-        </style>
 
-        <!-- Jumbotron -->
-        <div class="container py-4" style="
-                {#display: flex;#}
-                justify-content: center;
-                align-items: center;
-                height: 100vh;">
+                @media (max-width: 992px) {
+                    .cascading-left {
+                        margin-left: 0;
+                    }
+                }
+            </style>
 
-            <div class="row g-0 align-items-center" style="padding-top: 10%">
+            <!-- Jumbotron -->
+            <div class="container py-4" style="
+                    {#display: flex;#}
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;">
 
-                {% if object.picture is not None %}
-                    <div class="col-lg-6 mb-5 mb-lg-0"
-                         style="
+                <div class="row g-0 align-items-center"
+                        {#                 style="padding-top: 10%"#}
+                >
+
+                    {% if object.picture is not None %}
+                        <div class="col-lg-6 mb-5 mb-lg-0"
+                             style="
                              width: 30%;
                              height: 40%;">
-                        <img src="{{ object.picture }}" class="w-100 rounded-4 shadow-4"
-                             alt="login screen"/>
-                    </div>
-                {% else %}
+                            <img src="{{ object.picture }}" class="w-100 rounded-4 shadow-4"
+                                 alt="login screen"/>
+                        </div>
+                    {% else %}
+                        <div class="col-lg-6 mb-5 mb-lg-0">
+                            <img src="{% static '/images/missing-person.png' %}" class="w-100 rounded-4 shadow-4"
+                                 alt="login screen"/>
+                        </div>
+                    {% endif %}
+
                     <div class="col-lg-6 mb-5 mb-lg-0">
-                        <img src="{% static '/images/missing-person.png' %}" class="w-100 rounded-4 shadow-4"
-                             alt="login screen"/>
-                    </div>
-                {% endif %}
+                        <div class="card cascading-left" style="
+                                background: hsla(0, 0%, 100%, 0.55);
+                                backdrop-filter: blur(30px);
+                                {#padding-top: 30%;#}
+                                ">
+                            <div class="card-body p-5 shadow-5 text-center">
 
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="card cascading-left" style="
-                            background: hsla(0, 0%, 100%, 0.55);
-                            backdrop-filter: blur(30px);
-                            {#padding-top: 30%;#}
-                            ">
-                        <div class="card-body p-5 shadow-5 text-center">
+                                <h2 class="fw-bold mb-5">Profile details</h2>
 
-                            <h2 class="fw-bold mb-5">Profile details</h2>
+                                <input type="hidden" value="{{ next }}" name="next"/>
+                                {% csrf_token %}
 
-                            <input type="hidden" value="{{ next }}" name="next"/>
-                            {% csrf_token %}
-
-                            <div class="form-outline mb-4" style="text-align: left;">
-                                <strong>Registration email: </strong> {{ user.email }}
-                            </div>
-
-                            {% for field_name, field_value in fields %}
                                 <div class="form-outline mb-4" style="text-align: left;">
-                                    <strong>{{ field_name|title|ljust:"100" }}:</strong> {{ field_value }}
+                                    <strong>Registration email: </strong> {{ user.email }}
                                 </div>
-                            {% endfor %}
-                            <div class="form-outline mb-4" style="text-align: left;">
-                                <strong>Company: </strong> {{ company_name }}
-                            </div>
-                            <div class="form-outline mb-4" style="text-align: left;">
-                                <strong>Bookings count: </strong>  {{ bookings_count }}   (active: {{ active_bookings_count }}, inactive: {{ past_booking_count }})
-                            </div>
 
-                            <!-- Delete Profile Button -->
-                            <a href="{% url 'delete profile' pk=object.pk %}" class="btn btn-danger">Delete
-                                Profile</a>
+                                {% for field_name, field_value in fields %}
+                                    <div class="form-outline mb-4" style="text-align: left;">
+                                        <strong>{{ field_name|title|ljust:"100" }}:</strong> {{ field_value }}
+                                    </div>
+                                {% endfor %}
+                                <div class="form-outline mb-4" style="text-align: left;">
+                                    <strong>Company: </strong> {{ company_name }}
+                                </div>
+                                <div class="form-outline mb-4" style="text-align: left;">
+                                    <strong>Bookings count: </strong> {{ bookings_count }}
+                                    (active: {{ active_bookings_count }}, inactive: {{ past_booking_count }})
+                                </div>
 
-                            <!-- Edit Profile Button -->
-                            <a href="{% url 'edit profile' pk=object.pk %}" class="btn btn-primary">Edit Profile</a>
+                                <!-- Delete Profile Button -->
+                                <a href="{% url 'delete profile' pk=object.pk %}" class="btn btn-danger">Delete
+                                    Profile</a>
+
+                                <!-- Edit Profile Button -->
+                                <a href="{% url 'edit profile' pk=object.pk %}" class="btn btn-primary">Edit Profile</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    </main>
 {% endblock %}

@@ -1,49 +1,16 @@
-{#<footer style="#}
-{#        position: fixed;#}
-{#        bottom: 0;#}
+<footer>
+    @CoachMe - <a class="text-dark" href="https://github.com/maon0002">Maon Team</a> 2023. All rights reserved.
+</footer>
+
+{#<style>#}
+{#    footer {#}
+        {#position: absolute;#}
+{#        position: relative;#}
+        {#bottom: 0;#}
 {#        left: 0;#}
 {#        width: 100%;#}
 {#        background-color: whitesmoke;#}
 {#        padding: 10px;#}
-{#        text-align: center;">#}
-{#    @CoachMe - <a class="text-dark" href="https://github.com/maon0002">Maon Team</a> 2023. All rights reserved.#}
-{#</footer>#}
-
-
-
-<head>
-    <!-- Add your head content here (e.g., meta tags, title, CSS links) -->
-    <style>
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: whitesmoke;
-            padding: 10px;
-            text-align: center;
-            display: none; /* Hide the footer initially */
-        }
-    </style>
-</head>
-<body>
-<!-- Add your main content here -->
-
-<!-- footer -->
-<footer id="fixed-footer">
-    @CoachMe - <a class="text-dark" href="https://github.com/maon0002">Maon Team</a> 2023. All rights reserved.
-</footer>
-
-<script>
-    // Show the footer when the user reaches the bottom of the page
-    window.addEventListener('scroll', function () {
-        var footer = document.getElementById('fixed-footer');
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            footer.style.display = 'block';
-        } else {
-            footer.style.display = 'none';
-        }
-    });
-</script>
-</body>
-
+{#        text-align: center;#}
+{#    }#}
+{#</style>#}

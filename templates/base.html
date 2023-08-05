@@ -9,13 +9,35 @@
     {% include 'core/header.html' %}
 </div>
 
-{% block content %}
-{% endblock %}
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
 
 {% include 'core/footer.html' %}
+
+
+<style>
+    /* Add padding to create space between content and footer */
+    main {
+        padding-bottom: 50px; /* Adjust the value as needed */
+        min-height: calc(100vh - 58px); /* Subtract the height of the fixed navbar */
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: whitesmoke;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous">
 </script>
 </body>
+</html>

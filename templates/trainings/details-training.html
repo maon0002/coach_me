@@ -2,55 +2,55 @@
 {% load forms %}
 {% load static %}
 {% block content %}
-
-    <div class="container card" style="padding: 5%">
-        <div class="row">
-            <div class="col">
-                <div class="flex-container">
+    <main style="padding: 2%">
+        <div class="container card" style="padding: 5%">
+            <div class="row">
+                <div class="col">
                     <div class="flex-container">
-                        <input type="hidden" value="{{ next }}" name="next"/>
-                        {% csrf_token %}
-                        <div class="form-outline mb-4" style="text-align: left;">
-                            {% if training.service_image is not None %}
-                                <div class="colM"
-                                     style="text-align: left;
+                        <div class="flex-container">
+                            <input type="hidden" value="{{ next }}" name="next"/>
+                            {% csrf_token %}
+                            <div class="form-outline mb-4" style="text-align: left;">
+                                {% if training.service_image is not None %}
+                                    <div class="colM"
+                                         style="text-align: left;
                              width: 90%;
                              height: 70%;">
-                                    <img src="{{ training.service_image }}" class="w-100 rounded-4 shadow-4"
-                                         alt="login screen"/>
-                                    <p></p>
-                                </div>
+                                        <img src="{{ training.service_image }}" class="w-100 rounded-4 shadow-4"
+                                             alt="login screen"/>
+                                        <p></p>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="flex-container">
+                        <div class="flex-container">
+                            <input type="hidden" value="{{ next }}" name="next"/>
+                            {% csrf_token %}
+                            <div class="form-outline mb-4" style="text-align: left;">
+                                <h2 class="fw-bold mb-5" style="text-align: center">
+                                    {{ training.service_name }}
+                                </h2>
+                                <p><strong>Training info: </strong> {{ training.service_description }}</p>
+                                <p><strong>Available lectors: </strong> {{ available_lectors }}</p>
+                            </div>
+                            {% if user.is_staff %}
+                                <!-- Delete Profile Button -->
+                                <a href="{% url 'delete training' slug=object.slug %}" class="btn btn-danger">
+                                    Delete
+                                </a>
+                                <!-- Edit Profile Button -->
+                                <a href="{% url 'edit training' slug=object.slug %}" class="btn btn-primary">
+                                    Edit
+                                </a>
                             {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="flex-container">
-                    <div class="flex-container">
-                        <input type="hidden" value="{{ next }}" name="next"/>
-                        {% csrf_token %}
-                        <div class="form-outline mb-4" style="text-align: left;">
-                            <h2 class="fw-bold mb-5" style="text-align: center">
-                                {{ training.service_name }}
-                            </h2>
-                            <p><strong>Training info: </strong> {{ training.service_description }}</p>
-                            <p><strong>Available lectors: </strong> {{ available_lectors }}</p>
-                        </div>
-                        {% if user.is_staff %}
-                            <!-- Delete Profile Button -->
-                            <a href="{% url 'delete training' slug=object.slug %}" class="btn btn-danger">
-                                Delete
-                            </a>
-                            <!-- Edit Profile Button -->
-                            <a href="{% url 'edit training' slug=object.slug %}" class="btn btn-primary">
-                                Edit
-                            </a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-
+    </main>
 {% endblock %}
