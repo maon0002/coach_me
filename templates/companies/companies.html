@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load forms %}
+{% load static %}
+{% block content %}
+
+    <main class="my-5">
+        <div class="container">
+            <div id="intro" class="p-5 text-center bg-light">
+                <section class="my-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <div>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover
+                             table-striped">
+                                            <h3
+                                                    style="text-align: center; color: deepskyblue">
+                                                Companies list:
+                                            </h3>
+                                            <hr>
+                                            <thead>
+                                            <tr>
+                                                <th scope="col" style="background-color: white">SHORT NAME</th>
+                                                <th scope="col" style="background-color: white">LEGAL NAME</th>
+                                                <th scope="col" style="background-color: white">REG NUM</th>
+                                                <th scope="col" style="background-color: white">CONTACT PERSON</th>
+                                                <th scope="col" style="background-color: white">CONTACT ROLE</th>
+                                                <th scope="col" style="background-color: white">CONTACT EMAIL</th>
+                                                <th scope="col" style="background-color: white">CONTACT PHONE</th>
+                                                <th scope="col" style="background-color: white">CONTRACT START</th>
+                                                <th scope="col" style="background-color: white">CONTRACT END</th>
+                                                <th scope="col" style="background-color: white">DETAILS</th>
+                                                <th scope="col" style="background-color: white">EDIT</th>
+                                                <th scope="col" style="background-color: white">DELETE</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for company in company_list %}
+                                                <tr>
+                                                    <td>{{ company.short_company_name }}</td>
+                                                    <td>{{ company.legal_company_name }}</td>
+                                                    <td>{{ company.company_register_number }}</td>
+                                                    <td>{{ company.contact_person_names }}</td>
+                                                    <td>{{ company.contact_person_role }}</td>
+                                                    <td>{{ company.contact_person_email }}</td>
+                                                    <td>{{ company.contact_person_phone }}</td>
+                                                    <td>{{ company.contract_start_date }}</td>
+                                                    <td>{{ company.contract_end_date }}</td>
+                                                    <td>
+                                                        <a class="details-booking-button"
+                                                           href="{% url 'details company' slug=company.slug %}">
+                                                            <img src="{% static '/images/eye.png' %}"
+                                                                 style="width: 25px; margin:auto; text-align:center; display:block;"
+                                                                 alt="edit-booking">
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="edit-booking-button"
+                                                           href="{% url 'edit company' slug=company.slug %}">
+                                                            <img src="{% static '/images/edit-icon.png' %}"
+                                                                 style="width: 20px; margin:auto; text-align:center; display:block;"
+                                                                 alt="edit-booking">
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="delete-booking-button"
+                                                           href="{% url 'delete company' slug=company.slug %}">
+                                                            <img src="{% static 'images/delete-booking-icon.png' %}"
+                                                                 style="width: 20px; margin:auto; text-align:center; display:block;"
+                                                                 alt="delete-booking">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                        <p> &nbsp;</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {% include 'core/pagination.html' %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -57,7 +57,7 @@ class TrainingDetailsView(views.DetailView):
         return context
 
 
-class TrainingUpdateView(LoginRequiredMixin, views.UpdateView):
+class TrainingUpdateView(LoginRequiredMixin, IsStaffdMixin, views.UpdateView):
     model = Training
     template_name = 'trainings/edit-training.html'
     fields = '__all__'
@@ -66,7 +66,7 @@ class TrainingUpdateView(LoginRequiredMixin, views.UpdateView):
         return reverse_lazy('details training', kwargs={'slug': self.object.slug})
 
 
-class TrainingDeleteView(LoginRequiredMixin, views.DeleteView):
+class TrainingDeleteView(LoginRequiredMixin, IsStaffdMixin, views.DeleteView):
     model = Training
     template_name = 'trainings/delete-training.html'
     success_url = reverse_lazy('trainings')

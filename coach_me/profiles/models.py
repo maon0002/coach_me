@@ -3,6 +3,8 @@ from django.core.validators import MinLengthValidator
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
+from django.utils.text import slugify
+
 from coach_me.accounts.models import BookingUser
 from coach_me.bookings.validators import validate_if_string_is_alphanumeric
 
@@ -118,6 +120,8 @@ class Company(models.Model):
     MAX_CONTACT_PERSON_NAMES = 30
     MAX_CONTACT_PERSON_ROLE_LEN = 15
     MAX_COMPANY_DOMAIN_LEN = 15
+    SLUG_MAX_LENGTH = 255
+    PHONE_MAX_LENGTH = 13
 
     short_company_name = models.CharField(
         max_length=MAX_COMPANY_SHORT_NAME,
@@ -150,6 +154,11 @@ class Company(models.Model):
         max_length=MAX_CONTACT_PERSON_ROLE_LEN
     )
     contact_person_email = models.EmailField()
+    contact_person_phone = models.CharField(
+        max_length=PHONE_MAX_LENGTH,
+        null=False,
+        blank=False,
+    )
     contract_start_date = models.DateField()
     contract_end_date = models.DateField()
     company_domain = models.CharField(
@@ -159,8 +168,19 @@ class Company(models.Model):
         default=None,
     )
 
+    slug = models.SlugField(
+        max_length=SLUG_MAX_LENGTH,
+        unique=True,
+        blank=True)
+
     inserted_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            super().save(*args, **kwargs)
+            self.slug = slugify(f"{self.pk}-{self.short_company_name}")
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.id}: {self.short_company_name}'
