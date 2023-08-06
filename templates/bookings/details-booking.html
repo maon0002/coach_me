@@ -60,12 +60,15 @@
                             </div>
 
                             {% if not booking.start_date <= current_date %}
-                                <!-- Delete Profile Button -->
-                                <a href="{% url 'delete booking' pk=object.pk %}" class="btn btn-danger">Delete
-                                    Booking</a>
+                                {% if profile_lector.is_lector == False%}
+                                    <!-- Delete Profile Button -->
+                                    <a href="{% url 'delete booking' pk=object.pk %}" class="btn btn-danger">Delete
+                                        Booking</a>
 
-                                <!-- Edit Profile Button -->
-                                <a href="{% url 'edit booking' pk=object.pk %}" class="btn btn-primary">Edit Booking</a>
+                                    <!-- Edit Profile Button -->
+                                    <a href="{% url 'edit booking' pk=object.pk %}" class="btn btn-primary">Edit
+                                        Booking</a>
+                                {% endif %}
                             {% endif %}
                         </div>
                     </div>

@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from coach_me.accounts.models import BookingUser
 from coach_me.bookings.mixins import DefineModelsMixin
 from coach_me.bookings.models import Booking
+from coach_me.lectors.models import Lector
 from coach_me.profiles.forms import ProfileUpdateForm, ProfileDetailsForm, CompanyListForm, CompanyDetailsForm
 from coach_me.profiles.models import BookingUserProfile, Company
 from django.views import generic as views, View
@@ -13,42 +14,146 @@ from django.utils import timezone
 UserModel = get_user_model()
 
 
-class DashboardView(views.ListView):
+class DashboardView(LoginRequiredMixin, views.ListView):
     model = Booking
     template_name = 'dashboard.html'
     context_object_name = 'bookings'
-    paginate_by = 10  # TODO not working properly
+    paginate_by = 2  # TODO not working properly
 
     def get_queryset(self):
         user = self.request.user
-        return Booking.objects.filter(employee=user).order_by('start_date').all()
+        booking_user = BookingUserProfile.objects.filter(pk=user.pk).get()
+        if not booking_user.is_lector:
+            bookings = Booking.objects.filter(employee=user).order_by('start_date').all()
+            return bookings
+        elif booking_user.is_lector:
+            lector = Lector.objects.filter(user_id=user.pk).get()
+            bookings = Booking.objects.filter(lector_id=lector.pk).order_by('start_date').all()
+            return bookings
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
-        current_date = timezone.now().date()
+        booking_user = BookingUserProfile.objects.filter(pk=user.pk).get()
+        if not booking_user.is_lector:
+            current_date = timezone.now().date()
 
-        past_bookings = Booking.objects.filter(
-            employee=user,
-            start_date__lt=current_date
-        ).order_by('-start_date').all()
-        future_bookings = Booking.objects.filter(
-            employee=user,
-            start_date__gte=current_date
-        ).order_by('start_date').all()
+            past_bookings = Booking.objects.filter(
+                employee=user,
+                start_date__lt=current_date
+            ).order_by('-start_date').all()
+            future_bookings = Booking.objects.filter(
+                employee=user,
+                start_date__gte=current_date
+            ).order_by('start_date').all()
 
-        # Retrieve the user profile for the current user
-        try:
-            profile = BookingUserProfile.objects.get(pk=user.pk)
-        except BookingUserProfile.DoesNotExist:
-            profile = None
+            # Retrieve the user profile for the current user
+            try:
+                profile = BookingUserProfile.objects.get(pk=user.pk)
+            except BookingUserProfile.DoesNotExist:
+                profile = None
 
-        # Add the related BookingUserProfile to the context
-        context['profile'] = profile
-        context['past_bookings'] = past_bookings
-        context['future_bookings'] = future_bookings
+            # Add the related BookingUserProfile to the context
+            context['profile'] = profile
+            context['past_bookings'] = past_bookings
+            context['future_bookings'] = future_bookings
+
+
+        elif booking_user.is_lector:
+            lector = Lector.objects.filter(user_id=user.pk).get()
+            # current_booking = Booking.objects.filter(user_id=user.pk).get()
+            current_date = timezone.now().date()
+
+            past_bookings = Booking.objects.filter(
+                lector=lector,
+                start_date__lt=current_date
+            ).order_by('-start_date').all()
+
+            future_bookings = Booking.objects.filter(
+                lector=lector,
+                start_date__gte=current_date
+            ).order_by('start_date').all()
+
+            # Retrieve the user profile for the current user
+            try:
+                profile = BookingUserProfile.objects.get(pk=user.pk)
+
+            except BookingUserProfile.DoesNotExist:
+                profile = None
+
+            # Add the related BookingUserProfile to the context
+            context['profile'] = profile
+            context['past_bookings'] = past_bookings
+            context['future_bookings'] = future_bookings
+            context['lector'] = lector
+
 
         return context
+
+
+#             __class__
+# <class 'coach_me.profiles.views.DashboardView'>
+# booking_user
+# <BookingUserProfile: Maria Doe>
+# context
+# {'bookings': <QuerySet [<Booking: yy@dell.com>, <Booking: yy@dell.com>]>,
+#  'is_paginated': True,
+#  'object_list': <QuerySet [<Booking: yy@dell.com>, <Booking: yy@dell.com>]>,
+#  'page_obj': <Page 1 of 4>,
+#  'paginator': <django.core.paginator.Paginator object at 0x0573D988>,
+#  'view': <coach_me.profiles.views.DashboardView object at 0x0573DBC8>}
+# current_date
+# datetime.date(2023, 8, 6)
+# future_bookings
+# <QuerySet [<Booking: yy@dell.com>, <Booking: yy@dell.com>, <Booking: maon@dell.com>, <Booking: maon@dell.com>, <Booking: maon@dell.com>]>
+# kwargs
+# {}
+# lector
+# 1: Maria Doee
+# past_bookings
+# <QuerySet [<Booking: yy@dell.com>, <Booking: yy@dell.com>]>
+# self
+# <coach_me.profiles.views.DashboardView object at 0x0573DBC8>
+# user
+# <SimpleLazyObject: 12: maria.doe@coachme.com>
+
+#
+# class DashboardView(views.ListView):
+#     model = Booking
+#     template_name = 'dashboard.html'
+#     context_object_name = 'bookings'
+#     paginate_by = 10  # TODO not working properly
+#
+#     def get_queryset(self):
+#         user = self.request.user
+#         return Booking.objects.filter(employee=user).order_by('start_date').all()
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         user = self.request.user
+#         current_date = timezone.now().date()
+#
+#         past_bookings = Booking.objects.filter(
+#             employee=user,
+#             start_date__lt=current_date
+#         ).order_by('-start_date').all()
+#         future_bookings = Booking.objects.filter(
+#             employee=user,
+#             start_date__gte=current_date
+#         ).order_by('start_date').all()
+#
+#         # Retrieve the user profile for the current user
+#         try:
+#             profile = BookingUserProfile.objects.get(pk=user.pk)
+#         except BookingUserProfile.DoesNotExist:
+#             profile = None
+#
+#         # Add the related BookingUserProfile to the context
+#         context['profile'] = profile
+#         context['past_bookings'] = past_bookings
+#         context['future_bookings'] = future_bookings
+#
+#         return context
 
 
 class ProfileDetailsView(views.DetailView):

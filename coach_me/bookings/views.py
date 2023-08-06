@@ -178,16 +178,24 @@ class BookingDetailsView(LoginRequiredMixin, views.DetailView):
         current_date = timezone.now().date()
 
 
+        current_booking = Booking.objects.filter(pk=context['object'].pk).get()
+        # current_booking = get_object_or_404(Booking, pk=self.kwargs['pk'])
+
+
         # Retrieve the user profile for the current user
         try:
-            profile = BookingUserProfile.objects.get(pk=user.pk)
+            # profile = BookingUserProfile.objects.get(pk=user.pk)
+            profile = BookingUserProfile.objects.filter(pk=current_booking.employee_id).get()
         except BookingUserProfile.DoesNotExist:
             profile = None
+
+        profile_lector = BookingUserProfile.objects.get(pk=user.pk)
 
         company = Company.objects.filter(company_domain__iendswith=user.email.split('@')[1]).get()
 
         # Add the related BookingUserProfile to the context
         context['profile'] = profile
+        context['profile_lector'] = profile_lector
         context['lector'] = lector
         context['training'] = training
         context['company'] = company
