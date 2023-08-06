@@ -15,6 +15,7 @@ from coach_me.trainings.models import Training
 
 UserModel = get_user_model()
 
+
 class Booking(models.Model):
     FIRST_NAME_MAX_LENGTH = 30
     FIRST_NAME_MIN_LENGTH = 2
