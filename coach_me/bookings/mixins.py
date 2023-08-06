@@ -10,6 +10,9 @@ from coach_me.trainings.models import Training
 
 
 class DefineModelsMixin:
+    # def __init__(self):
+    #     self.request = None
+
     def get_booking_user_profile(self, *args, **kwargs):
         # Get the primary key (pk) of the logged-in user
         user_pk = self.request.user.pk
@@ -48,7 +51,6 @@ class DefineModelsMixin:
             return ", ".join(available_lectors_lst)
 
         return available_lectors
-
 
     @staticmethod
     def get_trainings_by_lector(lector, list_csv):
@@ -101,3 +103,5 @@ class AnonymousRequiredMixin(AccessMixin):
             return redirect(
                 'index')
         return super().dispatch(request, *args, **kwargs)
+
+

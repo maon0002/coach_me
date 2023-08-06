@@ -75,6 +75,7 @@
                                 </tbody>
                             </table>
                         {% endif %}
+
                         <p> &nbsp;</p>
                         {% if past_bookings %}
                             <table class="table table-hover table-secondary">
@@ -99,7 +100,7 @@
                                     <tr>
                                         <td style="color: gray">{{ booking.booking_type }}</td>
                                         <td style="color: gray">{{ booking.start_date }} : {{ booking.start_time }}</td>
-                                        <td style="color: gray">{{ profile.full_name|capfirst }}</td>
+                                        <td style="color: gray">{{ profile.first_name|capfirst }} {{ profile.last_name|capfirst }}</td>
                                         <td style="color: gray">{{ booking.lector }}</td>
                                         <td style="color: gray">{{ booking.training_mode }}</td>
                                         <td style="color: gray">
@@ -136,8 +137,9 @@
                     </div>
                 </div>
             </div>
-        </section>
         {% include 'core/pagination.html' %}
+        </section>
+{#        {% include 'core/pagination.html' %}#}
     {% endif %}
     </main>
 {% endblock %}

@@ -17,7 +17,7 @@ class DashboardView(views.ListView):
     model = Booking
     template_name = 'dashboard.html'
     context_object_name = 'bookings'
-    paginate_by = 1  # TODO not working properly
+    paginate_by = 10  # TODO not working properly
 
     def get_queryset(self):
         user = self.request.user

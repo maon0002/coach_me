@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A booking in your schedule was removed</title>
+    <style>
+        /* Your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .message {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: white;
+            color: dodgerblue;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="logo">
+        {#            <img src="https://drive.google.com/file/d/1QufNBZiR1ZjDHOF7SdjNAN6RN-LTXlf5/view?usp=sharing" alt="Logo">#}
+        <img src="https://images-platform.99static.com/c1q2uKpznRoV0MeqSUYoM3jwqKY=/500x500/top/smart/99designs-contests-attachments/49/49653/attachment_49653793"
+             alt="Logo">
+    </div>
+    <div class="header">
+{#        <h2>Nice job!</h2>#}
+    </div>
+    <div class="message">
+        <p>Hello <strong>{{ lector.first_name|capfirst }}</strong>,</p>
+        <p>A booking for <strong>"{{ training }}"</strong> from your schedule was just removed!</p>
+        <p>You can find the details below.</p>
+        <p>If you have any questions or need assistance, feel free to reach out to our support team.</p>
+
+    </div>
+
+    <div class="form-outline mb-4 card"
+         style="text-align: left;
+         padding-top: 3%;
+">
+
+        <h3>Deleted booking details:</h3>
+
+        <img src="{{ training.service_image }}"
+             alt="{{ training.service_name }} thumbnail"
+             style="height: 300px"
+        >
+
+
+        <p><strong>Employee: </strong>{{ profile.first_name|capfirst }} {{ profile.last_name|capfirst }}</p>
+        <p><strong>Scheduled for: </strong> {{ booking.start_date }}, {{ booking.start_time }}</p>
+        <p><strong>Employee Phone: </strong> {{ booking.phone }}</p>
+        <p><strong>Employee Company: </strong> {{ company.short_company_name }}</p>
+        <p><strong>Employee Company email: </strong> {{ profile.user }}</p>
+        <p><strong>Employee Private email: </strong> {{ booking.private_email }}</p>
+        <p><strong>Mode: </strong> {{ booking.training_mode }}</p>
+        <p><strong>Notes: </strong> {{ booking.notes }}</p>
+        <p><strong>Scheduled on: </strong> {{ booking.date_scheduled }}</p>
+        <p><strong>Preferred platform: </strong> {{ booking.preferred_platforms }}</p>
+    </div>
+
+    <div class="footer">
+        <p>Best regards,<br>CoachMe Team</p>
+    </div>
+</div>
+</body>
+
+</html>

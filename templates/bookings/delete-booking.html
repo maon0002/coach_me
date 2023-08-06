@@ -4,13 +4,33 @@
     <main style="padding: 2%">
         <section class="text-center text-lg-start" id="delete">
             <div class="container">
-                <h1>Are you sure you want to delete your booking?</h1>
+                <p>
+                <h1 style="
+            color: crimson;
+            display: inline-block;
+                ">Are you sure you want to delete Booking:</h1>
+                <h1 style="
+            color: #007bff;
+            display: inline-block;"> &nbsp;{{ booking.booking_type }}</h1>
+                <h1 style="
+            color: crimson;
+            display: inline-block;">?</h1>
+                </p>
+                <p>&nbsp;<strong>Booking date and time: </strong>
+                    {{ booking.start_date }} {{ booking.start_time }}
+                </p>
+                <p>&nbsp;<strong>Lector: </strong>
+                    {{ booking.lector}}
+                </p>
+
                 <!-- Delete Profile Form -->
                 <form class="delete-form" action="{% url 'delete booking' pk=booking.pk %}" method="post">
                     <!-- Confirm Button -->
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-primary btn-block mb-4" type="submit">Delete Booking</button>
+                    <button class="btn btn-primary btn-block mb-4 btn btn-danger" type="submit">
+                        Delete Booking
+                    </button>
                 </form>
                 <!-- End Delete Profile Form -->
             </div>
