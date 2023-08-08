@@ -1,4 +1,4 @@
-# CoachMe - Soft Skills Training Platform
+# CoachMe - Soft Skills Training Platform (demo exam project)
 
 CoachMe is an innovative web application designed to help organizations effortlessly schedule and manage soft skills training for their employees. This platform aims to empower the workforce with valuable professional development opportunities through a user-friendly and intuitive booking system.
 
