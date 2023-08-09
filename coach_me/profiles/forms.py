@@ -7,14 +7,14 @@ from coach_me.profiles.models import BookingUserProfile, Company
 UserModel = get_user_model()
 
 
-class ProfileDashboardForm(forms.ModelForm):
-    pass
-
-
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = BookingUserProfile
-        exclude = ['consent_terms', 'newsletter_subscription', 'is_lector']
+        exclude = [
+            'consent_terms',
+            'newsletter_subscription',
+            'is_lector',
+        ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

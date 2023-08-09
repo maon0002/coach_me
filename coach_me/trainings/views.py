@@ -1,15 +1,11 @@
-from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, IsStaffdMixin
-from django.forms import modelform_factory
 from django.shortcuts import redirect
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from django.views import generic as views
-from django.views.decorators.cache import cache_page
-from coach_me.bookings.models import Booking, Lector
 from coach_me.profiles.models import BookingUserProfile
 from coach_me.trainings.models import Training
-from coach_me.bookings.mixins import DisabledFormFieldsMixin, DefineModelsMixin
+from coach_me.bookings.mixins import DefineModelsMixin
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 
@@ -27,7 +23,7 @@ class TrainingListView(views.ListView):
     #     return super().dispatch(*args, **kwargs)
 
 
-class TrainingCreateView(LoginRequiredMixin, IsStaffdMixin, views.CreateView):
+class TrainingCreateView(IsStaffdMixin, views.CreateView):
     model = Training
     template_name = 'trainings/create-training.html'
     fields = '__all__'
@@ -57,7 +53,7 @@ class TrainingDetailsView(views.DetailView):
         return context
 
 
-class TrainingUpdateView(LoginRequiredMixin, IsStaffdMixin, views.UpdateView):
+class TrainingUpdateView(IsStaffdMixin, views.UpdateView):
     model = Training
     template_name = 'trainings/edit-training.html'
     fields = '__all__'
@@ -66,7 +62,7 @@ class TrainingUpdateView(LoginRequiredMixin, IsStaffdMixin, views.UpdateView):
         return reverse_lazy('details training', kwargs={'slug': self.object.slug})
 
 
-class TrainingDeleteView(LoginRequiredMixin, IsStaffdMixin, views.DeleteView):
+class TrainingDeleteView(IsStaffdMixin, views.DeleteView):
     model = Training
     template_name = 'trainings/delete-training.html'
     success_url = reverse_lazy('trainings')

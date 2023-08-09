@@ -10,8 +10,7 @@ from coach_me.trainings.models import Training
 
 
 class DefineModelsMixin:
-    # def __init__(self):
-    #     self.request = None
+
 
     def get_booking_user_profile(self, *args, **kwargs):
         # Get the primary key (pk) of the logged-in user
@@ -64,23 +63,6 @@ class DefineModelsMixin:
             return ", ".join(available_trainings_lst)
 
         return available_trainings
-
-
-class DisabledFormFieldsMixin:
-    disabled_fields = ()
-
-    def get_form(self, *args, **kwargs):
-        form = super().get_form(*args, **kwargs)
-
-        # fields = self.disabled_fields \
-        # if self.disabled_fields != '__all__' \
-        # else
-
-        for field in self.disabled_fields:
-            form.fields[field].widget.attrs['disabled'] = 'disabled'
-            form.fields[field].widget.attrs['readonly'] = 'readonly'
-
-        return form
 
 
 class MyModelMixin:

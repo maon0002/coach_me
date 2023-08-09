@@ -1,8 +1,84 @@
+{#{% extends 'base.html' %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{##}
+{##}
+{#    <main style="padding: 2%">#}
+        {#        <section class="text-center text-lg-start">#}
+{#        <section>#}
+{#            <style>#}
+{#                .cascading-right {#}
+{#                    margin-right: -50px;#}
+{#                }#}
+{##}
+{#                @media (max-width: 992px) {#}
+{#                    .cascading-right {#}
+{#                        margin-right: 0;#}
+{#                    }#}
+{#                }#}
+{#            </style>#}
+{#            <!-- Jumbotron -->#}
+{#            <div class="container py-4" style="#}
+                    {#display: flex;#}
+{#                    justify-content: center;#}
+{#                    align-items: center;#}
+{#                    height: 100vh;#}
+{#                    width: 100vh;">#}
+{##}
+{#                <div class="row g-0 align-items-center" style="padding-top: 5%">#}
+{##}
+{#                    <div class="col-lg-6 mb-5 mb-lg-0">#}
+                        {#                    <div class="col-md-6 offset-md-3">#}
+{#                        <div class="lectors-training-info col-md-4 ms-auto">#}
+{#                            {% for k, v in objects_dict.items %}#}
+{#                                <ul>#}
+{#                                    <li>{{ k }} : {{ v }}</li>#}
+{#                                </ul>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                        <div class="card cascading-right" style="#}
+{#            background: hsla(0, 0%, 100%, 0.55);#}
+{#            backdrop-filter: blur(30px);#}
+{#            ">#}
+{#                            <div class="card-body p-5 shadow-5 text-center">#}
+{#                                <form action="{% url 'add booking' %}" method="post">#}
+{#                                    <input type="hidden" value="{{ next }}" name="next"/>#}
+{#                                    {% csrf_token %}#}
+{#                                    <h2 class="fw-bold mb-5">Add booking</h2>#}
+{##}
+{#                                    <div class="form-outline mb-4" style="text-align: left;">#}
+{#                                        {% include 'common/bs4_form.html' with form=form %}#}
+{##}
+{#                                    </div>#}
+{#                                    <!-- Submit button -->#}
+{#                                    <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>#}
+{#                                    <!-- Cancel button -->#}
+{#                                    <button type="button" class="btn btn-primary btn-block mb-4" id="cancelButton">#}
+{#                                        Cancel#}
+{#                                    </button>#}
+{#                                </form>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{#            </div>#}
+{#        </section>#}
+{#    </main>#}
+{#    <script>#}
+{#        // Add event listener to the Cancel button#}
+{#        document.getElementById('cancelButton').addEventListener('click', function () {#}
+{#            // Navigate to the dashboard page when the Cancel button is clicked#}
+{#            window.location.href = "{% url 'dashboard' pk=request.user.pk %}";#}
+{#        });#}
+{#    </script>#}
+{#{% endblock %}#}
+
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
     <main style="padding: 2%">
-        <section class="text-center text-lg-start">
+        <section>
             <style>
                 .cascading-right {
                     margin-right: -50px;
@@ -14,38 +90,42 @@
                     }
                 }
             </style>
-            <!-- Jumbotron -->
-            <div class="container py-4" style="
-                    {#display: flex;#}
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;
-                    width: 100vh;">
-
-                <div class="row g-0 align-items-center" style="padding-top: 5%">
-                    <div class="col-lg-6 mb-5 mb-lg-0">
+{#            <div class="container py-4">#}
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-5">
                         <div class="card cascading-right" style="
-            background: hsla(0, 0%, 100%, 0.55);
-            backdrop-filter: blur(30px);
-            ">
+                            background: hsla(0, 0%, 100%, 0.55);
+                            backdrop-filter: blur(30px);
+                        ">
                             <div class="card-body p-5 shadow-5 text-center">
                                 <form action="{% url 'add booking' %}" method="post">
                                     <input type="hidden" value="{{ next }}" name="next"/>
                                     {% csrf_token %}
                                     <h2 class="fw-bold mb-5">Add booking</h2>
-
                                     <div class="form-outline mb-4" style="text-align: left;">
                                         {% include 'common/bs4_form.html' with form=form %}
-
                                     </div>
-                                    <!-- Submit button -->
                                     <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>
-                                    <!-- Cancel button -->
                                     <button type="button" class="btn btn-primary btn-block mb-4" id="cancelButton">
                                         Cancel
                                     </button>
-
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="card" style="background-color: whitesmoke;">
+                            <div class="card-body p-5 shadow-5 text-center">
+                                <div class="lectors-training-info" style="text-align: left">
+                                <h5 class="fw-bold mb-5">*Available lectors by Training</h5>
+                                    {% for training, lectors in objects_dict.items %}
+                                        <ul>
+                                            <li><strong>{{ training }} :</strong> <br>{{ lectors }}</li>
+
+                                        </ul>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -54,9 +134,7 @@
         </section>
     </main>
     <script>
-        // Add event listener to the Cancel button
         document.getElementById('cancelButton').addEventListener('click', function () {
-            // Navigate to the dashboard page when the Cancel button is clicked
             window.location.href = "{% url 'dashboard' pk=request.user.pk %}";
         });
     </script>

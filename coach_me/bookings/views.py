@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.views import generic as views
 from coach_me.bookings.forms import BookingCreateForm, BookingUpdateForm
 from coach_me.bookings.models import Booking
+from coach_me.lectors.models import Lector
 from coach_me.profiles.models import BookingUserProfile, Company
 from django.http import HttpResponseRedirect
 from coach_me.bookings.mixins import DefineModelsMixin
@@ -55,19 +56,30 @@ class BookingCreateView(LoginRequiredMixin, views.CreateView):
     template_name = 'bookings/create-booking.html'
     success_url = reverse_lazy('dashboard')
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     user = self.request.user
-    #     training = context['object'].booking_type
-    #     lector = context['object'].lector
-    #     current_date = timezone.now().date()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        trainings = Training.objects.all()
+        lectors = Lector.objects.all()
+
+        training_lectors_dictionary = {}
+
+        for training in trainings:
+            # Filter lectors based on the service_integrity relationship
+            available_lectors = DefineModelsMixin.get_lectors_by_training(training, list_csv=True)
+            training_lectors_dictionary[training] = available_lectors
+
+        context['trainings'] = trainings
+        context['lectors'] = lectors
+        context['objects_dict'] = training_lectors_dictionary
+
+        return context
 
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
         user = self.request.user
         booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).get()
 
-        #TODO check the logic for lector to booked for another person and remove the IF if not needed
+        # TODO check the logic for lector to booked for another person and remove the IF if not needed
         if booking_user_profile and not booking_user_profile.is_lector:
 
             # Set 'employee' and 'corporate_email' initial values from BookingUser
@@ -105,58 +117,57 @@ class BookingCreateView(LoginRequiredMixin, views.CreateView):
                     form.instance.employee == original_booking.employee
                     and form.instance.start_time == original_booking.start_time
             ):
-                return super().form_valid(form)
 
-        # Check if the start_time exists for the employee
-        employee_availability_duplicate = Booking.objects.filter(
-            employee=form.instance.employee,
-            start_date=form.instance.start_date,
-            start_time=form.instance.start_time,
-        ).exists()
+                # Check if the start_time exists for the employee
+                employee_availability_duplicate = Booking.objects.filter(
+                    employee=form.instance.employee,
+                    start_date=form.instance.start_date,
+                    start_time=form.instance.start_time,
+                ).exists()
 
-        if employee_availability_duplicate:
-            form.add_error(None, "This start time is already booked for the employee.")
-            return self.form_invalid(form)
+                if employee_availability_duplicate:
+                    form.add_error(None, "This start time is already booked for the employee.")
+                    return self.form_invalid(form)
 
-        # Check if the start_time exists for the lector
-        lector_availability_duplicate = Booking.objects.filter(
-            lector=form.instance.lector,
-            start_date=form.instance.start_date,
-            start_time=form.instance.start_time,
-        ).exists()
+                # Check if the start_time exists for the lector
+                lector_availability_duplicate = Booking.objects.filter(
+                    lector=form.instance.lector,
+                    start_date=form.instance.start_date,
+                    start_time=form.instance.start_time,
+                ).exists()
 
-        if lector_availability_duplicate:
-            form.add_error(None, "This start time is already booked for this lector.")
-            return self.form_invalid(form)
+                if lector_availability_duplicate:
+                    form.add_error(None, "This start time is already booked for this lector.")
+                    return self.form_invalid(form)
 
-        # Check if the selected lector has the selected booking_type (Training)
-        lector = form.cleaned_data.get('lector')
-        booking_type = form.cleaned_data.get('booking_type')
+                # Check if the selected lector has the selected booking_type (Training)
+                lector = form.cleaned_data.get('lector')
+                booking_type = form.cleaned_data.get('booking_type')
 
-        if lector and booking_type:
-            if booking_type in lector.service_integrity.all():
-                return super().form_valid(form)
-            else:
-                form.add_error(
-                    'booking_type',
-                    "The selected lector does not have the selected booking type.")
-                return self.form_invalid(form)
+                if lector and booking_type:
+                    if booking_type in lector.service_integrity.all():
+                        return super().form_valid(form)
+                    else:
+                        form.add_error(
+                            'booking_type',
+                            "The selected lector does not have the selected booking type.")
+                        return self.form_invalid(form)
 
-        # Check if the employee corporate email has the correct domain name suffix
-        existing_domains = Company.objects.filter(
-            company_domain__iendswith=str(form.instance.employee.email).split('@')[1]
-        ).exists()
+                # Check if the employee corporate email has the correct domain name suffix
+                existing_domains = Company.objects.filter(
+                    company_domain__iendswith=str(form.instance.employee.email).split('@')[1]
+                ).exists()
 
-        if not existing_domains:
-            form.add_error(
-                None,
-                """
-                We can't find your company domain in our database! 
-                Please contact our team for support or check if the corporate email address 
-                is correct!
-                """
-            )
-            return self.form_invalid(form)
+                if not existing_domains:
+                    form.add_error(
+                        None,
+                        """
+                        We can't find your company domain in our database! 
+                        Please contact our team for support or check if the corporate email address 
+                        is correct!
+                        """
+                    )
+                    return self.form_invalid(form)
 
         return super().form_valid(form)
 
@@ -177,10 +188,8 @@ class BookingDetailsView(LoginRequiredMixin, views.DetailView):
         lector = context['object'].lector
         current_date = timezone.now().date()
 
-
         current_booking = Booking.objects.filter(pk=context['object'].pk).get()
         # current_booking = get_object_or_404(Booking, pk=self.kwargs['pk'])
-
 
         # Retrieve the user profile for the current user
         try:
@@ -201,7 +210,6 @@ class BookingDetailsView(LoginRequiredMixin, views.DetailView):
         context['company'] = company
         context['current_date'] = current_date
 
-
         return context
 
 
@@ -217,7 +225,6 @@ class BookingDeleteView(LoginRequiredMixin, views.DeleteView):
 
 class BookingUpdateView(LoginRequiredMixin, views.UpdateView):
     model = Booking
-    # form_class = BookingForm
     form_class = BookingUpdateForm
     template_name = 'bookings/edit-booking.html'
     success_url = reverse_lazy('dashboard')
@@ -247,12 +254,6 @@ class BookingUpdateView(LoginRequiredMixin, views.UpdateView):
         initial['corporate_email'] = user.email
         initial['company_name'] = company.short_company_name
         initial['private_email'] = profile.private_email
-
-        # if profile.private_email:
-        #     initial['private_email'] = profile.private_email
-        # else:
-        #     initial['private_email'] = None
-
         return initial
 
     def get_context_data(self, **kwargs):

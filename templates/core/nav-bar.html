@@ -41,26 +41,21 @@
                     {#                    {% if user.is_authenticated %}#}
                     {% if request.user.is_authenticated and not request.user.is_staff %}
                         <li class="nav-item">
+                            <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'add booking' %}">Add Booking</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'dashboard' pk=request.user.pk %}">My Bookings</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                CoachMe
+                            <a class="nav-link" href="{% url 'dashboard' pk=request.user.pk %}">
+                                My Bookings
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
-                                </li>
-                            </ul>
                         </li>
+
                         <!-- for logged users // profile pages-->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -172,17 +167,17 @@
                         <!-- for anonymous users-->
                     {% else %}
                         <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'login_user' %}">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'register_user' %}">Sign
                                 Up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
                         </li>
                     {% endif %}
                 </ul>

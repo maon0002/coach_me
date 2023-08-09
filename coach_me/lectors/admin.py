@@ -18,9 +18,6 @@ class LectorAdmin(admin.ModelAdmin):
             'user', 'first_name', 'last_name', 'phone', 'email', 'lector_image', 'service_integrity', 'biography',
             'slug')
         }),
-        # ('Date Information', {
-        #     'fields': ('inserted_on', 'updated_on')
-        # }),
     )
 
     ordering = ['last_name', 'first_name']

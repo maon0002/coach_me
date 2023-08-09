@@ -1,5 +1,5 @@
 from django.contrib import admin
-from coach_me.bookings.models import Booking, Lector, Training
+from coach_me.bookings.models import Booking
 
 
 # Register your models here.

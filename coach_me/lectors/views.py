@@ -5,9 +5,9 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse_lazy
 from django.views import generic as views
 
-from coach_me.lectors.forms import LectorList, LectorDeleteForm
+from coach_me.lectors.forms import LectorList
 from coach_me.lectors.models import Lector
-from coach_me.bookings.mixins import DisabledFormFieldsMixin, DefineModelsMixin
+from coach_me.bookings.mixins import DefineModelsMixin
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 

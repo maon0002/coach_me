@@ -14,9 +14,6 @@ class TrainingAdmin(admin.ModelAdmin):
         ('Service Information', {
             'fields': ('service_name', 'service_description', 'service_image', 'slug')
         }),
-        # ('Date Information', {
-        #     'fields': ('inserted_on', 'updated_on')
-        # }),
     )
 
     ordering = ['-inserted_on']

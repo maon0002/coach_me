@@ -1,14 +1,10 @@
-from django.core.exceptions import ValidationError
 from django.core import validators
 from django.db import models
-# Create your models here.
 from django.contrib.auth import get_user_model
 from django.utils.timezone import now
-from django.core.mail import send_mail
 from coach_me.accounts.models import BookingUser
-from coach_me.bookings.validators import validate_if_string_is_alphanumeric, validate_phone_numbers_formatting, \
+from coach_me.bookings.validators import validate_phone_numbers_formatting, \
     validate_string_is_letters_and_hyphens_only, validate_string_is_letters_only
-from coach_me.bookings.mixins import MyModelMixin
 from coach_me.lectors.models import Lector
 from coach_me.profiles.models import BookingUserProfile, Company
 from coach_me.trainings.models import Training
@@ -26,7 +22,15 @@ class Booking(models.Model):
         ('Yes', 'Yes'),
         ('No', 'No'),
     )
-    PAID_MAX_LENGTH = max([len(list(choice[1])) for choice in PAID_CHOICES])
+    PAID_MAX_LENGTH = 3
+    PLATFORM_CHOICES = (
+        ('Teams', 'Teams'),
+        ('Zoom', 'Zoom'),
+        ('Skype', 'Skype'),
+        ('Google meetings', 'Google meetings'),
+    )
+    PLATFORM_CHOICES_MAX_LEN = max(len(choice[1]) for choice in PLATFORM_CHOICES)
+
     START_TIME_CHOICES = (
         ('09:00:00', '09:00:00'),
         ('10:00:00', '10:00:00'),
@@ -39,6 +43,16 @@ class Booking(models.Model):
         ('17:00:00', '17:00:00'),
         ('18:00:00', '18:00:00'),
     )
+    START_TIME_CHOICES_MAX_LEN = max(len(choice[1]) for choice in START_TIME_CHOICES)
+
+    TRAINING_MODE_CHOICES = (
+        ('Live', 'Live'),
+        ('Online', 'Online'),
+    )
+    TRAINING_MODE_MAX_LEN = max(len(choice[1]) for choice in TRAINING_MODE_CHOICES)
+    COMPANY_NAME_MAX_LEN = 75
+    CERTIFICATE_CODE_MAX_LEN = 10
+    LABEL_MAX_LEN = 30
 
     id = models.BigAutoField(primary_key=True)
 
@@ -79,8 +93,9 @@ class Booking(models.Model):
         )
     )
     company_name = models.CharField(
-        max_length=200,
-        # null=True
+        max_length=COMPANY_NAME_MAX_LEN,
+        null=True,
+        blank=True,
     )
 
     corporate_email = models.EmailField(
@@ -90,11 +105,9 @@ class Booking(models.Model):
 
     )
 
-    # email field as a ForeignKey to BookingUser model
     employee = models.ForeignKey(
-        BookingUser,  # Use BookingUser model here
+        BookingUser,
         on_delete=models.DO_NOTHING,
-        # related_name='rel_bookings', #instead of employee_set
     )
 
     private_email = models.EmailField(
@@ -109,12 +122,9 @@ class Booking(models.Model):
     )
 
     training_mode = models.CharField(
-        max_length=10,
+        max_length=TRAINING_MODE_MAX_LEN,
         default='Online',
-        choices=(
-            ('Live', 'Live'),
-            ('Online', 'Online'),
-        ),
+        choices=TRAINING_MODE_CHOICES,
     )
     lector = models.ForeignKey(
         Lector,
@@ -141,7 +151,7 @@ class Booking(models.Model):
         max_digits=10,
     )
     certificate_code = models.CharField(
-        max_length=50,
+        max_length=CERTIFICATE_CODE_MAX_LEN,
         null=True,
         blank=True,
     )
@@ -151,19 +161,21 @@ class Booking(models.Model):
     )
     date_scheduled = models.DateTimeField(
         auto_now_add=True,
-    )  # ,  auto_now=True for update
+    )
     label = models.CharField(
-        max_length=50,
+        max_length=LABEL_MAX_LEN,
         null=True,
         blank=True,
     )
 
     preferred_platforms = models.CharField(
-        max_length=30,
+        max_length=PLATFORM_CHOICES_MAX_LEN,
         null=True,
         blank=True,
+        choices=(
+            PLATFORM_CHOICES
+        )
     )
-
     inserted_on = models.DateTimeField(
         auto_now_add=True
     )  # ,  auto_now=True for update
@@ -188,6 +200,4 @@ class Booking(models.Model):
 
     def __str__(self):
         return f'{self.employee}'
-    # TODO apply later
-    # class Meta:
-    #     ordering = ('-start_date', '-start_time',)
+
