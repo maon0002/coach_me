@@ -5,9 +5,13 @@
 {% block content %}
 
     {% if not lector %}
+
     {% include 'common/dashboard-non-lector.html' %}
+
     {% elif lector %}
+
     {% include 'common/dashboard-lector.html' %}
+
     {% endif %}
 
 {% endblock %}

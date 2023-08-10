@@ -24,10 +24,10 @@
 #     ])),
 #
 # )
-
+from . import views
 from django.urls import path, include
 from coach_me.profiles.views import ProfileDetailsView, ProfileUpdateView, ProfileDeleteView, DashboardView, \
-    CompanyCreateView, CompanyListView, CompanyDetailsView, CompanyUpdateView, CompanyDeleteView
+    CompanyCreateView, CompanyListView, CompanyDetailsView, CompanyUpdateView, CompanyDeleteView, CSVListView
 
 urlpatterns = [
     path('profile/', include([
@@ -45,5 +45,6 @@ urlpatterns = [
         path('<slug:slug>/edit/', CompanyUpdateView.as_view(), name='edit company'),
         path('<slug:slug>/delete/', CompanyDeleteView.as_view(), name='delete company'),
     ])),
+    # Add a URL pattern for CSV export
+    path('export-csv/', views.export_csv, name='export_csv'),
 ]
-

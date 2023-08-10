@@ -25,6 +25,5 @@ class BookingUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
     def __str__(self):
         return f'{self.email}'
 
-
     def __repr__(self):
         return f'{self.id}: {self.email}'

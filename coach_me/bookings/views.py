@@ -11,16 +11,18 @@ from django.http import HttpResponseRedirect
 from coach_me.bookings.mixins import DefineModelsMixin
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
-
 from coach_me.trainings.models import Training
+import logging
 
+logger = logging.getLogger(__name__)
 UserModel = get_user_model()
+
+
 
 
 class IndexView(DefineModelsMixin, views.ListView):
     model = Training
     template_name = 'index.html'
-    paginate_by = 4  # Optional: Set the number of bookings to be displayed per page
 
     # @method_decorator(cache_page(1))  # Cache will expire in 1 hour (3600 seconds)
     # def dispatch(self, *args, **kwargs):
@@ -32,9 +34,7 @@ class IndexView(DefineModelsMixin, views.ListView):
         # Retrieve the BookingUserProfile and add it to the context
 
         user = self.get_booking_user()
-        # print(user, "<<<<<<< USER")
         booking_user_profile = self.get_booking_user_profile()
-        # print(booking_user_profile, "<<<<<<< BUP")
 
         if user and booking_user_profile:
             context['user'] = self.get_booking_user().get()
@@ -113,61 +113,68 @@ class BookingCreateView(LoginRequiredMixin, views.CreateView):
         # Check if the booking being edited has changes in the employee or start time
         if form.instance.pk is not None:
             original_booking = Booking.objects.get(pk=form.instance.pk)
-            if (
+            if not (
                     form.instance.employee == original_booking.employee
                     and form.instance.start_time == original_booking.start_time
             ):
+                return self.form_invalid(form)
 
-                # Check if the start_time exists for the employee
-                employee_availability_duplicate = Booking.objects.filter(
-                    employee=form.instance.employee,
-                    start_date=form.instance.start_date,
-                    start_time=form.instance.start_time,
-                ).exists()
+        # Check if the start_time exists for the employee
+        employee_availability_duplicate = Booking.objects.filter(
+            employee=form.instance.employee,
+            start_date=form.instance.start_date,
+            start_time=form.instance.start_time,
+        ).exists()
 
-                if employee_availability_duplicate:
-                    form.add_error(None, "This start time is already booked for the employee.")
-                    return self.form_invalid(form)
+        if employee_availability_duplicate:
+            form.add_error(None, "This start time is already booked for the employee.")
+            return self.form_invalid(form)
 
-                # Check if the start_time exists for the lector
-                lector_availability_duplicate = Booking.objects.filter(
-                    lector=form.instance.lector,
-                    start_date=form.instance.start_date,
-                    start_time=form.instance.start_time,
-                ).exists()
+        # Check if the start_time exists for the lector
+        lector_availability_duplicate = Booking.objects.filter(
+            lector=form.instance.lector,
+            start_date=form.instance.start_date,
+            start_time=form.instance.start_time,
+        ).exists()
 
-                if lector_availability_duplicate:
-                    form.add_error(None, "This start time is already booked for this lector.")
-                    return self.form_invalid(form)
+        if lector_availability_duplicate:
+            form.add_error(None, "This start time is already booked for this lector.")
+            return self.form_invalid(form)
 
-                # Check if the selected lector has the selected booking_type (Training)
-                lector = form.cleaned_data.get('lector')
-                booking_type = form.cleaned_data.get('booking_type')
+        # Check if the selected lector has the selected booking_type (Training)
+        lector = form.cleaned_data.get('lector')
+        booking_type = form.cleaned_data.get('booking_type')
 
-                if lector and booking_type:
-                    if booking_type in lector.service_integrity.all():
-                        return super().form_valid(form)
-                    else:
-                        form.add_error(
-                            'booking_type',
-                            "The selected lector does not have the selected booking type.")
-                        return self.form_invalid(form)
+        if lector and booking_type:
+            if booking_type in lector.service_integrity.all():
+                return super().form_valid(form)
+            else:
+                form.add_error(
+                    'booking_type',
+                    "The selected lector does not have the selected booking type.")
+                return self.form_invalid(form)
 
-                # Check if the employee corporate email has the correct domain name suffix
-                existing_domains = Company.objects.filter(
-                    company_domain__iendswith=str(form.instance.employee.email).split('@')[1]
-                ).exists()
+        # Check if the employee corporate email has the correct domain name suffix
+        existing_domains = Company.objects.filter(
+            company_domain__iendswith=str(form.instance.employee.email).split('@')[1]
+        ).exists()
 
-                if not existing_domains:
-                    form.add_error(
-                        None,
-                        """
-                        We can't find your company domain in our database! 
-                        Please contact our team for support or check if the corporate email address 
-                        is correct!
-                        """
-                    )
-                    return self.form_invalid(form)
+        if not existing_domains:
+            form.add_error(
+                None,
+                """
+                We can't find your company domain in our database! 
+                Please contact our team for support or check if the corporate email address 
+                is correct!
+                """
+            )
+            return self.form_invalid(form)
+        logger.info(
+            f"""User: {self.request.user} from company : {existing_domains}
+            create booking 
+            for Training: {booking_type} 
+            with Lector: {lector}"""
+        )
 
         return super().form_valid(form)
 
@@ -193,7 +200,6 @@ class BookingDetailsView(LoginRequiredMixin, views.DetailView):
 
         # Retrieve the user profile for the current user
         try:
-            # profile = BookingUserProfile.objects.get(pk=user.pk)
             profile = BookingUserProfile.objects.filter(pk=current_booking.employee_id).get()
         except BookingUserProfile.DoesNotExist:
             profile = None

@@ -9,15 +9,47 @@ from coach_me.profiles.forms import ProfileUpdateForm, ProfileDetailsForm, Compa
 from coach_me.profiles.models import BookingUserProfile, Company
 from django.views import generic as views
 from django.utils import timezone
+from django.core.paginator import Paginator
+import csv
+from django.http import HttpResponse
 
 UserModel = get_user_model()
+
+
+def export_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="data.csv"'
+
+    writer = csv.writer(response)
+
+    # Fetch the data and write to CSV
+
+    user = request.user
+    queryset = Booking.objects.filter(employee=user).all()
+    fields = [field.name for field in queryset.model._meta.fields]
+
+    # Write the headers
+    writer.writerow(fields)
+
+    # Write the data
+    for item in queryset:
+        row = [getattr(item, field) for field in fields]
+        writer.writerow(row)
+
+    return response
+
+
+class CSVListView(views.ListView):
+    model = Booking
+    template_name = 'common/export_to_csv.html'
+    context_object_name = 'items'
 
 
 class DashboardView(LoginRequiredMixin, views.ListView):
     model = Booking
     template_name = 'dashboard.html'
     context_object_name = 'bookings'
-    paginate_by = 2  # TODO not working properly
+    paginate_by = 10  # TODO not working properly
 
     def get_queryset(self):
         user = self.request.user
@@ -46,6 +78,10 @@ class DashboardView(LoginRequiredMixin, views.ListView):
                 start_date__gte=current_date
             ).order_by('start_date').all()
 
+            paginator_past = Paginator(past_bookings, self.paginate_by)
+            page_number_past = self.request.GET.get('past_page')
+            past_bookings = paginator_past.get_page(page_number_past)
+
             # Retrieve the user profile for the current user
             try:
                 profile = BookingUserProfile.objects.get(pk=user.pk)
@@ -72,6 +108,15 @@ class DashboardView(LoginRequiredMixin, views.ListView):
                 lector=lector,
                 start_date__gte=current_date
             ).order_by('start_date').all()
+
+            paginator_past = Paginator(past_bookings, self.paginate_by)
+            paginator_future = Paginator(future_bookings, self.paginate_by)
+
+            page_number_past = self.request.GET.get('past_page')
+            page_number_future = self.request.GET.get('future_page')
+
+            past_bookings = paginator_past.get_page(page_number_past)
+            future_bookings = paginator_future.get_page(page_number_future)
 
             # Retrieve the user profile for the current user
             try:

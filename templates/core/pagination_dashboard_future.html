@@ -1,0 +1,19 @@
+<div class="container">
+
+    <!-- Pagination for past bookings -->
+    <nav class="my-4" aria-label="...">
+        <ul class="pagination pagination-circle justify-content-center">
+            <li class="page-item {% if futurebookings.has_previous %} {% else %} disabled {% endif %}">
+                <a class="page-link" href="?past_page=1" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            {% for num in futurebookings.paginator.page_range %}
+                <li class="page-item {% if futurebookings.number == num %} active {% endif %}">
+                    <a class="page-link" href="?past_page={{ num }}">{{ num }}</a>
+                </li>
+            {% endfor %}
+            <li class="page-item {% if futurebookings.has_next %} {% else %} disabled {% endif %}">
+                <a class="page-link" href="?past_page={{ futurebookings.paginator.num_pages }}">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>

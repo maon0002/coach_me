@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load export_tags %}
+
+{% block content %}
+    <h1>Your List View</h1>
+
+    <table>
+        <!-- Your table content -->
+    </table>
+
+    <p><a href="{% export_csv_link %}">Export as CSV</a></p>
+{% endblock %}

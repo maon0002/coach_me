@@ -40,7 +40,6 @@ DATABASES = {
     }
 }
 
-
 # Application definition
 MY_APPS = [
     # 'coach_me.accounts',
@@ -161,9 +160,34 @@ LOGIN_URL = reverse_lazy('login_user')
 # Defines the model for **Users**
 AUTH_USER_MODEL = 'accounts.BookingUser'
 
-
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'coachme.demoapp@gmail.com'
 EMAIL_HOST_PASSWORD = 'jpisehhqplalzlkr'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',  # Adjust the log level as needed
+            'class': 'logging.FileHandler',
+            'filename': 'log.txt',  # Specify the log file name and location
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',  # Adjust the log level as needed
+            'propagate': True,
+        },
+    },
+}

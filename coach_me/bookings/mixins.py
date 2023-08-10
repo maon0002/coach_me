@@ -6,11 +6,9 @@ from django.shortcuts import get_object_or_404
 from coach_me.accounts.models import BookingUser
 from coach_me.lectors.models import Lector
 from coach_me.profiles.models import BookingUserProfile
-from coach_me.trainings.models import Training
 
 
 class DefineModelsMixin:
-
 
     def get_booking_user_profile(self, *args, **kwargs):
         # Get the primary key (pk) of the logged-in user
@@ -85,5 +83,3 @@ class AnonymousRequiredMixin(AccessMixin):
             return redirect(
                 'index')
         return super().dispatch(request, *args, **kwargs)
-
-

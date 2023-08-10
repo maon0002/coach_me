@@ -63,25 +63,32 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="logo">
-{#            <img src="https://drive.google.com/file/d/1QufNBZiR1ZjDHOF7SdjNAN6RN-LTXlf5/view?usp=sharing" alt="Logo">#}
-            <img src="https://images-platform.99static.com/c1q2uKpznRoV0MeqSUYoM3jwqKY=/500x500/top/smart/99designs-contests-attachments/49/49653/attachment_49653793" alt="Logo">
-        </div>
-        <div class="header">
-            <h2>Welcome to CoachMe!</h2>
-        </div>
-        <div class="message">
-            <p>Hello {{ profile.email }},</p>
-            <p>Thank you for registering with us. We are excited to have you on board!</p>
-            <p>Get ready to explore our amazing features and content.</p>
-            <p>If you have any questions or need assistance, feel free to reach out to our support team.</p>
-            <a href="https://coachme.tk/auth/login/" class="btn">Login to Your Account</a>
-        </div>
-        <div class="footer">
-            <p>Best regards,<br>CoachMe Team</p>
-        </div>
+<div class="container">
+    <div class="logo">
+        {#            <img src="https://drive.google.com/file/d/1QufNBZiR1ZjDHOF7SdjNAN6RN-LTXlf5/view?usp=sharing" alt="Logo">#}
+        <img src="https://images-platform.99static.com/c1q2uKpznRoV0MeqSUYoM3jwqKY=/500x500/top/smart/99designs-contests-attachments/49/49653/attachment_49653793"
+             alt="Logo">
     </div>
+    <div class="header">
+        <h2>Welcome to CoachMe!</h2>
+    </div>
+    <div class="message">
+        <p>Hello {{ profile.email }},</p>
+        <p>Thank you for registering with us. We are excited to have you on board!</p>
+        <p>Get ready to explore our amazing features and content.</p>
+        <p>If you have any questions or need assistance, feel free to reach out to our support team.</p>
+    </div>
+    <div style="text-align: center">
+        <button type="button" class="btn btn-primary btn-block mb-4">
+            <a href="{% url 'trainings' %}">
+                You can start with checking our available trainings
+            </a>
+        </button>
+    </div>
+    <div class="footer">
+        <p>Best regards,<br>CoachMe Team</p>
+    </div>
+</div>
 </body>
 
 </html>

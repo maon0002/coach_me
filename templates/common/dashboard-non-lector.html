@@ -1,5 +1,7 @@
 {% load forms %}
 {% load static %}
+{% load export_tags %}
+
 <main style="padding: 5%">
 
     {% if not past_bookings and not future_bookings %}
@@ -71,18 +73,28 @@
                                         </tbody>
                                     </table>
                                     <!-- Add pagination for future bookings here -->
-                                    {% include 'core/pagination.html' with page_obj=future_bookings %}
+                                    {#                                    {% include 'core/pagination_dashboard_future.html' with page_obj=future_bookings %}#}
                                 </div>
                             </div>
+
                         {% endif %}
 
                         <p> &nbsp;</p>
                         {% if past_bookings %}
+
                             <table class="table table-hover table-secondary">
                                 <h3
                                         style="text-align: left; color: gray">
                                     PAST BOOKINGS:
+
                                 </h3>
+
+                                <a class="csv-exporting-button"
+                                   href="{% export_csv_link %}">
+                                    <img src="{% static '/images/csv.png' %}"
+                                         style="width: 40px; text-align:left; display:block;"
+                                         alt="csv-exporting">
+                                </a>
                                 <thead>
                                 <tr>
                                     <th scope="col" style="background-color: white">TRAINING</th>
@@ -133,7 +145,7 @@
                                 </tbody>
                             </table>
                             <!-- Add pagination for past bookings here -->
-                            {% include 'core/pagination.html' with page_obj=past_bookings %}
+                            {% include 'core/pagination_dashboard_past.html' with page_obj=past_bookings %}
                         {% endif %}
                     </div>
                 </div>

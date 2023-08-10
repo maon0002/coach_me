@@ -70,7 +70,7 @@
              alt="Logo">
     </div>
     <div class="header">
-{#        <h2>Nice job!</h2>#}
+        {#        <h2>Nice job!</h2>#}
     </div>
     <div class="message">
         <p>Hello <strong>{{ lector.first_name|capfirst }}</strong>,</p>
@@ -104,6 +104,13 @@
         <p><strong>Scheduled on: </strong> {{ booking.date_scheduled }}</p>
         <p><strong>Preferred platform: </strong> {{ booking.preferred_platforms }}</p>
     </div>
+    <div style="text-align: center">
+        <button type="button" class="btn btn-primary btn-block mb-4">
+        <a href="{% url 'dashboard' pk=profile.pk %}" >
+            Check your bookings
+        </a>
+        </button>
+    </div>
 
     <div class="footer">
         <p>Best regards,<br>CoachMe Team</p>
@@ -112,3 +119,4 @@
 </body>
 
 </html>
+

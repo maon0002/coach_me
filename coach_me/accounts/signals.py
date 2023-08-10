@@ -1,3 +1,4 @@
+import logging
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
@@ -8,6 +9,8 @@ from django.utils.html import strip_tags
 from coach_me.bookings.models import Booking
 from coach_me.lectors.models import Lector
 from coach_me.profiles.models import BookingUserProfile, Company
+
+logger = logging.getLogger(__name__)
 
 UserModel = get_user_model()
 
@@ -46,6 +49,11 @@ def send_email_to_user_after_booking_creation(booking):
             'manukov.business@gmail.com',
         ),
     )
+    logger.info(
+        f"""User: {booking_user_profile.full_name} email: {user}
+                        create booking 
+                        for Training: {training} 
+                        with Lector: {lector}""")
 
 
 def send_email_to_lector_after_booking_creation(booking):
@@ -121,6 +129,11 @@ def send_email_to_user_after_booking_update(booking):
             'manukov.business@gmail.com',
         ),
     )
+    logger.info(
+        f"""User: {booking_user_profile.full_name} email: {user}
+                            create booking 
+                            for Training: {training} 
+                            with Lector: {lector}""")
 
 
 def send_email_to_lector_after_booking_update(booking):
