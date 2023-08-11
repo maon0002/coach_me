@@ -5,3 +5,5 @@ envs/
 *.db
 *.sqlite3
 envs/.env
+.env
+static/images/dataa.csv

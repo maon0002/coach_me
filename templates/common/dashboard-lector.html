@@ -1,5 +1,6 @@
 {% load forms %}
 {% load static %}
+{% load export_tags %}
 
 <main style="padding: 5%">
 
@@ -50,7 +51,7 @@
                                         </tbody>
                                     </table>
                                     <!-- Add pagination for future bookings here -->
-                                    {% include 'core/pagination.html' with page_obj=future_bookings %}
+{#                                    {% include 'core/pagination.html' with page_obj=future_bookings %}#}
                                 </div>
                             </div>
                         {% endif %}
@@ -88,6 +89,12 @@
                                     </tr>
                                 {% endfor %}
                                 </tbody>
+                            <a class="csv-exporting-button"
+                                   href="{% export_csv_link %}">
+                                    <img src="{% static '/images/csv.png' %}"
+                                         style="width: 35px; text-align:left; "
+                                         alt="csv-exporting"> export to .csv
+                                </a>
                             </table>
                             <!-- Add pagination for past bookings here -->
                             {% include 'core/pagination.html' with page_obj=past_bookings %}

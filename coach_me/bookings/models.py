@@ -183,11 +183,15 @@ class Booking(models.Model):
         auto_now=True
     )  # ,  auto_now=True for update
 
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.corporate_email = BookingUser.email
+    #     self.first_name = Booking.first_name
+    #     self.last_name = Booking.last_name
+    #     self.full_name = f"{self.first_name} {self.last_name}"
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.corporate_email = BookingUser.email
-        self.first_name = Booking.first_name
-        self.last_name = Booking.last_name
         self.full_name = f"{self.first_name} {self.last_name}"
 
     @property

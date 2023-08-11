@@ -91,8 +91,11 @@ class BookingCreateView(LoginRequiredMixin, views.CreateView):
 
             # Set 'first_name' and 'last_name' initial values from BookingUserProfile
             if booking_user_profile:
-                form.fields['first_name'].initial = str(booking_user_profile.first_name)
-                form.fields['last_name'].initial = str(booking_user_profile.last_name)
+                form.fields['first_name'].initial = booking_user_profile.first_name
+                form.fields['last_name'].initial = booking_user_profile.last_name
+
+            # Set 'corporate_email' initial value from User
+            form.fields['corporate_email'].initial = user.email
 
             # Disable the fields
             # form.fields['employee'].widget.attrs['disabled'] = True

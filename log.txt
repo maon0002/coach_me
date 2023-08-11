@@ -2032,3 +2032,473 @@ INFO 2023-08-10 22:56:33,413 basehttp "GET /static/images/edit-icon.png HTTP/1.1
 INFO 2023-08-10 22:56:33,414 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
 INFO 2023-08-10 22:56:33,415 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
 INFO 2023-08-10 22:56:33,597 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:03:35,407 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:03:36,561 autoreload Watching for file changes with StatReloader
+INFO 2023-08-10 23:03:37,118 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40493
+INFO 2023-08-10 23:03:39,151 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:03:39,153 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:03:39,154 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:03:39,155 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:03:39,156 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:03:39,157 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:03:39,158 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:03:39,180 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:03:41,232 basehttp "GET /export-csv/ HTTP/1.1" 200 6612
+INFO 2023-08-10 23:08:11,225 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:08:12,473 autoreload Watching for file changes with StatReloader
+INFO 2023-08-10 23:08:13,024 basehttp "GET /export-csv/ HTTP/1.1" 200 6612
+INFO 2023-08-10 23:08:21,466 basehttp "GET /profile/9/dashboard/?past_page=2 HTTP/1.1" 200 22307
+INFO 2023-08-10 23:08:21,512 basehttp "GET /static/images/csv.png HTTP/1.1" 304 0
+INFO 2023-08-10 23:08:23,464 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40493
+INFO 2023-08-10 23:08:26,395 basehttp "GET /booking/59/details/ HTTP/1.1" 200 8951
+INFO 2023-08-10 23:09:06,063 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:09:07,273 autoreload Watching for file changes with StatReloader
+INFO 2023-08-10 23:09:07,903 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40494
+INFO 2023-08-10 23:09:09,938 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:09:09,940 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:09:09,941 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:09:09,943 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:09:09,944 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:09:09,944 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:09:09,950 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:09:09,969 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:09:15,762 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40494
+INFO 2023-08-10 23:09:17,670 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40494
+INFO 2023-08-10 23:09:17,739 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:09:17,747 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:09:17,755 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:09:17,756 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:09:17,757 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:09:17,758 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:09:17,758 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:09:17,945 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:09:44,084 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40117
+INFO 2023-08-10 23:09:44,164 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:09:44,173 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:09:44,177 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:09:44,178 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:09:44,178 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:09:44,179 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:09:44,238 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:09:45,443 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40117
+INFO 2023-08-10 23:09:45,502 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:09:45,510 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:09:45,519 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:09:45,520 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:09:45,521 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:09:45,522 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:09:45,555 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:10:02,799 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40117
+INFO 2023-08-10 23:10:02,872 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:10:02,888 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:10:02,888 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:10:02,890 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:10:02,892 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:10:02,893 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:10:02,938 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:10:04,222 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40480
+INFO 2023-08-10 23:10:04,280 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:10:04,298 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:10:04,298 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:10:04,299 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:10:04,299 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:10:04,301 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:10:04,302 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:10:04,338 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:10:41,250 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:10:42,360 autoreload Watching for file changes with StatReloader
+INFO 2023-08-10 23:10:42,827 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40488
+INFO 2023-08-10 23:10:44,812 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:10:44,812 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:10:44,815 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:10:44,816 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:10:44,817 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:10:44,817 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:10:44,823 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:10:44,865 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:10:55,743 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40495
+INFO 2023-08-10 23:10:55,804 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:10:55,810 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:10:55,817 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:10:55,819 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:10:55,819 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:10:55,820 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:10:55,821 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:10:55,863 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:11:09,165 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 40495
+INFO 2023-08-10 23:11:09,233 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:11:09,241 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:11:09,249 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:11:09,250 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:11:09,251 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-10 23:11:09,252 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-10 23:11:09,252 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-10 23:11:09,289 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:11:54,407 basehttp "GET /auth/logout/ HTTP/1.1" 302 0
+INFO 2023-08-10 23:11:54,466 basehttp "GET / HTTP/1.1" 200 7089
+INFO 2023-08-10 23:11:56,818 basehttp "GET /auth/login/ HTTP/1.1" 200 3983
+INFO 2023-08-10 23:13:16,996 basehttp "POST /auth/login/ HTTP/1.1" 302 0
+INFO 2023-08-10 23:13:17,057 basehttp "GET / HTTP/1.1" 200 8721
+INFO 2023-08-10 23:13:20,768 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 19846
+ERROR 2023-08-10 23:13:56,539 log Internal Server Error: /profile/12/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'export_csv_link'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 967, in do_if
+    nodelist = parser.parse(("endif",))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 92: 'export_csv_link', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2023-08-10 23:13:56,545 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 500 281213
+WARNING 2023-08-10 23:13:56,995 log Not Found: /favicon.ico
+WARNING 2023-08-10 23:13:56,996 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-10 23:14:10,475 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20227
+INFO 2023-08-10 23:14:10,633 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:14:10,638 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:14:10,639 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:14:10,640 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:14:10,738 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:14:13,771 basehttp "GET /export-csv/ HTTP/1.1" 200 4517
+INFO 2023-08-10 23:15:45,449 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:15:46,638 autoreload Watching for file changes with StatReloader
+INFO 2023-08-10 23:15:47,263 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20227
+INFO 2023-08-10 23:15:48,883 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:15:48,883 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:15:48,884 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:15:48,884 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:15:48,905 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:15:50,231 basehttp "GET /export-csv/ HTTP/1.1" 200 4517
+INFO 2023-08-10 23:17:15,251 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:17:16,447 autoreload Watching for file changes with StatReloader
+INFO 2023-08-10 23:17:17,068 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 19554
+INFO 2023-08-10 23:17:18,691 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:17:18,692 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-10 23:17:18,692 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-10 23:17:18,693 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:17:18,726 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:17:32,322 basehttp "GET /profile/12/details/ HTTP/1.1" 200 10731
+INFO 2023-08-10 23:26:51,050 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:26:52,199 autoreload Watching for file changes with StatReloader
+INFO 2023-08-10 23:28:11,711 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:28:12,949 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-10 23:28:13,491 log Internal Server Error: /profile/12/details/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 144, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\detail.py", line 109, in get
+    context = self.get_context_data(object=self.object)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py", line 207, in get_context_data
+    if not booking_user.is_lector:
+AttributeError: 'QuerySet' object has no attribute 'is_lector'
+ERROR 2023-08-10 23:28:13,495 basehttp "GET /profile/12/details/ HTTP/1.1" 500 91197
+WARNING 2023-08-10 23:28:13,832 log Not Found: /favicon.ico
+WARNING 2023-08-10 23:28:13,832 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-10 23:28:33,717 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:28:34,898 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-10 23:28:35,829 log Internal Server Error: /profile/12/details/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 144, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\detail.py", line 109, in get
+    context = self.get_context_data(object=self.object)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py", line 216, in get_context_data
+    bookings_count = Booking.objects.filter(lector=lector).count()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1307, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\fields\related_lookups.py", line 168, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\lookups.py", line 337, in get_prep_lookup
+    raise ValueError(
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+ERROR 2023-08-10 23:28:35,836 basehttp "GET /profile/12/details/ HTTP/1.1" 500 145038
+WARNING 2023-08-10 23:28:36,167 log Not Found: /favicon.ico
+WARNING 2023-08-10 23:28:36,168 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-10 23:29:42,480 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:29:43,622 autoreload Watching for file changes with StatReloader
+INFO 2023-08-10 23:29:44,265 basehttp "GET /profile/12/details/ HTTP/1.1" 200 10732
+INFO 2023-08-10 23:29:45,416 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-10 23:29:45,417 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-10 23:29:45,442 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-10 23:29:49,176 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 19554
+INFO 2023-08-10 23:29:49,323 basehttp "GET /static/images/csv.png HTTP/1.1" 304 0
+INFO 2023-08-10 23:30:00,055 basehttp "GET /profile/9/details/ HTTP/1.1" 200 10697
+INFO 2023-08-10 23:30:04,493 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 40495
+INFO 2023-08-10 23:30:04,532 basehttp "GET /static/images/csv.png HTTP/1.1" 304 0
+INFO 2023-08-10 23:47:57,908 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-10 23:47:59,353 autoreload Watching for file changes with StatReloader
+INFO 2023-08-11 18:26:08,112 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-11 18:26:08,115 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-11 18:26:08,121 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-11 18:26:08,123 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-11 18:26:08,130 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-11 18:26:08,131 basehttp "GET /static/images/csv.png HTTP/1.1" 304 0
+INFO 2023-08-11 18:26:08,133 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-11 18:26:08,189 basehttp "GET /static/images/favicon.png HTTP/1.1" 304 0
+ERROR 2023-08-11 18:26:51,226 log Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\backends\base\base.py", line 289, in ensure_connection
+    self.connect()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\backends\base\base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\backends\postgresql\base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 261, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 230, in inner
+    if not self.has_permission(request):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 203, in has_permission
+    return request.user.is_active and request.user.is_staff
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\functional.py", line 266, in inner
+    self._setup()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\functional.py", line 419, in _setup
+    self._wrapped = self._setupfunc()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\backends\base\base.py", line 330, in cursor
+    return self._cursor()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\backends\base\base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\backends\base\base.py", line 289, in ensure_connection
+    self.connect()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\backends\base\base.py", line 289, in ensure_connection
+    self.connect()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\backends\base\base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\backends\postgresql\base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+ERROR 2023-08-11 18:26:51,236 basehttp "GET /admin/ HTTP/1.1" 500 228078
+WARNING 2023-08-11 18:26:51,541 log Not Found: /favicon.ico
+WARNING 2023-08-11 18:26:51,542 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-11 20:35:31,700 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 40495
+INFO 2023-08-11 20:35:31,785 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-11 20:35:31,788 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-11 20:35:31,792 basehttp "GET /static/images/csv.png HTTP/1.1" 304 0
+INFO 2023-08-11 20:35:53,383 basehttp "GET /booking/add/ HTTP/1.1" 200 16301
+INFO 2023-08-11 20:38:00,575 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-11 20:38:00,576 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-11 20:38:00,580 basehttp "GET /static/images/csv.png HTTP/1.1" 304 0
+INFO 2023-08-11 20:38:04,716 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 19554
+INFO 2023-08-11 20:38:04,988 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-11 20:48:52,128 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\models.py changed, reloading.
+INFO 2023-08-11 20:48:53,829 autoreload Watching for file changes with StatReloader
+INFO 2023-08-11 20:49:02,280 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\models.py changed, reloading.
+INFO 2023-08-11 20:49:03,538 autoreload Watching for file changes with StatReloader
+INFO 2023-08-11 20:49:08,157 basehttp "GET /booking/add/ HTTP/1.1" 200 16301
+INFO 2023-08-11 20:49:09,296 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-11 20:49:09,297 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-11 20:49:09,315 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-11 20:49:55,513 basehttp "POST /booking/add/ HTTP/1.1" 302 0
+INFO 2023-08-11 20:49:55,679 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 42912
+INFO 2023-08-11 20:50:00,845 basehttp "GET /export-csv/ HTTP/1.1" 200 4009
+INFO 2023-08-11 20:51:48,134 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-11 20:51:49,309 autoreload Watching for file changes with StatReloader
+INFO 2023-08-11 20:52:04,318 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-11 20:52:05,545 autoreload Watching for file changes with StatReloader
+INFO 2023-08-11 20:52:24,998 basehttp "GET /booking/add/ HTTP/1.1" 200 16301
+INFO 2023-08-11 20:52:47,372 basehttp "POST /booking/add/ HTTP/1.1" 302 0
+INFO 2023-08-11 20:52:47,506 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 45343
+INFO 2023-08-11 20:52:57,236 basehttp "GET /booking/62/details/ HTTP/1.1" 200 9545
+INFO 2023-08-11 20:53:03,365 basehttp "GET /booking/62/edit/ HTTP/1.1" 200 17434
+INFO 2023-08-11 20:53:03,399 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2023-08-11 20:53:15,482 basehttp "POST /booking/62/edit/ HTTP/1.1" 302 0
+INFO 2023-08-11 20:53:15,660 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 45343
+INFO 2023-08-11 20:53:20,577 basehttp "GET /booking/62/details/ HTTP/1.1" 200 9545
+INFO 2023-08-11 20:53:29,853 basehttp "GET /booking/62/edit/ HTTP/1.1" 200 17438
+INFO 2023-08-11 20:53:47,546 basehttp "POST /booking/62/edit/ HTTP/1.1" 302 0
+INFO 2023-08-11 20:53:47,700 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 45343
+INFO 2023-08-11 20:54:14,355 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 19554
+INFO 2023-08-11 20:54:16,231 basehttp "GET /export-csv/ HTTP/1.1" 200 2637
+INFO 2023-08-11 20:54:33,226 basehttp "GET /trainings/ HTTP/1.1" 200 13527
+INFO 2023-08-11 20:54:33,649 basehttp "GET /trainings/ HTTP/1.1" 200 13527
+INFO 2023-08-11 20:54:34,304 basehttp "GET /lectors/ HTTP/1.1" 200 14559
+INFO 2023-08-11 20:54:35,014 basehttp "GET /booking/add/ HTTP/1.1" 200 16242
+INFO 2023-08-11 20:54:36,441 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 19554
+INFO 2023-08-11 20:54:38,783 basehttp "GET /profile/12/details/ HTTP/1.1" 200 10732

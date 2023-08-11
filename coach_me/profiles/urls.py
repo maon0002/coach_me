@@ -27,7 +27,7 @@
 from . import views
 from django.urls import path, include
 from coach_me.profiles.views import ProfileDetailsView, ProfileUpdateView, ProfileDeleteView, DashboardView, \
-    CompanyCreateView, CompanyListView, CompanyDetailsView, CompanyUpdateView, CompanyDeleteView, CSVListView
+    CompanyCreateView, CompanyListView, CompanyDetailsView, CompanyUpdateView, CompanyDeleteView
 
 urlpatterns = [
     path('profile/', include([
