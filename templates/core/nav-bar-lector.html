@@ -1,0 +1,46 @@
+{% load static %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'dashboard' pk=request.user.pk %}">My Bookings</a>
+</li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+       aria-expanded="false">
+        CoachMe
+    </a>
+    <ul class="dropdown-menu">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
+        </li>
+    </ul>
+</li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+       aria-expanded="false">
+        {{ user.email }}
+        <img class="user-uni-pic" id="user-uni-img"
+             src="{% static '/images/profile-blue-default.png' %}"
+             alt="user-uni-pic"
+             style="width:20px"/>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="dropdown-item" href="{% url 'details profile' pk=request.user.pk %}">Profile
+                details</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="{% url 'edit profile' pk=request.user.pk %}">Edit
+                profile</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="{% url 'delete profile' pk=request.user.pk %}">Delete
+                profile</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="{% url 'logout_user' %}">Logout
+            </a>
+        </li>
+    </ul>
+</li>

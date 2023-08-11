@@ -86,9 +86,6 @@ class BookingCreateView(LoginRequiredMixin, views.CreateView):
             form.fields['employee'].initial = user
             form.fields['corporate_email'].initial = user.email
 
-            # Try to get the related BookingUserProfile instance
-            # booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).first()
-
             # Set 'first_name' and 'last_name' initial values from BookingUserProfile
             if booking_user_profile:
                 form.fields['first_name'].initial = booking_user_profile.first_name

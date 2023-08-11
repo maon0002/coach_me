@@ -35,150 +35,23 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- for logged users-->
+
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    {#                    {% if user.is_authenticated %}#}
-                    {% if request.user.is_authenticated and not request.user.is_staff %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'add booking' %}">Add Booking</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'dashboard' pk=request.user.pk %}">
-                                My Bookings
-                            </a>
-                        </li>
-
-                        <!-- for logged users // profile pages-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                {{ user.email }}
-                                <img class="user-uni-pic" id="user-uni-img"
-                                     src="{% static '/images/profile-blue-default.png' %}"
-                                     alt="user-uni-pic"
-                                     style="width:20px"/>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'details profile' pk=request.user.pk %}">Profile
-                                        details</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'edit profile' pk=request.user.pk %}">Edit
-                                        profile</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'delete profile' pk=request.user.pk %}">Delete
-                                        profile</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'logout_user' %}">Logout
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    {% elif request.user.is_authenticated and request.user.is_staff %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'add booking' %}">Add Booking</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'dashboard' pk=request.user.pk %}">My Bookings</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                CoachMe
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- for logged users // profile pages-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                {{ user.email }}
-                                <img class="user-uni-pic" id="user-uni-img"
-                                     src="{% static '/images/profile-blue-default.png' %}"
-                                     alt="user-uni-pic"
-                                     style="width:20px"/>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'details profile' pk=request.user.pk %}">Profile
-                                        details</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'edit profile' pk=request.user.pk %}">Edit
-                                        profile</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'delete profile' pk=request.user.pk %}">Delete
-                                        profile</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'logout_user' %}">Logout
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                Admin
-                                <img class="user-uni-pic" id="user-uni-img"
-                                     src="{% static '/images/admin-person.png' %}"
-                                     alt="user-uni-pic"
-                                     style="width:20px"/>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'add lector' %}">
-                                        Add Lector</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'add training' %}">
-                                        Add Training</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'add company' %}">
-                                        Add Company</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'companies' %}">
-                                        Companies</a>
-                                </li>
-                            </ul>
-                        </li>
+                    <!-- for logged users-->
+                    {% if request.user.is_authenticated and request.user.groups == 'COACHME_USER' %}
+                        {% include 'core/nav-bar-logged-user.html' %}
+                        <!-- for staff -->
+                    {% elif request.user.is_authenticated and request.user.groups == 'COACHME_STAFF' %}
+                        {% include 'core/nav-bar-staff.html' %}
+                        <!-- for lector users -->
+                    {% elif request.user.is_authenticated and request.user.groups == 'COACHME_LECTOR' %}
+                        {% include 'core/nav-bar-lector.html' %}
                         <!-- for anonymous users-->
                     {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lectors' %}">Lectors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'trainings' %}">Trainings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'login_user' %}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'register_user' %}">Sign
-                                Up</a>
-                        </li>
+                        {% include 'core/nav-bar-anonymous.html' %}
+
                     {% endif %}
                 </ul>
             </div>

@@ -4,6 +4,12 @@ from coach_me.accounts.managers import BookingUserManager
 
 
 class BookingUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
+    GROUP_CHOICES = (
+        ('COACHME_STAFF', 'COACHME_STAFF'),
+        ('COACHME_LECTOR', 'COACHME_LECTOR'),
+        ('COACHME_USER', 'COACHME_USER'),
+    )
+    GROUPS_CHOICES_MAX_LEN = max(len(choice[1]) for choice in GROUP_CHOICES)
     email = models.EmailField(
         null=False,
         blank=False,
@@ -17,6 +23,16 @@ class BookingUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
 
     is_staff = models.BooleanField(
         default=False,
+    )
+
+    groups = models.CharField(
+        max_length=GROUPS_CHOICES_MAX_LEN,
+        null=True,
+        blank=True,
+        default='DEFAULT_USER',
+        choices=(
+            GROUP_CHOICES
+        ),
     )
 
     USERNAME_FIELD = 'email'
