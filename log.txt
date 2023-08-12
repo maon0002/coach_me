@@ -9799,3 +9799,610 @@ INFO 2023-08-12 15:48:48,974 basehttp "GET / HTTP/1.1" 200 7242
 INFO 2023-08-12 15:48:51,254 basehttp "GET /auth/login/ HTTP/1.1" 200 4503
 INFO 2023-08-12 15:48:56,326 basehttp "POST /auth/login/ HTTP/1.1" 302 0
 INFO 2023-08-12 15:48:56,423 basehttp "GET / HTTP/1.1" 200 8184
+INFO 2023-08-12 15:49:22,093 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 44573
+INFO 2023-08-12 15:49:45,109 basehttp "GET /profile/9/details/ HTTP/1.1" 200 10143
+INFO 2023-08-12 15:51:06,480 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\mixins.py changed, reloading.
+INFO 2023-08-12 15:51:07,800 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 15:52:01,979 basehttp "GET /admin/ HTTP/1.1" 200 12119
+INFO 2023-08-12 15:52:04,039 basehttp "GET /admin/accounts/bookinguser/ HTTP/1.1" 200 21440
+INFO 2023-08-12 15:52:04,158 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:52:15,169 basehttp "GET /admin/accounts/bookinguser/?o=4.-5 HTTP/1.1" 200 22566
+INFO 2023-08-12 15:52:15,243 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:52:16,089 basehttp "GET /admin/accounts/bookinguser/?o=-4.-5 HTTP/1.1" 200 22610
+INFO 2023-08-12 15:52:16,204 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:52:23,485 basehttp "GET /admin/accounts/bookinguser/?is_staff__exact=0&o=-4.-5 HTTP/1.1" 200 22726
+INFO 2023-08-12 15:52:23,555 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:52:24,639 basehttp "GET /admin/accounts/bookinguser/?o=-4.-5 HTTP/1.1" 200 22610
+INFO 2023-08-12 15:52:24,746 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:52:25,901 basehttp "GET /admin/accounts/bookinguser/?is_staff__exact=1&o=-4.-5 HTTP/1.1" 200 16252
+INFO 2023-08-12 15:52:25,959 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:52:27,816 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 11361
+INFO 2023-08-12 15:52:27,893 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:52:33,639 basehttp "GET /admin/auth/group/2/change/ HTTP/1.1" 200 15071
+INFO 2023-08-12 15:52:33,706 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:53:03,237 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 11361
+INFO 2023-08-12 15:53:03,328 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:53:08,679 basehttp "GET /admin/auth/group/1/change/ HTTP/1.1" 200 15234
+INFO 2023-08-12 15:53:08,952 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:53:18,273 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 11361
+INFO 2023-08-12 15:53:18,355 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:53:19,836 basehttp "GET /admin/auth/group/1/change/ HTTP/1.1" 200 15234
+INFO 2023-08-12 15:53:19,940 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:53:36,484 basehttp "GET /admin/lectors/lector/ HTTP/1.1" 200 13799
+INFO 2023-08-12 15:53:36,592 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:53:43,228 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 23377
+INFO 2023-08-12 15:53:43,338 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:54:17,995 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\admin.py changed, reloading.
+INFO 2023-08-12 15:54:19,388 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 15:54:36,653 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\admin.py changed, reloading.
+INFO 2023-08-12 15:54:37,905 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 15:54:38,662 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 24442
+INFO 2023-08-12 15:54:38,756 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:54:56,755 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\admin.py changed, reloading.
+INFO 2023-08-12 15:54:58,022 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 15:54:58,671 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 24442
+INFO 2023-08-12 15:54:58,737 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:55:03,491 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 24442
+INFO 2023-08-12 15:55:03,571 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:56:25,007 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 24442
+INFO 2023-08-12 15:56:25,078 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:56:25,174 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\admin.py changed, reloading.
+INFO 2023-08-12 15:56:26,480 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 15:56:27,339 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 24753
+INFO 2023-08-12 15:56:27,409 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-08-12 15:56:31,905 log Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1301, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+ERROR 2023-08-12 15:56:31,913 basehttp "GET /admin/bookings/booking/?q=Ya HTTP/1.1" 500 185856
+INFO 2023-08-12 15:57:18,928 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\admin.py changed, reloading.
+INFO 2023-08-12 15:57:20,110 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-12 15:57:21,039 log Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1301, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+ERROR 2023-08-12 15:57:21,046 basehttp "GET /admin/bookings/booking/?q=Ya HTTP/1.1" 500 185981
+ERROR 2023-08-12 15:57:22,176 log Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1301, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+ERROR 2023-08-12 15:57:22,180 basehttp "GET /admin/bookings/booking/?q=Ya HTTP/1.1" 500 185981
+ERROR 2023-08-12 15:57:23,143 log Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1301, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+ERROR 2023-08-12 15:57:23,146 basehttp "GET /admin/bookings/booking/?q=Ya HTTP/1.1" 500 185981
+ERROR 2023-08-12 15:57:24,040 log Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1301, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+ERROR 2023-08-12 15:57:24,042 basehttp "GET /admin/bookings/booking/?q=Ya HTTP/1.1" 500 185981
+ERROR 2023-08-12 15:57:24,889 log Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1301, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+ERROR 2023-08-12 15:57:24,892 basehttp "GET /admin/bookings/booking/?q=Ya HTTP/1.1" 500 185981
+INFO 2023-08-12 15:57:30,018 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 26146
+ERROR 2023-08-12 15:57:32,259 log Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1301, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+ERROR 2023-08-12 15:57:32,261 basehttp "GET /admin/bookings/booking/?q=Ya HTTP/1.1" 500 185844
+INFO 2023-08-12 15:57:33,783 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 26146
+ERROR 2023-08-12 15:57:45,177 log Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1301, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+ERROR 2023-08-12 15:57:45,183 basehttp "GET /admin/bookings/booking/?q=zz HTTP/1.1" 500 185844
+INFO 2023-08-12 15:58:25,427 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\admin.py changed, reloading.
+INFO 2023-08-12 15:58:26,751 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 15:58:27,547 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 27406
+INFO 2023-08-12 15:58:40,648 basehttp "GET /admin/bookings/booking/2/change/ HTTP/1.1" 200 28468
+INFO 2023-08-12 15:58:40,759 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:58:41,666 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+INFO 2023-08-12 15:58:41,667 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2023-08-12 15:58:41,683 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2023-08-12 15:58:41,683 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2023-08-12 15:58:41,753 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2023-08-12 15:59:07,850 basehttp "GET /admin/accounts/bookinguser/ HTTP/1.1" 200 21440
+INFO 2023-08-12 15:59:07,952 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:59:10,801 basehttp "GET /admin/accounts/bookinguser/?q=maon HTTP/1.1" 200 15073
+INFO 2023-08-12 15:59:10,879 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:59:27,769 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 27406
+INFO 2023-08-12 15:59:27,895 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:59:28,042 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\admin.py changed, reloading.
+INFO 2023-08-12 15:59:29,398 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 15:59:32,751 basehttp "GET /admin/bookings/booking/?q=zz HTTP/1.1" 200 19035
+INFO 2023-08-12 15:59:32,870 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 15:59:52,726 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\admin.py changed, reloading.
+INFO 2023-08-12 15:59:54,063 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-12 15:59:55,116 log Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1480, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1301, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.
+ERROR 2023-08-12 15:59:55,126 basehttp "GET /admin/bookings/booking/?q=zz HTTP/1.1" 500 187375
+INFO 2023-08-12 15:59:59,257 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\admin.py changed, reloading.
+INFO 2023-08-12 16:00:00,402 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 16:00:01,103 basehttp "GET /admin/bookings/booking/ HTTP/1.1" 200 27406
+INFO 2023-08-12 16:00:03,795 basehttp "GET /admin/bookings/booking/?q=zz HTTP/1.1" 200 19035
+INFO 2023-08-12 16:00:03,867 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:00:05,878 basehttp "GET /admin/bookings/booking/? HTTP/1.1" 200 27406
+INFO 2023-08-12 16:00:05,961 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:00:13,455 basehttp "GET /admin/accounts/bookinguser/ HTTP/1.1" 200 21440
+INFO 2023-08-12 16:00:13,522 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:00:14,731 basehttp "GET /admin/lectors/lector/ HTTP/1.1" 200 13799
+INFO 2023-08-12 16:00:14,810 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:00:18,895 basehttp "GET /admin/lectors/lector/?q=eva HTTP/1.1" 200 13460
+INFO 2023-08-12 16:00:18,963 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:00:21,103 basehttp "GET /admin/profiles/bookinguserprofile/ HTTP/1.1" 200 21197
+INFO 2023-08-12 16:00:21,217 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:01:28,171 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\admin.py changed, reloading.
+INFO 2023-08-12 16:01:29,408 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 16:01:35,683 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\admin.py changed, reloading.
+INFO 2023-08-12 16:01:36,948 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 16:01:37,601 basehttp "GET /admin/accounts/bookinguser/ HTTP/1.1" 200 21440
+INFO 2023-08-12 16:01:37,668 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:03:27,990 basehttp "GET /admin/accounts/bookinguser/ HTTP/1.1" 200 21440
+INFO 2023-08-12 16:03:28,050 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:03:28,109 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\lectors\admin.py changed, reloading.
+INFO 2023-08-12 16:03:29,431 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 16:03:31,281 basehttp "GET /admin/accounts/bookinguser/ HTTP/1.1" 200 22305
+INFO 2023-08-12 16:03:31,336 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:03:50,783 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\accounts\admin.py changed, reloading.
+INFO 2023-08-12 16:03:52,159 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 16:03:52,879 basehttp "GET /admin/accounts/bookinguser/ HTTP/1.1" 200 22732
+INFO 2023-08-12 16:03:52,937 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:03:53,590 basehttp "GET /admin/accounts/bookinguser/ HTTP/1.1" 200 22732
+INFO 2023-08-12 16:03:53,647 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:03:56,482 basehttp "GET /admin/accounts/bookinguser/?c_labels__exact=COACHME_STAFF HTTP/1.1" 200 16637
+INFO 2023-08-12 16:03:56,592 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:03:59,091 basehttp "GET /admin/accounts/bookinguser/?c_labels__exact=COACHME_LECTOR HTTP/1.1" 200 17268
+INFO 2023-08-12 16:03:59,169 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:04:06,221 basehttp "GET /admin/profiles/bookinguserprofile/ HTTP/1.1" 200 21197
+INFO 2023-08-12 16:04:06,327 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:04:11,648 basehttp "GET /admin/profiles/company/ HTTP/1.1" 200 18408
+INFO 2023-08-12 16:04:11,723 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:04:14,047 basehttp "GET /admin/trainings/training/ HTTP/1.1" 200 20260
+INFO 2023-08-12 16:04:14,138 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-12 16:04:32,240 basehttp "GET /admin/ HTTP/1.1" 200 12119

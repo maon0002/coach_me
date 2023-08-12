@@ -4,19 +4,41 @@ from coach_me.lectors.models import Lector
 
 @admin.register(Lector)
 class LectorAdmin(admin.ModelAdmin):
-    filter_horizontal = ('service_integrity',)
+    filter_horizontal = (
+        'service_integrity',
+    )
 
-    list_display = ('full_name', 'email', 'phone', )
+    list_display = (
+        'full_name',
+        'email',
+        'phone',
+    )
 
-    list_filter = ('inserted_on', 'updated_on')
+    list_filter = (
+        'inserted_on',
+        'updated_on'
+    )
 
-    search_fields = ('first_name', 'last_name', 'email', 'phone')
+    search_fields = (
+        'first_name',
+        'last_name',
+        'email',
+        'phone'
+    )
 
     fieldsets = (
         ('Lector Information', {
             'fields': (
-            'user', 'first_name', 'last_name', 'phone', 'email', 'lector_image', 'service_integrity', 'biography',
-            'slug')
+                'user',
+                'first_name',
+                'last_name',
+                'phone',
+                'email',
+                'lector_image',
+                'service_integrity',
+                'biography',
+                'slug',
+            )
         }),
     )
 

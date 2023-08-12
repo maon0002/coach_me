@@ -8,13 +8,23 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'employee',
+        'first_name',
+        'last_name',
         'phone',
         'booking_type',
-        'lector')
+        'lector',
+    )
+
+    search_fields = (
+        'first_name',
+        'last_name',
+        'phone',
+
+    )
 
     list_filter = (
         'employee', 'booking_type', 'lector',
-        # 'first_name', 'last_name',
+        'first_name', 'last_name',
     )
 
     fieldsets = (

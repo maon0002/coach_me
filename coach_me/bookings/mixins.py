@@ -15,7 +15,6 @@ class DefineModelsMixin:
         user_pk = self.request.user.pk
 
         # Retrieve the BookingUserProfile using the pk
-        # booking_user_profile = get_object_or_404(BookingUserProfile, user_id=user_pk)
         booking_user_profile = BookingUserProfile.objects.filter(pk=user_pk)
         if booking_user_profile:
             return booking_user_profile
@@ -27,7 +26,6 @@ class DefineModelsMixin:
         user_pk = self.request.user.pk
 
         # Retrieve the BookingUser using the pk
-        # booking_user_profile = get_object_or_404(BookingUserProfile, user_id=user_pk)
         booking_user = BookingUser.objects.filter(pk=user_pk)
 
         if booking_user:
