@@ -1,37 +1,41 @@
 <!-- Pagination -->
-<nav class="my-4" aria-label="...">
-    <ul class="pagination pagination-circle justify-content-center">
-        {% if page_obj.has_previous %}
-            <li class="page-item">
-                <a class="page-link" href="?page=1" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-        {% else %}
-            <li class="page-item disabled">
-                <span class="page-link">Previous</span>
-            </li>
-        {% endif %}
-
-        {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-                <li class="page-item active" aria-current="page">
-                    <span class="page-link">{{ num }} <span class="sr-only">(current)</span></span>
+<div class="pagination-container" style="
+        position: relative;
+        z-index: 0;
+        ">
+    <nav class="my-4" aria-label="...">
+        <ul class="pagination pagination-circle justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1" tabindex="-1" aria-disabled="true">Previous</a>
                 </li>
             {% else %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
                 </li>
             {% endif %}
-        {% endfor %}
 
-        {% if page_obj.has_next %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Next</a>
-            </li>
-        {% else %}
-            <li class="page-item disabled">
-                <span class="page-link">Next</span>
-            </li>
-        {% endif %}
-    </ul>
-</nav>
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{ num }} <span class="sr-only">(current)</span></span>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
 
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Next</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link">Next</span>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>

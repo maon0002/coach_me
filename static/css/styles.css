@@ -27,3 +27,13 @@ body,
   height: 50%;
 }
 
+/* Adjust the position and z-index for the pagination container */
+.pagination-container {
+    position: relative; /* Ensure relative positioning */
+    z-index: 1; /* Give it a lower z-index so it stays behind other elements */
+}
+
+/* Add margin to the footer to ensure content is not overlaid */
+.footer {
+    margin-top: 20px; /* Adjust as needed */
+}
