@@ -6622,3 +6622,150 @@ INFO 2023-08-12 09:33:09,726 basehttp "GET /company/add/ HTTP/1.1" 200 12766
 INFO 2023-08-12 09:34:22,530 basehttp "POST /company/add/ HTTP/1.1" 302 0
 INFO 2023-08-12 09:34:22,600 basehttp "GET /companies/ HTTP/1.1" 200 20674
 INFO 2023-08-12 09:34:30,514 basehttp "GET /companies/ HTTP/1.1" 200 20674
+INFO 2023-08-12 09:35:43,808 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58221
+INFO 2023-08-12 09:36:54,823 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58221
+INFO 2023-08-12 09:36:55,187 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:36:55,209 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:36:56,415 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:36:56,428 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:36:56,892 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58221
+INFO 2023-08-12 09:37:02,278 basehttp "GET /profile/1/dashboard/?past_page=2 HTTP/1.1" 200 53617
+INFO 2023-08-12 09:37:23,220 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 41695
+INFO 2023-08-12 09:37:24,206 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 41695
+INFO 2023-08-12 09:40:09,657 basehttp "GET /profile/9/dashboard/?past_page=2 HTTP/1.1" 200 25768
+INFO 2023-08-12 09:40:11,557 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 41717
+INFO 2023-08-12 09:41:26,057 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:41:26,064 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:41:27,219 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:41:27,220 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:41:27,926 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 48647
+INFO 2023-08-12 09:41:29,882 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:41:29,883 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:41:29,883 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:41:29,884 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-12 09:41:29,885 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-12 09:41:29,892 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-12 09:41:29,916 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:41:50,471 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:41:51,242 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 48647
+INFO 2023-08-12 09:41:51,708 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:41:51,985 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:41:52,277 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 41717
+INFO 2023-08-12 09:41:53,066 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:41:54,488 basehttp - Broken pipe from ('127.0.0.1', 49388)
+INFO 2023-08-12 09:41:54,491 basehttp - Broken pipe from ('127.0.0.1', 49387)
+INFO 2023-08-12 09:41:54,676 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:41:54,682 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:41:54,689 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-12 09:41:54,690 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-12 09:41:54,697 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:41:54,704 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-12 09:41:54,724 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:41:54,794 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 41717
+INFO 2023-08-12 09:41:54,958 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:41:54,965 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:41:54,966 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:41:54,966 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-12 09:41:54,968 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-12 09:41:54,969 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-12 09:42:49,594 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:42:49,623 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:42:50,739 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:42:50,769 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:42:51,227 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 41717
+INFO 2023-08-12 09:42:52,403 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:43:04,232 basehttp "GET /profile/9/dashboard/?past_page=1 HTTP/1.1" 200 41700
+INFO 2023-08-12 09:43:04,379 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:43:04,383 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:43:04,384 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:43:04,388 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-12 09:43:04,389 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-12 09:43:04,390 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-12 09:43:04,519 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:43:34,702 basehttp "GET /auth/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 09:43:34,743 basehttp "GET / HTTP/1.1" 200 6810
+INFO 2023-08-12 09:43:38,182 basehttp "GET /auth/login/ HTTP/1.1" 200 3983
+INFO 2023-08-12 09:43:41,987 basehttp "POST /auth/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 09:43:42,045 basehttp "GET / HTTP/1.1" 200 7897
+INFO 2023-08-12 09:43:45,175 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20904
+INFO 2023-08-12 09:44:34,549 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20904
+INFO 2023-08-12 09:44:34,708 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-12 09:44:34,708 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:44:34,709 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:44:34,709 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:44:34,790 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:44:48,202 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20904
+INFO 2023-08-12 09:44:48,354 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:44:48,359 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:44:48,360 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-12 09:44:48,360 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:44:48,454 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:45:01,241 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20904
+INFO 2023-08-12 09:45:01,405 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:45:01,406 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-12 09:45:01,406 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:45:01,407 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:45:01,503 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:45:21,428 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20905
+INFO 2023-08-12 09:45:21,586 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:45:21,587 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-12 09:45:21,587 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:45:21,588 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:45:21,681 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:46:16,188 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20905
+INFO 2023-08-12 09:46:16,338 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-12 09:46:16,339 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:46:16,339 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:46:16,339 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:46:16,442 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:46:17,271 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20905
+INFO 2023-08-12 09:46:17,428 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:46:17,431 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:46:17,432 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-12 09:46:17,432 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:46:17,522 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:46:19,484 basehttp "GET /profile/1/dashboard/?past_page=2 HTTP/1.1" 200 53622
+INFO 2023-08-12 09:46:19,582 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:46:19,597 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:46:19,603 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 09:46:19,604 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-12 09:46:19,605 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-12 09:46:19,606 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:46:19,607 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-12 09:46:19,695 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:46:20,271 basehttp "GET /profile/1/dashboard/?past_page=2 HTTP/1.1" 200 53622
+INFO 2023-08-12 09:46:20,347 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 09:46:20,349 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:46:20,349 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:46:20,353 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:46:20,354 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-12 09:46:20,355 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-12 09:46:20,356 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-12 09:46:20,401 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:47:25,218 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:47:25,448 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py changed, reloading.
+INFO 2023-08-12 09:47:26,371 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:47:26,634 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 09:47:26,868 basehttp "GET /profile/1/dashboard/?past_page=2 HTTP/1.1" 200 53627
+INFO 2023-08-12 09:47:28,829 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:47:28,829 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 09:47:28,830 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:47:28,834 basehttp "GET /static/images/csv.png HTTP/1.1" 200 2968
+INFO 2023-08-12 09:47:28,834 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-12 09:47:28,835 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-12 09:47:28,846 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-12 09:47:28,861 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:47:46,779 basehttp "GET /profile/1/details/ HTTP/1.1" 200 10871
+INFO 2023-08-12 09:48:08,916 basehttp "GET /profile/1/details/ HTTP/1.1" 200 10871
+INFO 2023-08-12 09:48:08,977 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:48:08,983 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:48:08,984 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 09:48:09,133 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:48:09,868 basehttp "GET /profile/1/details/ HTTP/1.1" 200 10854
+INFO 2023-08-12 09:48:09,936 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 09:48:09,943 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 09:48:09,943 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 09:48:09,992 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 09:48:16,435 basehttp "GET /profile/1/details/ HTTP/1.1" 200 10854
+INFO 2023-08-12 09:48:17,691 basehttp "GET /profile/1/details/ HTTP/1.1" 200 10854
+INFO 2023-08-12 09:48:27,249 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58214

@@ -75,11 +75,9 @@ class DashboardView(LoginRequiredMixin, views.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
-
+        current_date = timezone.now().date()
         # GET all existed bookings for a staff user
         if user.groups == 'COACHME_STAFF':
-            current_date = timezone.now().date()
-
             past_bookings = Booking.objects.filter(
                 start_date__lt=current_date
             ).order_by('-start_date').all()
@@ -90,7 +88,6 @@ class DashboardView(LoginRequiredMixin, views.ListView):
         # GET all existed bookings with the current user as a lector
         elif user.groups == 'COACHME_LECTOR':
             lector = Lector.objects.filter(user_id=user.pk).get()
-            current_date = timezone.now().date()
 
             past_bookings = Booking.objects.filter(
                 lector=lector,
@@ -106,8 +103,6 @@ class DashboardView(LoginRequiredMixin, views.ListView):
 
         # GET all existed bookings for the current user
         else:
-            current_date = timezone.now().date()
-
             past_bookings = Booking.objects.filter(
                 employee=user,
                 start_date__lt=current_date
@@ -116,6 +111,9 @@ class DashboardView(LoginRequiredMixin, views.ListView):
                 employee=user,
                 start_date__gte=current_date
             ).order_by('start_date').all()
+
+        context['past_bookings_count'] = len(past_bookings)
+        context['future_bookings_count'] = len(future_bookings)
 
         paginator_past = Paginator(past_bookings, self.paginate_by)
         paginator_future = Paginator(future_bookings, self.paginate_by)
@@ -128,6 +126,7 @@ class DashboardView(LoginRequiredMixin, views.ListView):
 
         context['past_bookings'] = past_bookings
         context['future_bookings'] = future_bookings
+
         # Retrieve the user profile for the current user
         try:
             profile = BookingUserProfile.objects.get(pk=user.pk)
