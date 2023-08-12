@@ -56,7 +56,10 @@ class Booking(models.Model):
 
     id = models.BigAutoField(primary_key=True)
 
-    start_date = models.DateField(default=now, )  # datetime picker and check if it's free
+    start_date = models.DateField(
+        default=now,
+    )  # datetime picker and check if it's free
+
     start_time = models.CharField(
         null=False,
         blank=False,
@@ -183,12 +186,6 @@ class Booking(models.Model):
         auto_now=True
     )  # ,  auto_now=True for update
 
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.corporate_email = BookingUser.email
-    #     self.first_name = Booking.first_name
-    #     self.last_name = Booking.last_name
-    #     self.full_name = f"{self.first_name} {self.last_name}"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

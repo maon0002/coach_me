@@ -6769,3 +6769,580 @@ INFO 2023-08-12 09:48:09,992 basehttp "GET /static/images/favicon.png HTTP/1.1" 
 INFO 2023-08-12 09:48:16,435 basehttp "GET /profile/1/details/ HTTP/1.1" 200 10854
 INFO 2023-08-12 09:48:17,691 basehttp "GET /profile/1/details/ HTTP/1.1" 200 10854
 INFO 2023-08-12 09:48:27,249 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58214
+INFO 2023-08-12 10:04:45,529 basehttp "GET /profile/1/details/ HTTP/1.1" 200 10690
+INFO 2023-08-12 10:04:50,991 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58126
+INFO 2023-08-12 10:04:52,049 basehttp "GET /booking/add/ HTTP/1.1" 200 16365
+INFO 2023-08-12 10:04:53,300 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58126
+INFO 2023-08-12 10:04:54,911 basehttp "GET /trainings/ HTTP/1.1" 200 13790
+INFO 2023-08-12 10:06:30,067 basehttp "GET /profile/12/details/ HTTP/1.1" 200 9727
+INFO 2023-08-12 10:06:37,430 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 20800
+INFO 2023-08-12 10:06:40,837 basehttp "GET /lectors/ HTTP/1.1" 200 13797
+INFO 2023-08-12 10:06:42,628 basehttp "GET /lector/1-maria-doe/details/ HTTP/1.1" 200 11158
+INFO 2023-08-12 10:09:08,174 basehttp "GET /auth/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:09:08,217 basehttp "GET / HTTP/1.1" 200 6705
+INFO 2023-08-12 10:09:10,611 basehttp "GET /auth/login/ HTTP/1.1" 200 3983
+INFO 2023-08-12 10:09:14,780 basehttp "POST /auth/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:09:14,825 basehttp "GET / HTTP/1.1" 200 7647
+INFO 2023-08-12 10:09:16,352 basehttp "GET /booking/add/ HTTP/1.1" 200 15925
+WARNING 2023-08-12 10:09:16,447 log Not Found: /resources/demos/style.css
+WARNING 2023-08-12 10:09:16,449 basehttp "GET /resources/demos/style.css HTTP/1.1" 404 4661
+WARNING 2023-08-12 10:09:16,552 log Not Found: /resources/demos/style.css
+WARNING 2023-08-12 10:09:16,553 basehttp "GET /resources/demos/style.css HTTP/1.1" 404 4661
+INFO 2023-08-12 10:14:28,834 basehttp "GET /trainings/ HTTP/1.1" 200 12889
+ERROR 2023-08-12 10:14:30,813 log Internal Server Error: /booking/add/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 1491, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 967, in do_if
+    nodelist = parser.parse(("endif",))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\widget_tweaks\templatetags\widget_tweaks.py", line 191, in render_field
+    parser.compile_filter(dct["value"]),
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '{'' from '{''
+ERROR 2023-08-12 10:14:30,822 basehttp "GET /booking/add/ HTTP/1.1" 500 390155
+WARNING 2023-08-12 10:14:31,371 log Not Found: /favicon.ico
+WARNING 2023-08-12 10:14:31,372 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+ERROR 2023-08-12 10:16:11,451 log Internal Server Error: /booking/add/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 1491, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 967, in do_if
+    nodelist = parser.parse(("endif",))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\widget_tweaks\templatetags\widget_tweaks.py", line 191, in render_field
+    parser.compile_filter(dct["value"]),
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '{'' from '{''
+ERROR 2023-08-12 10:16:11,454 basehttp "GET /booking/add/ HTTP/1.1" 500 451351
+INFO 2023-08-12 10:18:20,551 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58347
+ERROR 2023-08-12 10:18:23,351 log Internal Server Error: /booking/add/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 1491, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 967, in do_if
+    nodelist = parser.parse(("endif",))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\widget_tweaks\templatetags\widget_tweaks.py", line 191, in render_field
+    parser.compile_filter(dct["value"]),
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '{'' from '{''
+ERROR 2023-08-12 10:18:23,354 basehttp "GET /booking/add/ HTTP/1.1" 500 452362
+WARNING 2023-08-12 10:18:23,578 log Not Found: /favicon.ico
+WARNING 2023-08-12 10:18:23,579 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-12 10:20:36,985 basehttp "GET /booking/add/ HTTP/1.1" 200 16543
+INFO 2023-08-12 10:21:37,949 basehttp "GET /booking/add/ HTTP/1.1" 200 16543
+INFO 2023-08-12 10:21:38,150 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 10:21:38,155 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 10:21:38,163 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 10:21:38,197 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 10:21:39,593 basehttp "GET /booking/add/ HTTP/1.1" 200 16543
+INFO 2023-08-12 10:21:39,701 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 10:21:39,712 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 10:21:39,713 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 10:21:39,740 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 10:29:18,049 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\models.py changed, reloading.
+INFO 2023-08-12 10:29:18,062 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\models.py changed, reloading.
+INFO 2023-08-12 10:29:19,316 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:29:19,386 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:30:17,662 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\models.py changed, reloading.
+INFO 2023-08-12 10:30:17,664 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\models.py changed, reloading.
+INFO 2023-08-12 10:30:18,717 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:30:18,732 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:30:44,903 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:30:44,948 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:30:46,175 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:30:46,193 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:30:53,474 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:30:53,522 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:30:54,674 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:30:54,713 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:31:10,982 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:31:11,023 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:31:12,117 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:31:12,162 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:31:22,750 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:31:22,757 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:31:23,884 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:31:23,898 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:32:12,376 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:32:12,380 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:32:13,613 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:32:13,635 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-12 10:32:15,217 log Internal Server Error: /booking/add/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(field, class="form-control")' from 'form.render_field(field, class="form-control")'
+ERROR 2023-08-12 10:32:15,225 basehttp "GET /booking/add/ HTTP/1.1" 500 408527
+INFO 2023-08-12 10:33:04,067 basehttp "GET /booking/add/ HTTP/1.1" 200 15417
+INFO 2023-08-12 10:33:05,171 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 10:33:05,172 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 10:33:53,869 basehttp "POST /booking/add/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:33:54,019 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 44257
+INFO 2023-08-12 10:34:07,941 basehttp "GET /booking/63/edit/ HTTP/1.1" 200 16439
+INFO 2023-08-12 10:34:08,093 basehttp "GET /static/css/styles.css HTTP/1.1" 200 950
+INFO 2023-08-12 10:37:49,641 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:37:49,690 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\forms.py changed, reloading.
+INFO 2023-08-12 10:37:50,787 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:37:50,845 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:37:51,281 basehttp "GET /booking/63/edit/ HTTP/1.1" 200 16441
+INFO 2023-08-12 10:37:52,612 basehttp "GET /static/css/styles.css HTTP/1.1" 200 950
+INFO 2023-08-12 10:37:52,620 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 10:37:52,623 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 10:37:52,795 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 10:38:11,222 basehttp "POST /booking/63/edit/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:38:11,372 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 44265
+INFO 2023-08-12 10:38:21,220 basehttp "GET /profile/9/edit/ HTTP/1.1" 200 12041
+INFO 2023-08-12 10:39:54,319 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\forms.py changed, reloading.
+INFO 2023-08-12 10:39:54,532 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\forms.py changed, reloading.
+INFO 2023-08-12 10:39:55,541 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:39:55,716 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-12 10:39:56,153 log Internal Server Error: /profile/9/edit/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 144, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py", line 206, in get_form
+    form = super().get_form(form_class)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 39, in get_form
+    return form_class(**self.get_form_kwargs())
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\forms.py", line 25, in __init__
+    self.fields['start_date'].widget = DateInput(
+KeyError: 'start_date'
+ERROR 2023-08-12 10:39:56,156 basehttp "GET /profile/9/edit/ HTTP/1.1" 500 104580
+WARNING 2023-08-12 10:39:56,496 log Not Found: /favicon.ico
+WARNING 2023-08-12 10:39:56,496 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-12 10:40:19,514 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\forms.py changed, reloading.
+ERROR 2023-08-12 10:40:19,846 log Internal Server Error: /profile/9/edit/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 144, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\views.py", line 206, in get_form
+    form = super().get_form(form_class)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 39, in get_form
+    return form_class(**self.get_form_kwargs())
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\forms.py", line 25, in __init__
+    self.fields['date_of_birth'].widget = DateInput(
+KeyError: 'start_date'
+ERROR 2023-08-12 10:40:19,851 basehttp "GET /profile/9/edit/ HTTP/1.1" 500 104586
+INFO 2023-08-12 10:40:20,107 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\forms.py changed, reloading.
+INFO 2023-08-12 10:40:20,690 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-12 10:40:21,035 log Not Found: /favicon.ico
+WARNING 2023-08-12 10:40:21,036 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-12 10:40:21,193 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 10:40:22,086 basehttp "GET /profile/9/edit/ HTTP/1.1" 200 12029
+INFO 2023-08-12 10:40:23,425 basehttp "GET /static/css/styles.css HTTP/1.1" 200 950
+INFO 2023-08-12 10:40:23,425 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 10:40:23,426 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 10:40:23,504 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 10:42:47,968 basehttp "GET /booking/add/ HTTP/1.1" 200 16623
+INFO 2023-08-12 10:42:48,158 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 10:42:48,172 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 10:42:48,173 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 10:42:48,213 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 10:42:52,744 basehttp "GET /booking/add/ HTTP/1.1" 200 16623
+INFO 2023-08-12 10:42:52,862 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 10:42:52,863 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 10:42:52,879 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 10:42:52,910 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 10:50:02,002 basehttp "GET /booking/add/ HTTP/1.1" 200 16631
+INFO 2023-08-12 10:50:02,218 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 10:50:02,228 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 10:50:02,229 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 10:50:02,266 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 10:55:40,110 basehttp "GET /static/css/styles.css HTTP/1.1" 200 1080
+INFO 2023-08-12 10:57:40,425 basehttp "GET /profile/9/edit/ HTTP/1.1" 200 12105
+INFO 2023-08-12 10:57:40,831 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 10:57:40,832 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 10:57:40,844 basehttp "GET /static/css/styles.css HTTP/1.1" 200 1079
+INFO 2023-08-12 10:57:41,034 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:02:20,839 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\forms.py changed, reloading.
+INFO 2023-08-12 11:02:21,878 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\profiles\forms.py changed, reloading.
+INFO 2023-08-12 11:02:22,076 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 11:02:22,975 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 11:02:44,384 basehttp "GET /profile/9/edit/ HTTP/1.1" 200 12323
+INFO 2023-08-12 11:02:44,623 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2023-08-12 11:05:22,068 basehttp "GET /profile/9/edit/ HTTP/1.1" 200 12326
+INFO 2023-08-12 11:05:23,464 basehttp "GET /static/css/styles.css HTTP/1.1" 200 1079
+INFO 2023-08-12 11:05:23,465 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:05:23,465 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:05:23,573 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:05:44,190 basehttp "POST /profile/9/edit/ HTTP/1.1" 302 0
+INFO 2023-08-12 11:05:44,288 basehttp "GET /profile/9/details/ HTTP/1.1" 200 10124
+INFO 2023-08-12 11:05:48,950 basehttp "GET /booking/add/ HTTP/1.1" 200 15714
+INFO 2023-08-12 11:06:29,858 basehttp "GET /booking/add/ HTTP/1.1" 200 15713
+INFO 2023-08-12 11:06:32,717 basehttp "GET /booking/add/ HTTP/1.1" 200 15713

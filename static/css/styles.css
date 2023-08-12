@@ -37,3 +37,10 @@ body,
 .footer {
     margin-top: 20px; /* Adjust as needed */
 }
+
+
+/* Customize the Datepicker dropdown */
+.ui-datepicker {
+    font-family: 'Segoe UI', sans-serif ;
+    font-size: 14px;
+}

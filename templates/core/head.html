@@ -10,8 +10,25 @@
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="icon" href="{% static '/images/favicon.png' %}">
 
-    {#    Date picker#}
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    {#    Date picker for profile birthday date#}
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/Flick/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepickerPast").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1923:c-18',  // Show years from 1923 to current year
+            });
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: 'c:c+1',  // Show the dates from the current date until the next year
+            });
+        });
+    </script>
 
 </head>
