@@ -7,7 +7,7 @@
     {% if not past_bookings and not future_bookings %}
         <h3
                 style="text-align: center; color: deepskyblue">
-            {{ profile.first_name }} HAS NO SCHEDULED BOOKINGS YET:
+            NO SCHEDULED BOOKINGS YET:
         </h3>
     {% else %}
         <section class="my-5">
@@ -21,7 +21,7 @@
                              table-striped">
                                         <h3
                                                 style="text-align: center; color: deepskyblue">
-                                           {{ profile.full_name }} SCHEDULED BOOKINGS:
+                                           ALL SCHEDULED BOOKINGS:
                                         </h3>
                                         <hr>
                                         <thead>
@@ -41,7 +41,7 @@
                                             <tr>
                                                 <td>{{ booking.booking_type }}</td>
                                                 <td>{{ booking.start_date }} : {{ booking.start_time }}</td>
-                                                <td style="color: gray">{{ profile.full_name }}</td>
+                                                <td>{{ booking.user_full_name|capfirst }}</td>
                                                 <td>{{ booking.lector }}</td>
                                                 <td>{{ booking.training_mode }}</td>
                                                 <td>
@@ -72,6 +72,8 @@
                                         {% endfor %}
                                         </tbody>
                                     </table>
+                                    <!-- Add pagination for future bookings here -->
+                                    {#                                                                        {% include 'core/pagination_dashboard_future.html' with page_obj=future_bookings %}#}
                                 </div>
                             </div>
 
@@ -83,7 +85,7 @@
                             <table class="table table-hover table-secondary">
                                 <h3
                                         style="text-align: left; color: gray">
-                                   {{ profile.full_name }} PAST BOOKINGS:
+                                   ALL PAST BOOKINGS:
 
                                 </h3>
 
@@ -105,7 +107,7 @@
                                         <td style="color: gray">{{ booking.booking_type }}</td>
                                         <td style="color: gray">{{ booking.start_date }}
                                             : {{ booking.start_time }}</td>
-                                        <td style="color: gray">{{ profile.full_name }}</td>
+                                        <td style="color: gray">{{ booking.first_name|capfirst }} {{ booking.last_name|capfirst }}</td>
                                         <td style="color: gray">{{ booking.lector }}</td>
                                         <td style="color: gray">{{ booking.training_mode }}</td>
                                         <td style="color: gray">
@@ -118,16 +120,16 @@
                                         </td>
                                         <td>
                                             <a class="edit-booking-button"
-                                               href="#">
-                                                <img src="{% static 'images/na.png' %}"
+                                               href="{% url 'edit booking' pk=booking.pk %}">
+                                                <img src="{% static '/images/edit-icon.png' %}"
                                                      style="width: 20px; margin:auto; text-align:center; display:block;"
                                                      alt="edit-booking">
                                             </a>
                                         </td>
                                         <td>
                                             <a class="delete-booking-button"
-                                               href="#">
-                                                <img src="{% static 'images/na.png' %}"
+                                               href="{% url 'delete booking' pk=booking.pk %}">
+                                                <img src="{% static 'images/delete-booking-icon.png' %}"
                                                      style="width: 20px; margin:auto; text-align:center; display:block;"
                                                      alt="delete-booking">
                                             </a>
@@ -135,6 +137,13 @@
                                     </tr>
                                 {% endfor %}
                                 </tbody>
+
+                                <a class="csv-exporting-button"
+                                   href="{% export_csv_link %}">
+                                    <img src="{% static '/images/csv.png' %}"
+                                         style="width: 35px; text-align:left; "
+                                         alt="csv-exporting"> export to .csv
+                                </a>
                             </table>
                             <!-- Add pagination for past bookings here -->
                             {% include 'core/pagination_dashboard_past.html' with page_obj=past_bookings %}

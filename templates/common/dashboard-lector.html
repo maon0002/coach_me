@@ -7,7 +7,7 @@
     {% if not past_bookings and not future_bookings %}
         <h3
                 style="text-align: center; color: deepskyblue">
-            {{ profile.first_name }} HAS NO BOOKINGS SCHEDULED BOOKINGS YET:
+            LECTOR {{ profile.first_name }} HAS NO SCHEDULED BOOKINGS YET:
         </h3>
     {% else %}
         <section class="my-5">
@@ -21,7 +21,7 @@
                              table-striped">
                                         <h3
                                                 style="text-align: center; color: deepskyblue">
-                                            SCHEDULED BOOKINGS:
+                                            SCHEDULED BOOKINGS WITH {{ profile.full_name }} AS A LECTOR:
                                         </h3>
                                         <hr>
                                         <thead>
@@ -29,6 +29,8 @@
                                             <th scope="col" style="background-color: white">TRAINING</th>
                                             <th scope="col" style="background-color: white">SCHEDULED FOR</th>
                                             <th scope="col" style="background-color: white">MODE</th>
+                                            <th scope="col" style="background-color: white">EMPLOYEE</th>
+                                            <th scope="col" style="background-color: white">EMPLOYEE EMAIL</th>
                                             <th scope="col" style="background-color: white">Details</th>
                                         </tr>
                                         </thead>
@@ -38,6 +40,8 @@
                                                 <td>{{ booking.booking_type }}</td>
                                                 <td>{{ booking.start_date }} : {{ booking.start_time }}</td>
                                                 <td>{{ booking.training_mode }}</td>
+                                                <td>{{ booking.user_full_name }}</td>
+                                                <td>{{ booking.corporate_email }}</td>
                                                 <td style="color: gray">
                                                     <a class="details-booking-button"
                                                        href="{% url 'details booking' pk=booking.pk %}">
@@ -61,13 +65,16 @@
                             <table class="table table-hover table-secondary">
                                 <h3
                                         style="text-align: left; color: gray">
-                                    PAST BOOKINGS:
+                                    PAST BOOKINGS WITH {{ profile.full_name }} AS A LECTOR:
                                 </h3>
                                 <thead>
                                 <tr>
                                     <th scope="col" style="background-color: white">TRAINING</th>
                                     <th scope="col" style="background-color: white">SCHEDULED FOR</th>
                                     <th scope="col" style="background-color: white">MODE</th>
+                                    <th scope="col" style="background-color: white">EMPLOYEE</th>
+                                    <th scope="col" style="background-color: white">EMPLOYEE EMAIL</th>
+
                                     <th scope="col" style="background-color: white">Details</th>
                                 </tr>
                                 </thead>
@@ -78,6 +85,8 @@
                                         <td style="color: gray">{{ booking.start_date }}
                                             : {{ booking.start_time }}</td>
                                         <td style="color: gray">{{ booking.training_mode }}</td>
+                                        <td style="color: gray">{{ booking.user_full_name }}</td>
+                                        <td style="color: gray">{{ booking.corporate_email }}</td>
                                         <td style="color: gray">
                                             <a class="details-booking-button"
                                                href="{% url 'details booking' pk=booking.pk %}">

@@ -18,23 +18,28 @@ UserModel = get_user_model()
 
 def export_csv(request):
     response = HttpResponse(content_type='text/csv')
-    # response['Content-Disposition'] = 'attachment; filename="my_bookings.csv"'
-
     writer = csv.writer(response)
 
     # Fetch the data and write to CSV
-
     user = request.user
-    booking_user = BookingUserProfile.objects.filter(pk=user.pk).get()
-    if not booking_user.is_lector:
+    if user.groups == 'COACHME_STAFF':
+        queryset = Booking.objects.all()
+        response['Content-Disposition'] = 'attachment; filename="staff_all_scheduled_trainings.csv"'
+    elif user.groups == 'COACHME_USER':
         queryset = Booking.objects.filter(employee=user).all()
         response['Content-Disposition'] = 'attachment; filename="my_bookings.csv"'
-    else:
+    elif user.groups == 'COACHME_LECTOR':
         lector = Lector.objects.filter(user_id=user.pk).get()
         queryset = Booking.objects.filter(lector=lector).order_by('-start_date').all()
-        response['Content-Disposition'] = 'attachment; filename="my_scheduled_trainings.csv"'
+        response['Content-Disposition'] = 'attachment; filename="lector_scheduled_trainings.csv"'
+    else:
+        queryset = None
+        response['Content-Disposition'] = 'attachment; filename="no_data.csv"'
 
-    fields = [field.name for field in queryset.model._meta.fields]
+    try:
+        fields = [field.name for field in queryset.model._meta.fields]
+    except AttributeError:
+        return redirect(reverse_lazy('dashboard', kwargs={'pk': user.pk}))
 
     # Write the headers
     writer.writerow(fields)
@@ -56,10 +61,13 @@ class DashboardView(LoginRequiredMixin, views.ListView):
     def get_queryset(self):
         user = self.request.user
         booking_user = BookingUserProfile.objects.filter(pk=user.pk).get()
-        if not booking_user.is_lector:
+        if user.groups == 'COACHME_STAFF':
+            bookings = Booking.objects.order_by('start_date').all()
+            return bookings
+        elif user.groups == 'COACHME_USER':
             bookings = Booking.objects.filter(employee=user).order_by('start_date').all()
             return bookings
-        elif booking_user.is_lector:
+        elif user.groups == 'COACHME_LECTOR':
             lector = Lector.objects.filter(user_id=user.pk).get()
             bookings = Booking.objects.filter(lector_id=lector.pk).order_by('start_date').all()
             return bookings
@@ -67,38 +75,21 @@ class DashboardView(LoginRequiredMixin, views.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
-        booking_user = BookingUserProfile.objects.filter(pk=user.pk).get()
-        if not booking_user.is_lector:
+
+        # GET all existed bookings for a staff user
+        if user.groups == 'COACHME_STAFF':
             current_date = timezone.now().date()
 
             past_bookings = Booking.objects.filter(
-                employee=user,
                 start_date__lt=current_date
             ).order_by('-start_date').all()
             future_bookings = Booking.objects.filter(
-                employee=user,
                 start_date__gte=current_date
             ).order_by('start_date').all()
 
-            paginator_past = Paginator(past_bookings, self.paginate_by)
-            page_number_past = self.request.GET.get('past_page')
-            past_bookings = paginator_past.get_page(page_number_past)
-
-            # Retrieve the user profile for the current user
-            try:
-                profile = BookingUserProfile.objects.get(pk=user.pk)
-            except BookingUserProfile.DoesNotExist:
-                profile = None
-
-            # Add the related BookingUserProfile to the context
-            context['profile'] = profile
-            context['past_bookings'] = past_bookings
-            context['future_bookings'] = future_bookings
-
-
-        elif booking_user.is_lector:
+        # GET all existed bookings with the current user as a lector
+        elif user.groups == 'COACHME_LECTOR':
             lector = Lector.objects.filter(user_id=user.pk).get()
-            # current_booking = Booking.objects.filter(user_id=user.pk).get()
             current_date = timezone.now().date()
 
             past_bookings = Booking.objects.filter(
@@ -111,27 +102,41 @@ class DashboardView(LoginRequiredMixin, views.ListView):
                 start_date__gte=current_date
             ).order_by('start_date').all()
 
-            paginator_past = Paginator(past_bookings, self.paginate_by)
-            paginator_future = Paginator(future_bookings, self.paginate_by)
-
-            page_number_past = self.request.GET.get('past_page')
-            page_number_future = self.request.GET.get('future_page')
-
-            past_bookings = paginator_past.get_page(page_number_past)
-            future_bookings = paginator_future.get_page(page_number_future)
-
-            # Retrieve the user profile for the current user
-            try:
-                profile = BookingUserProfile.objects.get(pk=user.pk)
-
-            except BookingUserProfile.DoesNotExist:
-                profile = None
-
-            # Add the related BookingUserProfile to the context
-            context['profile'] = profile
-            context['past_bookings'] = past_bookings
-            context['future_bookings'] = future_bookings
             context['lector'] = lector
+
+        # GET all existed bookings for the current user
+        else:
+            current_date = timezone.now().date()
+
+            past_bookings = Booking.objects.filter(
+                employee=user,
+                start_date__lt=current_date
+            ).order_by('-start_date').all()
+            future_bookings = Booking.objects.filter(
+                employee=user,
+                start_date__gte=current_date
+            ).order_by('start_date').all()
+
+        paginator_past = Paginator(past_bookings, self.paginate_by)
+        paginator_future = Paginator(future_bookings, self.paginate_by)
+
+        page_number_past = self.request.GET.get('past_page')
+        page_number_future = self.request.GET.get('future_page')
+
+        past_bookings = paginator_past.get_page(page_number_past)
+        future_bookings = paginator_future.get_page(page_number_future)
+
+        context['past_bookings'] = past_bookings
+        context['future_bookings'] = future_bookings
+        # Retrieve the user profile for the current user
+        try:
+            profile = BookingUserProfile.objects.get(pk=user.pk)
+
+        except BookingUserProfile.DoesNotExist:
+            profile = None
+
+        # Add the related BookingUserProfile to the context
+        context['profile'] = profile
 
         return context
 
@@ -215,7 +220,6 @@ class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, views.UpdateVie
         # Try to get the related BookingUserProfile instance
         try:
             booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).get()
-
         except BookingUserProfile.DoesNotExist:
             booking_user_profile = None
 
@@ -255,7 +259,6 @@ class ProfileDeleteView(LoginRequiredMixin, UserPassesTestMixin, views.DeleteVie
 
 
 class CompanyListView(IsStaffdMixin, views.ListView):
-    # model = Training
     template_name = 'companies/companies.html'
     paginate_by = 20
     queryset = Company.objects.all().order_by('-updated_on')
@@ -312,6 +315,5 @@ class CompanyDeleteView(IsStaffdMixin, views.DeleteView):
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
         for field_name in form.fields:
-            # form.fields[field_name].widget.attrs['readonly'] = True
             form.fields[field_name].widget.attrs['disabled'] = True
         return form

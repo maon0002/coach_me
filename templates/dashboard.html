@@ -4,13 +4,18 @@
 
 {% block content %}
 
-    {% if not lector %}
+{#    {% if not lector %}#}
+    {% if request.user.groups == 'COACHME_USER' %}
 
     {% include 'common/dashboard-non-lector.html' %}
 
-    {% elif lector %}
+    {% elif request.user.groups == 'COACHME_LECTOR' %}
 
     {% include 'common/dashboard-lector.html' %}
+
+    {% elif request.user.groups == 'COACHME_STAFF' %}
+
+    {% include 'common/dashboard-staff.html' %}
 
     {% endif %}
 
