@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import models as auth_models
 from coach_me.accounts.managers import BookingUserManager
+from django.contrib.auth.models import AbstractUser, Group
 
 
 class BookingUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
@@ -24,15 +25,22 @@ class BookingUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
     is_staff = models.BooleanField(
         default=False,
     )
-
-    groups = models.CharField(
+    #
+    # groups = models.ManyToManyField(
+    #     Group,
+    #     blank=True,
+    #     related_name='users',
+    # )
+    #
+    c_labels = models.CharField(
         max_length=GROUPS_CHOICES_MAX_LEN,
         null=True,
         blank=True,
-        default='DEFAULT_USER',
+        default='COACHME_USER',
         choices=(
             GROUP_CHOICES
         ),
+        verbose_name="COACHME Groups",
     )
 
     USERNAME_FIELD = 'email'
@@ -42,4 +50,4 @@ class BookingUser(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
         return f'{self.email}'
 
     def __repr__(self):
-        return f'{self.id}: {self.email}'
+        return f'ID {self.id}: {self.email}'

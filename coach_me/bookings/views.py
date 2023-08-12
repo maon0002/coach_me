@@ -8,7 +8,7 @@ from coach_me.bookings.models import Booking
 from coach_me.lectors.models import Lector
 from coach_me.profiles.models import BookingUserProfile, Company
 from django.http import HttpResponseRedirect
-from coach_me.bookings.mixins import DefineModelsMixin
+from coach_me.bookings.mixins import DefineModelsMixin, IsLectorMixin
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from coach_me.trainings.models import Training
@@ -50,7 +50,7 @@ class IndexView(DefineModelsMixin, views.ListView):
         return context
 
 
-class BookingCreateView(LoginRequiredMixin, views.CreateView):
+class BookingCreateView(LoginRequiredMixin, IsLectorMixin, views.CreateView):
     model = Booking
     form_class = BookingCreateForm
     template_name = 'bookings/create-booking.html'

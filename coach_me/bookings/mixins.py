@@ -83,3 +83,12 @@ class AnonymousRequiredMixin(AccessMixin):
             return redirect(
                 'index')
         return super().dispatch(request, *args, **kwargs)
+
+
+class IsLectorMixin(AccessMixin):
+    """Verify that the current user is not a lector."""
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.groups == 'lectors':
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)

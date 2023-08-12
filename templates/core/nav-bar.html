@@ -40,13 +40,13 @@
                 <ul class="navbar-nav">
 
                     <!-- for logged users-->
-                    {% if request.user.is_authenticated and request.user.groups == 'COACHME_USER' %}
+                    {% if request.user.is_authenticated and request.user.c_labels == 'COACHME_USER' %}
                         {% include 'core/nav-bar-logged-user.html' %}
                         <!-- for staff -->
-                    {% elif request.user.is_authenticated and request.user.groups == 'COACHME_STAFF' %}
+                    {% elif request.user.is_authenticated and request.user.c_labels == 'COACHME_STAFF' %}
                         {% include 'core/nav-bar-staff.html' %}
                         <!-- for lector users -->
-                    {% elif request.user.is_authenticated and request.user.groups == 'COACHME_LECTOR' %}
+                    {% elif request.user.is_authenticated and request.user.c_labels == 'COACHME_LECTOR' %}
                         {% include 'core/nav-bar-lector.html' %}
                         <!-- for anonymous users-->
                     {% else %}

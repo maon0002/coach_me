@@ -66,7 +66,8 @@ class BookingCreateForm(FieldsWithFormControlClassMixin, forms.ModelForm):
 
         return start_date
 
-    def render_field(self, field, **kwargs):
+    @staticmethod
+    def render_field(field, **kwargs):
         return render_field(field, **kwargs)
 
 
@@ -112,5 +113,6 @@ class BookingUpdateForm(FieldsWithFormControlClassMixin, forms.ModelForm):
 
         return start_date
 
-    def render_field(self, field, **kwargs):
+    @staticmethod
+    def render_field(field, **kwargs):
         return render_field(field, **kwargs)

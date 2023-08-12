@@ -22,13 +22,13 @@ def export_csv(request):
 
     # Fetch the data and write to CSV
     user = request.user
-    if user.groups == 'COACHME_STAFF':
+    if user.c_labels == 'COACHME_STAFF':
         queryset = Booking.objects.all()
         response['Content-Disposition'] = 'attachment; filename="staff_all_scheduled_trainings.csv"'
-    elif user.groups == 'COACHME_USER':
+    elif user.c_labels == 'COACHME_USER':
         queryset = Booking.objects.filter(employee=user).all()
         response['Content-Disposition'] = 'attachment; filename="my_bookings.csv"'
-    elif user.groups == 'COACHME_LECTOR':
+    elif user.c_labels == 'COACHME_LECTOR':
         lector = Lector.objects.filter(user_id=user.pk).get()
         queryset = Booking.objects.filter(lector=lector).order_by('-start_date').all()
         response['Content-Disposition'] = 'attachment; filename="lector_scheduled_trainings.csv"'
@@ -61,13 +61,13 @@ class DashboardView(LoginRequiredMixin, views.ListView):
     def get_queryset(self):
         user = self.request.user
         booking_user = BookingUserProfile.objects.filter(pk=user.pk).get()
-        if user.groups == 'COACHME_STAFF':
+        if user.c_labels == 'COACHME_STAFF':
             bookings = Booking.objects.order_by('start_date').all()
             return bookings
-        elif user.groups == 'COACHME_USER':
+        elif user.c_labels == 'COACHME_USER':
             bookings = Booking.objects.filter(employee=user).order_by('start_date').all()
             return bookings
-        elif user.groups == 'COACHME_LECTOR':
+        elif user.c_labels == 'COACHME_LECTOR':
             lector = Lector.objects.filter(user_id=user.pk).get()
             bookings = Booking.objects.filter(lector_id=lector.pk).order_by('start_date').all()
             return bookings
@@ -77,7 +77,7 @@ class DashboardView(LoginRequiredMixin, views.ListView):
         user = self.request.user
         current_date = timezone.now().date()
         # GET all existed bookings for a staff user
-        if user.groups == 'COACHME_STAFF':
+        if user.c_labels == 'COACHME_STAFF':
             past_bookings = Booking.objects.filter(
                 start_date__lt=current_date
             ).order_by('-start_date').all()
@@ -86,7 +86,7 @@ class DashboardView(LoginRequiredMixin, views.ListView):
             ).order_by('start_date').all()
 
         # GET all existed bookings with the current user as a lector
-        elif user.groups == 'COACHME_LECTOR':
+        elif user.c_labels == 'COACHME_LECTOR':
             lector = Lector.objects.filter(user_id=user.pk).get()
 
             past_bookings = Booking.objects.filter(
@@ -158,17 +158,14 @@ class ProfileDetailsView(LoginRequiredMixin, UserPassesTestMixin, views.DetailVi
                       'newsletter_subscription',
                       'picture',
                       'is_lector',
-                      'company', ]
+                      'company',
+                  ]
                   ]
         fields_replace_underscores = list([str(field[0]).replace("_", " "), str(field[1])] for field in fields)
-
-        context['fields'] = fields_replace_underscores
 
         company_name = Company.objects.get(
             company_domain__iendswith=user.email.split('@')[1]
         ).short_company_name
-
-        context['company_name'] = company_name
 
         if not booking_user.is_lector:
             bookings_count = Booking.objects.filter(employee=user).count()
@@ -186,6 +183,9 @@ class ProfileDetailsView(LoginRequiredMixin, UserPassesTestMixin, views.DetailVi
             ).count()
             past_booking_count = bookings_count - active_bookings_count
 
+        context.update({'company': company_name})
+        # context['company'] = company_name
+        context['fields'] = fields_replace_underscores
         context['bookings_count'] = bookings_count
         context['active_bookings_count'] = active_bookings_count
         context['past_booking_count'] = past_booking_count
@@ -206,16 +206,6 @@ class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, views.UpdateVie
         form = super().get_form(form_class)
         user = self.request.user
 
-        # Set 'employee' and 'corporate_email' initial values from BookingUser
-        try:
-            company = Company.objects.get(company_domain__iendswith=user.email.split('@')[1])
-            form.fields['company'].initial = company.short_company_name
-        except Company.DoesNotExist:
-            company = None
-            form.fields['company'].initial = None
-
-            print(company)
-
         # Try to get the related BookingUserProfile instance
         try:
             booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).get()
@@ -223,13 +213,12 @@ class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, views.UpdateVie
             booking_user_profile = None
 
         # Set 'first_name' and 'last_name' initial values from BookingUserProfile
-        # if booking_user_profile:
         form.fields['first_name'].initial = str(booking_user_profile.first_name)
         form.fields['last_name'].initial = str(booking_user_profile.last_name)
 
         # Remove the fields from the form's required fields to prevent validation errors
         for field_name in [
-            'company',
+            # 'company',
             'picture',
             'first_name',
             'last_name',

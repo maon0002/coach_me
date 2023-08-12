@@ -41,11 +41,11 @@
                             {#                            <a href="{% url 'add booking' %}" class="btn btn-primary">#}
                             {#                                    Book this Training#}
                             {#                                </a>#}
-
+                            {% if user.c_labels != 'COACHME_LECTOR' %}
                             <a href="{% url 'add booking' %}?training={{ object.slug }}" class="btn btn-primary">
                                 Book this Training
                             </a>
-
+                            {% endif %}
                             {% if user.is_staff %}
                                 <!-- Delete Profile Button -->
                                 <a href="{% url 'delete training' slug=object.slug %}" class="btn btn-danger">
