@@ -15,7 +15,7 @@
 
 {% for field in form.visible_fields %}
     {% if field.field.widget.input_type == 'checkbox' %}
-         Render CheckboxInput field here
+{#        Render CheckboxInput field here#}
         <p>&nbsp;&nbsp; </p>
         <div class="form-check form-check-inline ml-3 d-flex justify-content-center">
             {% if field.label_tag %}
@@ -35,17 +35,20 @@
 
             {% if form.is_bound %}
                 {% if field.errors %}
-                    <input type="text" class="form-control is-invalid" name="{{ field.html_name }}" value="{{ field.value }}" id="{{ field.auto_id }}">
+                    <input type="text" class="form-control is-invalid" name="{{ field.html_name }}"
+                           value="{{ field.value }}" id="{{ field.auto_id }}">
                     {% for error in field.errors %}
                         <div class="invalid-feedback">
                             {{ error }}
                         </div>
                     {% endfor %}
                 {% else %}
-                    <input type="text" class="form-control is-valid" name="{{ field.html_name }}" value="{{ field.value }}" id="{{ field.auto_id }}">
+                    <input type="text" class="form-control is-valid" name="{{ field.html_name }}"
+                           value="{{ field.value }}" id="{{ field.auto_id }}">
                 {% endif %}
             {% else %}
-                <input type="text" class="form-control" name="{{ field.html_name }}" value="{{ field.value }}" id="{{ field.auto_id }}">
+                <input type="text" class="form-control" name="{{ field.html_name }}" value="{{ field.value }}"
+                       id="{{ field.auto_id }}">
             {% endif %}
 
             {% if field.help_text %}
@@ -82,42 +85,3 @@
 {% endfor %}
 <p>&nbsp;</p>
 
-
-{##}
-{#{% for field in form.visible_fields %}#}
-{#    {% if field.field.widget.input_type == 'checkbox' %}#}
-        {# Render CheckboxInput field here #}
-{#        <!-- ... Your existing code for checkbox fields ... -->#}
-{#    {% elif field.field.widget.input_type == 'date' %}#}
-{#        <div class="form-group">#}
-{#            <p>&nbsp;&nbsp; </p>#}
-{#            <strong>{{ field.label_tag }}</strong>#}
-{#            <p style="margin-bottom: -2%">&nbsp;</p>#}
-{#            #}
-{#            {% with datepicker_id=field.id_for_label %}#}
-{#            {% if form.is_bound %}#}
-{#                {% if field.errors %}#}
-{#                    {% render_field field class="form-control is-invalid" %}#}
-{#                    {% for error in field.errors %}#}
-{#                        <div class="invalid-feedback">#}
-{#                            {{ error }}#}
-{#                        </div>#}
-{#                    {% endfor %}#}
-{#                {% else %}#}
-{#                    {% render_field field class="form-control is-valid" attrs={'id': datepicker_id} %}#}
-{#                {% endif %}#}
-{#            {% else %}#}
-{#                {% render_field field class="form-control" attrs={'id': datepicker_id} %}#}
-{#            {% endif %}#}
-{#            {% endwith %} <!-- Close the 'with' tag here -->#}
-{#            #}
-{#            {% if field.help_text %}#}
-{#                <small class="form-text text-muted">{{ field.help_text }}</small>#}
-{#            {% endif %}#}
-{#        </div>#}
-{#    {% else %}#}
-        {# Render other fields (non-CheckboxInput) here #}
-{#        <!-- ... Your existing code for other fields ... -->#}
-{#    {% endif %}#}
-{#{% endfor %}#}
-{#<p>&nbsp;</p>#}

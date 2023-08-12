@@ -79,35 +79,46 @@ class BookingCreateView(LoginRequiredMixin, views.CreateView):
         user = self.request.user
         booking_user_profile = BookingUserProfile.objects.filter(pk=user.pk).get()
 
-        # TODO check the logic for lector to booked for another person and remove the IF if not needed
-        if booking_user_profile and not booking_user_profile.is_lector:
+        # # TODO check the logic for lector to booked for another person and remove the IF if not needed
+        # if booking_user_profile and not booking_user_profile.is_lector:
 
-            # Set 'employee' and 'corporate_email' initial values from BookingUser
-            form.fields['employee'].initial = user
-            form.fields['corporate_email'].initial = user.email
+        # Set 'employee' and 'corporate_email' initial values from BookingUser
+        form.fields['employee'].initial = user
+        form.fields['corporate_email'].initial = user.email
 
-            # Set 'first_name' and 'last_name' initial values from BookingUserProfile
-            if booking_user_profile:
-                form.fields['first_name'].initial = booking_user_profile.first_name
-                form.fields['last_name'].initial = booking_user_profile.last_name
+        # Set 'first_name' and 'last_name' initial values from BookingUserProfile
+        # if booking_user_profile:
+        form.fields['first_name'].initial = booking_user_profile.first_name
+        form.fields['last_name'].initial = booking_user_profile.last_name
 
-            # Set 'corporate_email' initial value from User
-            form.fields['corporate_email'].initial = user.email
+        # Set 'corporate_email' initial value from User
+        form.fields['corporate_email'].initial = user.email
 
-            # Disable the fields
-            # form.fields['employee'].widget.attrs['disabled'] = True
-            form.fields['employee'].widget.attrs['readonly'] = True
-            form.fields['corporate_email'].widget.attrs['readonly'] = True
-            form.fields['first_name'].widget.attrs['readonly'] = True
-            form.fields['last_name'].widget.attrs['readonly'] = True
+        # Disable the fields
+        # form.fields['employee'].widget.attrs['disabled'] = True
+        form.fields['employee'].widget.attrs['readonly'] = True
+        form.fields['corporate_email'].widget.attrs['readonly'] = True
+        form.fields['first_name'].widget.attrs['readonly'] = True
+        form.fields['last_name'].widget.attrs['readonly'] = True
 
-            # Remove the fields from the form's required fields to prevent validation errors
-            for field_name in ['employee', 'corporate_email', 'first_name', 'last_name']:
-                if field_name in form.fields:
-                    form.fields[field_name].required = False
+        # Remove the fields from the form's required fields to prevent validation errors
+        for field_name in ['employee', 'corporate_email', 'first_name', 'last_name']:
+            if field_name in form.fields:
+                form.fields[field_name].required = False
 
-            return form
+        # Get the selected training slug from the query parameter
+        selected_training_slug = self.request.GET.get('training')
+
+        if selected_training_slug:
+            try:
+                selected_training = Training.objects.get(slug=selected_training_slug)
+                # Set the selected training as the initial value for the training field
+                form.fields['booking_type'].initial = selected_training
+            except Training.DoesNotExist:
+                pass
+
         return form
+        # return form
 
     def form_valid(self, form):
         # Check if the booking being edited has changes in the employee or start time

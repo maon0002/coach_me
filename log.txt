@@ -7346,3 +7346,405 @@ INFO 2023-08-12 11:05:44,288 basehttp "GET /profile/9/details/ HTTP/1.1" 200 101
 INFO 2023-08-12 11:05:48,950 basehttp "GET /booking/add/ HTTP/1.1" 200 15714
 INFO 2023-08-12 11:06:29,858 basehttp "GET /booking/add/ HTTP/1.1" 200 15713
 INFO 2023-08-12 11:06:32,717 basehttp "GET /booking/add/ HTTP/1.1" 200 15713
+INFO 2023-08-12 11:10:00,729 basehttp "GET /booking/add/ HTTP/1.1" 200 16853
+INFO 2023-08-12 11:10:01,648 basehttp "GET /booking/add/ HTTP/1.1" 200 16853
+INFO 2023-08-12 11:10:02,330 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58661
+INFO 2023-08-12 11:10:04,907 basehttp "GET /booking/62/edit/ HTTP/1.1" 200 17929
+INFO 2023-08-12 11:10:14,945 basehttp "GET /profile/1/dashboard/ HTTP/1.1" 200 58661
+INFO 2023-08-12 11:10:25,794 basehttp "GET / HTTP/1.1" 200 9306
+INFO 2023-08-12 11:11:39,519 basehttp "GET / HTTP/1.1" 200 8184
+INFO 2023-08-12 11:11:41,574 basehttp "GET /booking/add/ HTTP/1.1" 200 15733
+INFO 2023-08-12 11:12:06,427 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 44573
+INFO 2023-08-12 11:12:23,133 basehttp "GET /profile/9/details/ HTTP/1.1" 200 10143
+INFO 2023-08-12 11:12:32,054 basehttp "GET /profile/9/edit/ HTTP/1.1" 200 12345
+INFO 2023-08-12 11:12:32,212 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2023-08-12 11:13:04,655 basehttp "POST /profile/9/edit/ HTTP/1.1" 302 0
+INFO 2023-08-12 11:13:04,711 basehttp "GET /profile/9/details/ HTTP/1.1" 200 10143
+INFO 2023-08-12 11:13:13,643 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 44573
+INFO 2023-08-12 11:13:21,764 basehttp "GET /auth/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 11:13:21,804 basehttp "GET / HTTP/1.1" 200 7242
+INFO 2023-08-12 11:13:24,255 basehttp "GET /auth/login/ HTTP/1.1" 200 4558
+INFO 2023-08-12 11:13:28,567 basehttp "POST /auth/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 11:13:28,637 basehttp "GET / HTTP/1.1" 200 8329
+INFO 2023-08-12 11:13:39,934 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 21337
+INFO 2023-08-12 11:13:46,746 basehttp "GET /booking/27/details/ HTTP/1.1" 200 8726
+INFO 2023-08-12 11:14:04,392 basehttp "GET /profile/12/dashboard/ HTTP/1.1" 200 21337
+INFO 2023-08-12 11:14:08,261 basehttp "GET /export-csv/ HTTP/1.1" 200 2637
+INFO 2023-08-12 11:14:22,188 basehttp "GET /profile/12/details/ HTTP/1.1" 200 10264
+INFO 2023-08-12 11:14:25,486 basehttp "GET /profile/12/edit/ HTTP/1.1" 200 12394
+INFO 2023-08-12 11:14:25,537 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2023-08-12 11:14:42,519 basehttp "POST /profile/12/edit/ HTTP/1.1" 302 0
+INFO 2023-08-12 11:14:42,579 basehttp "GET /profile/12/details/ HTTP/1.1" 200 10264
+INFO 2023-08-12 11:14:56,107 basehttp "GET /lectors/ HTTP/1.1" 200 14334
+INFO 2023-08-12 11:15:01,066 basehttp "GET /trainings/ HTTP/1.1" 200 13350
+INFO 2023-08-12 11:15:02,775 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 7473
+INFO 2023-08-12 11:19:15,756 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-12 11:19:15,765 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-12 11:19:16,876 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 11:19:16,926 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-12 11:19:17,536 log Internal Server Error: /training/1-adaptability-and-resilience/details/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'add booking' with keyword arguments '{'pk': 12}' not found. 1 pattern(s) tried: ['booking/add/\\Z']
+ERROR 2023-08-12 11:19:17,543 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 500 165023
+WARNING 2023-08-12 11:19:17,957 log Not Found: /favicon.ico
+WARNING 2023-08-12 11:19:17,958 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+ERROR 2023-08-12 11:19:41,299 log Internal Server Error: /training/1-adaptability-and-resilience/details/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'add booking' with keyword arguments '{'pk': 12}' not found. 1 pattern(s) tried: ['booking/add/\\Z']
+ERROR 2023-08-12 11:19:41,303 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 500 165618
+WARNING 2023-08-12 11:19:41,767 log Not Found: /favicon.ico
+WARNING 2023-08-12 11:19:41,768 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+ERROR 2023-08-12 11:19:43,290 log Internal Server Error: /training/1-adaptability-and-resilience/details/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'add booking' with keyword arguments '{'pk': 12}' not found. 1 pattern(s) tried: ['booking/add/\\Z']
+ERROR 2023-08-12 11:19:43,297 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 500 165650
+WARNING 2023-08-12 11:19:43,704 log Not Found: /favicon.ico
+WARNING 2023-08-12 11:19:43,706 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-12 11:20:16,406 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 7642
+INFO 2023-08-12 11:20:17,525 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:20:17,528 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:20:17,555 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:20:20,679 basehttp "GET /static/images/slide2.webp HTTP/1.1" 304 0
+INFO 2023-08-12 11:20:31,296 basehttp "GET /trainings/ HTTP/1.1" 200 14327
+INFO 2023-08-12 11:20:32,646 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9157
+INFO 2023-08-12 11:21:07,663 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9226
+INFO 2023-08-12 11:21:07,884 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:21:07,899 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:21:07,900 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:21:08,171 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:21:24,716 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9249
+INFO 2023-08-12 11:21:24,818 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:21:24,827 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:21:24,827 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:21:24,944 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:21:25,288 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9249
+INFO 2023-08-12 11:21:25,407 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:21:25,416 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:21:25,417 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:21:25,536 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:21:25,546 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9249
+INFO 2023-08-12 11:21:25,646 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:21:25,656 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:21:25,656 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:21:25,722 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:21:25,753 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9249
+INFO 2023-08-12 11:21:25,857 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:21:25,867 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:21:25,867 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:21:32,568 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9244
+INFO 2023-08-12 11:21:32,672 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:21:32,681 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:21:32,682 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:21:32,797 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:21:33,274 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9244
+INFO 2023-08-12 11:21:33,393 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:21:33,403 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:21:33,403 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:21:33,518 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:21:50,975 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9282
+INFO 2023-08-12 11:21:51,102 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:21:51,103 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:21:51,112 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:21:51,243 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:22:01,990 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9197
+INFO 2023-08-12 11:22:02,103 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:22:02,113 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:22:02,114 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:22:02,228 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:22:15,375 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9159
+INFO 2023-08-12 11:22:15,499 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:22:15,506 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:22:15,507 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:22:15,628 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:22:18,700 basehttp "GET /booking/add/ HTTP/1.1" 200 16798
+INFO 2023-08-12 11:28:40,850 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9278
+INFO 2023-08-12 11:28:42,359 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 9278
+INFO 2023-08-12 11:28:43,961 basehttp "GET /booking/add/?training=1-adaptability-and-resilience HTTP/1.1" 200 16798
+INFO 2023-08-12 11:30:33,161 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-12 11:30:33,166 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-12 11:30:34,313 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 11:30:34,334 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 11:31:16,060 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-12 11:31:16,085 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-12 11:31:17,229 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 11:31:17,304 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-12 11:31:19,109 log Internal Server Error: /booking/add/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 180, in get
+    return super().get(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 60, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 116, in get_form
+    form.fields['training'].initial = selected_training
+KeyError: 'training'
+ERROR 2023-08-12 11:31:19,112 basehttp "GET /booking/add/?training=1-adaptability-and-resilience HTTP/1.1" 500 98375
+WARNING 2023-08-12 11:31:19,244 log Not Found: /favicon.ico
+WARNING 2023-08-12 11:31:19,245 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+ERROR 2023-08-12 11:32:13,458 log Internal Server Error: /booking/add/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 180, in get
+    return super().get(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 60, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 116, in get_form
+    form.fields['training'].initial = selected_training
+KeyError: 'training'
+ERROR 2023-08-12 11:32:13,460 basehttp "GET /booking/add/?training=1-adaptability-and-resilience HTTP/1.1" 500 98640
+WARNING 2023-08-12 11:32:13,599 log Not Found: /favicon.ico
+WARNING 2023-08-12 11:32:13,600 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+ERROR 2023-08-12 11:32:14,153 log Internal Server Error: /booking/add/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 180, in get
+    return super().get(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 60, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 116, in get_form
+    form.fields['training'].initial = selected_training
+KeyError: 'training'
+ERROR 2023-08-12 11:32:14,155 basehttp "GET /booking/add/?training=1-adaptability-and-resilience HTTP/1.1" 500 98640
+WARNING 2023-08-12 11:32:14,272 log Not Found: /favicon.ico
+WARNING 2023-08-12 11:32:14,273 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+ERROR 2023-08-12 11:32:14,752 log Internal Server Error: /booking/add/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 180, in get
+    return super().get(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 60, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 116, in get_form
+    form.fields['training'].initial = selected_training
+KeyError: 'training'
+ERROR 2023-08-12 11:32:14,754 basehttp "GET /booking/add/?training=1-adaptability-and-resilience HTTP/1.1" 500 98640
+WARNING 2023-08-12 11:32:14,915 log Not Found: /favicon.ico
+WARNING 2023-08-12 11:32:14,916 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+ERROR 2023-08-12 11:32:15,439 log Internal Server Error: /booking/add/
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 180, in get
+    return super().get(request, *args, **kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 60, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\venv\lib\site-packages\django\views\generic\edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py", line 116, in get_form
+    form.fields['training'].initial = selected_training
+KeyError: 'training'
+ERROR 2023-08-12 11:32:15,441 basehttp "GET /booking/add/?training=1-adaptability-and-resilience HTTP/1.1" 500 98640
+WARNING 2023-08-12 11:32:15,577 log Not Found: /favicon.ico
+WARNING 2023-08-12 11:32:15,578 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-12 11:34:08,706 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-12 11:34:08,979 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
+INFO 2023-08-12 11:34:09,961 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 11:34:10,094 autoreload Watching for file changes with StatReloader
+INFO 2023-08-12 11:34:10,472 basehttp "GET /booking/add/?training=1-adaptability-and-resilience HTTP/1.1" 200 16798
+INFO 2023-08-12 11:34:11,825 basehttp "GET /static/images/admin-person.png HTTP/1.1" 200 9747
+INFO 2023-08-12 11:34:11,826 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-12 11:34:11,827 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-12 11:34:11,854 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-12 11:34:28,192 basehttp "GET /trainings/ HTTP/1.1" 200 14327
+INFO 2023-08-12 11:34:30,085 basehttp "GET /training/5-teamwork-and-collaboration/details/ HTTP/1.1" 200 9263
+INFO 2023-08-12 11:34:31,151 basehttp "GET /booking/add/?training=5-teamwork-and-collaboration HTTP/1.1" 200 16798
+INFO 2023-08-12 11:34:57,900 basehttp "GET /training/1-adaptability-and-resilience/details/ HTTP/1.1" 200 7763
+INFO 2023-08-12 11:34:58,941 basehttp "GET /booking/add/?training=1-adaptability-and-resilience HTTP/1.1" 200 15831
+INFO 2023-08-12 11:35:02,265 basehttp "GET /trainings/ HTTP/1.1" 200 13350
+INFO 2023-08-12 11:35:04,770 basehttp "GET /training/7-emotional-intelligence/details/ HTTP/1.1" 200 7765
+INFO 2023-08-12 11:35:06,211 basehttp "GET /booking/add/?training=7-emotional-intelligence HTTP/1.1" 200 15831
+INFO 2023-08-12 11:35:15,786 basehttp "GET /trainings/ HTTP/1.1" 200 13350

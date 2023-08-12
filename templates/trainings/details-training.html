@@ -37,6 +37,15 @@
                                 <p><strong>Training info: </strong> {{ training.service_description }}</p>
                                 <p><strong>Available lectors: </strong> {{ available_lectors }}</p>
                             </div>
+
+                            {#                            <a href="{% url 'add booking' %}" class="btn btn-primary">#}
+                            {#                                    Book this Training#}
+                            {#                                </a>#}
+
+                            <a href="{% url 'add booking' %}?training={{ object.slug }}" class="btn btn-primary">
+                                Book this Training
+                            </a>
+
                             {% if user.is_staff %}
                                 <!-- Delete Profile Button -->
                                 <a href="{% url 'delete training' slug=object.slug %}" class="btn btn-danger">
