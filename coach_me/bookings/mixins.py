@@ -87,6 +87,7 @@ class IsLectorMixin(AccessMixin):
     """Verify that the current user is not a lector."""
 
     def dispatch(self, request, *args, **kwargs):
-        if not request.user.groups == 'lectors':
+        # if not request.user.groups == 'lectors':
+        if request.user.c_labels not in ('COACHME_STAFF', 'COACHME_USER'):
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)

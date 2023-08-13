@@ -118,7 +118,7 @@ class BookingCreateView(LoginRequiredMixin, IsLectorMixin, views.CreateView):
                 pass
 
         return form
-        # return form
+
 
     def form_valid(self, form):
         # Check if the booking being edited has changes in the employee or start time
