@@ -20,6 +20,7 @@ class LectorListView(views.ListView):
     model = Lector
     template_name = 'lectors/lectors.html'
     form_class = LectorList
+    paginate_by = 2
 
     # @method_decorator(cache_page(1))  # Cache will expire in 1 hour (3600 seconds)
     # def dispatch(self, *args, **kwargs):

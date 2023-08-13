@@ -10586,3 +10586,82 @@ INFO 2023-08-13 08:35:50,784 basehttp "GET /training/1-adaptability-and-resilien
 INFO 2023-08-13 08:35:56,790 basehttp "GET /booking/add/?training=1-adaptability-and-resilience HTTP/1.1" 200 15678
 INFO 2023-08-13 08:37:33,449 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\bookings\views.py changed, reloading.
 INFO 2023-08-13 08:37:34,716 autoreload Watching for file changes with StatReloader
+INFO 2023-08-13 09:47:13,241 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-13 09:47:16,360 base Session data corrupted
+INFO 2023-08-13 09:47:16,420 basehttp "GET / HTTP/1.1" 200 7242
+WARNING 2023-08-13 09:47:27,807 base Session data corrupted
+INFO 2023-08-13 09:47:27,822 basehttp "GET /lectors/ HTTP/1.1" 200 12444
+WARNING 2023-08-13 09:47:28,800 base Session data corrupted
+INFO 2023-08-13 09:47:28,812 basehttp "GET /trainings/ HTTP/1.1" 200 11110
+WARNING 2023-08-13 09:47:31,766 base Session data corrupted
+INFO 2023-08-13 09:47:31,773 basehttp "GET /lectors/ HTTP/1.1" 200 12444
+WARNING 2023-08-13 09:47:34,679 base Session data corrupted
+INFO 2023-08-13 09:47:34,685 basehttp "GET / HTTP/1.1" 200 7242
+INFO 2023-08-13 11:31:36,059 autoreload Watching for file changes with StatReloader
+INFO 2023-08-13 11:32:18,348 autoreload Watching for file changes with StatReloader
+INFO 2023-08-13 11:32:35,010 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 304 0
+WARNING 2023-08-13 11:32:43,846 base Session data corrupted
+INFO 2023-08-13 11:32:43,878 basehttp "GET /admin/ HTTP/1.1" 302 0
+WARNING 2023-08-13 11:32:43,911 base Session data corrupted
+INFO 2023-08-13 11:32:43,976 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4188
+WARNING 2023-08-13 11:32:44,124 log Not Found: /favicon.ico
+WARNING 2023-08-13 11:32:44,125 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+WARNING 2023-08-13 11:32:53,452 base Session data corrupted
+INFO 2023-08-13 11:32:54,402 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2023-08-13 11:32:54,509 basehttp "GET /admin/ HTTP/1.1" 200 12119
+INFO 2023-08-13 11:33:44,118 basehttp "GET /lectors/ HTTP/1.1" 200 15318
+INFO 2023-08-13 11:33:45,269 basehttp "GET /lector/1-maria-doe/details/ HTTP/1.1" 200 13136
+INFO 2023-08-13 11:33:51,491 basehttp "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2023-08-13 11:33:51,530 basehttp "GET / HTTP/1.1" 200 7242
+INFO 2023-08-13 11:33:56,759 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2023-08-13 11:33:56,769 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4188
+INFO 2023-08-13 11:34:00,190 basehttp "GET / HTTP/1.1" 200 7242
+INFO 2023-08-13 11:34:02,160 basehttp "GET /lectors/ HTTP/1.1" 200 12444
+INFO 2023-08-13 11:35:00,322 autoreload C:\Users\LENOVO\PycharmProjects\coach_me\coach_me\lectors\views.py changed, reloading.
+INFO 2023-08-13 11:35:01,371 autoreload Watching for file changes with StatReloader
+INFO 2023-08-13 11:35:03,817 basehttp "GET /lectors/ HTTP/1.1" 200 10479
+INFO 2023-08-13 11:35:04,753 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-13 11:35:04,765 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-13 11:35:06,367 basehttp "GET /lectors/?page=2 HTTP/1.1" 200 8151
+INFO 2023-08-13 11:35:08,298 basehttp "GET /lectors/?page=1 HTTP/1.1" 200 10479
+INFO 2023-08-13 11:35:09,796 basehttp "GET /trainings/ HTTP/1.1" 200 11110
+INFO 2023-08-13 11:35:12,014 basehttp "GET /trainings/?page=2 HTTP/1.1" 200 9942
+INFO 2023-08-13 11:35:17,433 basehttp "GET /lectors/ HTTP/1.1" 200 10479
+INFO 2023-08-13 11:35:21,894 basehttp "GET /auth/login/ HTTP/1.1" 200 4503
+INFO 2023-08-13 11:35:24,169 basehttp "GET /auth/register/ HTTP/1.1" 200 7334
+INFO 2023-08-13 11:35:24,196 basehttp "GET /static/images/signup.jpg HTTP/1.1" 200 419415
+WARNING 2023-08-13 11:35:24,272 log Not Found: /favicon.ico
+WARNING 2023-08-13 11:35:24,272 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-13 11:35:28,517 basehttp "GET /auth/login/?next= HTTP/1.1" 200 4503
+INFO 2023-08-13 11:37:59,055 basehttp "POST /auth/login/ HTTP/1.1" 302 0
+INFO 2023-08-13 11:37:59,144 basehttp "GET / HTTP/1.1" 200 8184
+INFO 2023-08-13 11:38:00,940 basehttp "GET /booking/add/ HTTP/1.1" 200 15678
+INFO 2023-08-13 11:38:01,579 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 42130
+INFO 2023-08-13 11:38:06,100 basehttp "GET /booking/63/edit/ HTTP/1.1" 200 16694
+INFO 2023-08-13 11:38:06,119 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2023-08-13 11:38:18,428 basehttp "POST /booking/63/edit/ HTTP/1.1" 302 0
+INFO 2023-08-13 11:38:18,544 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 42130
+INFO 2023-08-13 11:46:42,028 basehttp "GET /booking/63/edit/ HTTP/1.1" 200 16694
+INFO 2023-08-13 11:46:51,516 basehttp "POST /booking/63/edit/ HTTP/1.1" 302 0
+INFO 2023-08-13 11:46:51,699 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 42130
+INFO 2023-08-13 11:47:12,764 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 42130
+INFO 2023-08-13 11:47:12,909 basehttp "GET /static/images/logo.png HTTP/1.1" 200 18159
+INFO 2023-08-13 11:47:12,993 basehttp "GET /static/images/profile-blue-default.png HTTP/1.1" 200 11944
+INFO 2023-08-13 11:47:12,995 basehttp "GET /static/images/eye.png HTTP/1.1" 200 13209
+INFO 2023-08-13 11:47:12,996 basehttp "GET /static/images/edit-icon.png HTTP/1.1" 200 23594
+INFO 2023-08-13 11:47:13,000 basehttp "GET /static/images/delete-booking-icon.png HTTP/1.1" 200 65467
+INFO 2023-08-13 11:47:13,001 basehttp "GET /static/images/na.png HTTP/1.1" 200 65500
+INFO 2023-08-13 11:47:13,023 basehttp "GET /static/images/favicon.png HTTP/1.1" 200 94768
+INFO 2023-08-13 11:48:27,390 basehttp "GET /booking/63/edit/ HTTP/1.1" 200 16694
+INFO 2023-08-13 11:48:37,182 basehttp "POST /booking/63/edit/ HTTP/1.1" 302 0
+INFO 2023-08-13 11:48:37,358 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 42130
+WARNING 2023-08-13 11:48:45,881 log Not Found: //profile/9/dashboard/
+WARNING 2023-08-13 11:48:45,882 basehttp "GET //profile/9/dashboard/ HTTP/1.1" 404 4649
+WARNING 2023-08-13 11:48:45,970 log Not Found: /favicon.ico
+WARNING 2023-08-13 11:48:45,970 basehttp "GET /favicon.ico HTTP/1.1" 404 4619
+INFO 2023-08-13 11:49:34,048 basehttp "GET /booking/63/edit/ HTTP/1.1" 200 16694
+INFO 2023-08-13 11:49:43,772 basehttp "POST /booking/63/edit/ HTTP/1.1" 302 0
+INFO 2023-08-13 11:49:43,992 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 42130
+INFO 2023-08-13 11:52:01,995 basehttp "GET /profile/9/dashboard/ HTTP/1.1" 200 42130
+INFO 2023-08-13 11:52:28,337 basehttp "GET /auth/logout/ HTTP/1.1" 302 0
+INFO 2023-08-13 11:52:28,376 basehttp "GET / HTTP/1.1" 200 7242
